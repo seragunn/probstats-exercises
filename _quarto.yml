@@ -5,6 +5,9 @@ book:
   title: "Probability and Statistics Exercises"
   author: "Sera Gunn"
   date: today
+  repo-url: https://github.com/seragunn/probstats-exercises/
+  site-url: https://seragunn.github.io/probstats-exercises/
+  repo-actions: [edit, issue, source]
   sidebar:
     background: primary
   navbar:
@@ -14,7 +17,11 @@ book:
         href: https://seragunn.github.io/
   chapters:
     - index.qmd
+    - part: "Project 1"
+      chapters:
+        - project-1/intro.qmd
 
 format:
-  html:
+  live-html:
     theme: [journal, theme.scss]
+    css: style.css

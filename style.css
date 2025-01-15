@@ -1,0 +1,10 @@
+.cell-output:has(input) {
+    margin-bottom: -1em;
+}
+
+[type="number"] {
+    margin-top: -2em;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.75rem;
+}
