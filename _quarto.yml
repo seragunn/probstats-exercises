@@ -1,0 +1,20 @@
+project:
+  type: book
+
+book:
+  title: "Probability and Statistics Exercises"
+  author: "Sera Gunn"
+  date: today
+  sidebar:
+    background: primary
+  navbar:
+    background: "#222"
+    left:
+      - text: Home
+        href: https://seragunn.github.io/
+  chapters:
+    - index.qmd
+
+format:
+  html:
+    theme: [journal, theme.scss]
