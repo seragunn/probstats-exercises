@@ -1,0 +1,34 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Probability and Statistics Exercises",
+    "section": "",
+    "text": "About\nExercises using the R programming language for MTH 113 at the College of Staten Island\n\nThis work © 2025 by Sera Gunn is licensed under CC BY-SA 4.0",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "project-1/intro.html",
+    "href": "project-1/intro.html",
+    "title": "1  Intro to R",
+    "section": "",
+    "text": "1.1 Syntax and Functions\nR is a programming language for statistical computation and data visualization. It is widely used by stacticians, data scientists, and researchers and has a rich ecosystem of packages and libraries to facilitate data manipulation, visualization, statistical modeling, and more. R is free to download, use, and modify.\nR can be installed to your computer, but in class we will use R entirely in the browser. No installation necessary!\nLet’s get started by looking at some code. Press the “Run Code” button or click inside the text-editor and press Ctrl or Cmd + Enter to execute the code. It may take a few seconds for your browser to load the R software.\nTo create a bar graph, we can use the barplot() function:\nYou may have noticed some symbols like # or &lt;- or c(...) in the code. These are called syntax and I will summarize new syntax and functions at the end of each section.",
+    "crumbs": [
+      "Project 1",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro to R</span>"
+    ]
+  },
+  {
+    "objectID": "project-1/intro.html#syntax-and-functions",
+    "href": "project-1/intro.html#syntax-and-functions",
+    "title": "1  Intro to R",
+    "section": "",
+    "text": "# denotes a comment, this is a term in programming to mean text that is not computed, but merely serves to describe the adjacent code. For instance, the following two lines are identical as far as R is concerned—the comment is only read by us and not by R.\n\n1 + 1 # Computes 1 + 1\n1 + 1\n\n&lt;- is called an assignment operator and is used to store previous values into a variable that can be used later on. For instance, we might write “if \\(x\n= 3\\) and \\(y = 4\\) then \\(x * y = 12\\).” In R, this looks like\n\n\n\n\n\n\n\n\nExercise 1.2 In the box above, let \\(x = 3, y = 4, z = -2, w = 1\\) and compute \\(x + y * z - w\\).",
+    "crumbs": [
+      "Project 1",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro to R</span>"
+    ]
+  }
+]
