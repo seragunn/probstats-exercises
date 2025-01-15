@@ -1,3 +1,9 @@
+@media (min-width: 768px) {
+    footer:has(.d-sm-block) {
+        display: none;
+    }
+}
+
 .cell-output:has(input) {
     margin-bottom: -1em;
 }
