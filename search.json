@@ -25,7 +25,7 @@
     "href": "project-1/intro.html#syntax-and-functions",
     "title": "1  Intro to R",
     "section": "",
-    "text": "# denotes a comment, this is a term in programming to mean text that is not computed, but merely serves to describe the adjacent code. For instance, the following two lines are identical as far as R is concerned—the comment is only read by us and not by R.\n\n1 + 1 # Computes 1 + 1\n1 + 1\n\n&lt;- is called an assignment operator and is used to store previous values into a variable that can be used later on. For instance, we might write “if \\(x\n= 3\\) and \\(y = 4\\) then \\(x * y = 12\\).” In R, this looks like\n\n\n\n\n\n\n\n\nExercise 1.2 In the box above, let \\(x = 3, y = 4, z = -2, w = 1\\) and compute \\(x + y * z - w\\).",
+    "text": "# denotes a comment, this is a term in programming to mean text that is not computed, but merely serves to describe the adjacent code. For instance, the following two lines are identical as far as R is concerned—the comment is only read by us and not by R.\n\n1 + 1 # Computes 1 + 1\n1 + 1\n\n&lt;- is called an assignment operator and is used to store previous values into a variable that can be used later on. For instance, we might write “if \\(x\n= 3\\) and \\(y = 4\\) then \\(x * y = 12\\).” In R, this looks like\n\n\n\n\n\n\n\n\nExercise 1.2 In the box above, let \\(x = 3, y = 4, z = -2, w = 1\\) and compute \\(x + y * z - w\\).\n\n\nc(1, 2, 3, 4, ...) is R’s notation for a list. The c stands for “combine” or “collect.”\ntable(...) takes a list of data and returns a table counting the number of occurrences of each value.\nbarplot(...) creates a bar graph",
     "crumbs": [
       "Project 1",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro to R</span>"
