@@ -80,3 +80,9 @@ x * y
 ::: {#exr-intro-variables}
 In the box above, let $x = 3, y = 4, z = -2, w = 1$ and compute $x + y * z - w$.
 :::
+
+* `c(1, 2, 3, 4, ...)` is R's notation for a list. The c stands for "combine" or "collect."
+
+* `table(...)` takes a list of data and returns a table counting the number of occurrences of each value.
+
+* `barplot(...)` creates a bar graph
