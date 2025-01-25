@@ -1,5 +1,6 @@
 project:
   type: book
+  resources: datasets
 
 book:
   title: "Probability and Statistics Exercises"
@@ -20,6 +21,7 @@ book:
     - part: "Project 1"
       chapters:
         - project-1/intro.qmd
+        - project-1/bars-and-pies.qmd
 
 format:
   live-html:
