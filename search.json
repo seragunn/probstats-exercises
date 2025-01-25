@@ -30,5 +30,49 @@
       "Project 1",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro to R</span>"
     ]
+  },
+  {
+    "objectID": "project-1/bars-and-pies.html",
+    "href": "project-1/bars-and-pies.html",
+    "title": "2  Activity 1",
+    "section": "",
+    "text": "2.1 Dice activity\nTake two dice and roll the pair of them 25 times, keeping track of the sum of their values. Fill those into the dice_rolls variable below.",
+    "crumbs": [
+      "Project 1",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 1</span>"
+    ]
+  },
+  {
+    "objectID": "project-1/bars-and-pies.html#dice-activity",
+    "href": "project-1/bars-and-pies.html#dice-activity",
+    "title": "2  Activity 1",
+    "section": "",
+    "text": "Exercise 2.1  \n\nFrom the sum_count table, report how many times you rolled a 2, 3, 4, etc. After you have done that, change the last line from sum_count to barplot(sum_count) and run that to get a barplot.\nWhich sum (or sums) occurred the most number of times?\nBased on your data, are we more likely to roll a 2 or a 7?\nThe function mean() returns the mean of a dataset. Run the next code box and report the mean of the data.\n\n\n\n\n\n\n\n\nNote\n\n\n\nIt is likely the case that in 25 rolls there were some totals you never rolled, if so, report those numbers as 0.",
+    "crumbs": [
+      "Project 1",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 1</span>"
+    ]
+  },
+  {
+    "objectID": "project-1/bars-and-pies.html#data-activity",
+    "href": "project-1/bars-and-pies.html#data-activity",
+    "title": "2  Activity 1",
+    "section": "2.2 Data activity",
+    "text": "2.2 Data activity\nR, and it’s many packages, contain many different datasets for practicing its features. One of these is the starwars dataset in the dplyr package. To access this, we first load the package with library(\"dplyr\") and then we can preview the dataset by simply writing starwars.\n\n\n\n\n\n\nNote\n\n\n\nWhile not strictly, necessary, I added suppressMessages() to hide the messages that often come up when loading a package.\n\n\n\n\n\n\n\n\nThis is just a preview of the first 10 rows of data. Some of the columns aren’t displayed either. You can see the full dataset here.\nIf we want information about the starwars dataset (or any R function), we can use the ? operator.\n\n\n\n\n\n\n\nExercise 2.2  \n\nWhat types of variables are included in this dataset? Which variables are quantitative?\nIf we want to talk about a specific column, like gender, we can use the $ operator. Let’s use this now to create a pie chart of character gender in Star Wars. Make a quick sketch of the resulting chart.\n\n\n\n\n\n\n\n\nTry replacing gender by a different column like height, sex, or homeworld. For which of these does it make sense to use a pie chart? For which of these does a pie chart make sense but it would be better to group smaller categories into “other”?",
+    "crumbs": [
+      "Project 1",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 1</span>"
+    ]
+  },
+  {
+    "objectID": "project-1/bars-and-pies.html#syntax-and-functions",
+    "href": "project-1/bars-and-pies.html#syntax-and-functions",
+    "title": "2  Activity 1",
+    "section": "2.3 Syntax and Functions",
+    "text": "2.3 Syntax and Functions\n\nmean(...) the mean or average of a list of numbers\n$ takes a specific column from a dataset e.g. starwars$height\n? put this before any function on built-in dataset to get more information about it\npie(...) creates a pie chart\nlibrary(...) used to add additional features to R (i.e. new functions and new datasets). suppressMessages(...) loads these in without printing any new messages.",
+    "crumbs": [
+      "Project 1",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 1</span>"
+    ]
   }
 ]
