@@ -25,6 +25,10 @@ It is likely the case that in 25 rolls there were some totals you never rolled,
 if so, report those numbers as 0.
 :::
 
+```{webr}
+mean(dice_rolls)
+```
+
 ## Data activity
 
 R, and it's many packages, contain many different datasets for practicing its
@@ -60,7 +64,7 @@ use the `?` operator.
 in Star Wars. Make a quick sketch of the resulting chart.
 ```{webr}
 data <- starwars$gender
-count_of_data <- table(data)
+count <- table(data)
 pie(count)
 ```
 3. Try replacing `gender` by a different column like `height`, `sex`, or
