@@ -85,5 +85,16 @@
       "Project 2",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Calculating Mean, Median, etc. in R</span>"
     ]
+  },
+  {
+    "objectID": "project-2/box-hist.html",
+    "href": "project-2/box-hist.html",
+    "title": "4  Boxplots and Histograms",
+    "section": "",
+    "text": "4.1 Histograms\nTo create a basic box and whisker plot, we use the boxplot() command. As per usual, we define our data in a variable and then use that variable in the boxplot function.\nRemember that the lines of the boxplot correspond to the quartiles (minimum, 25% mark, 50% mark, 75% mark, maximum). A related and quite useful function is summary() which will print out all of these values as numbers for us.\nCompare the output of this command to where the lines of boxplot are positioned.\nHistograms are created with the hist() function. For instance\nUnlike boxplots, we usually want to configure our histogram, i.e. set a number of bins and/or declare the beginning and end of each bin.\nWe can do this by adding breaks=... to the end of our histogram function. And the two most common types of breaks are to set a number of bins or to set where the boundaries of those bins are.\nThere is one more option we need to discuss which is the right=FALSE option. By default, bins will include their right endpoint, so a bin that goes from \\(10\\) to \\(20\\) will include every data point equal to \\(20\\). Adding right=FALSE moves all the \\(20\\) data points into the next bin over (bins will include the left point but not the right point). Compare:\nThere are \\(6\\) data points equal to \\(20\\). In the first histogram those \\(6\\) count for the middle bin, in the second histogram the count for the right bin.",
+    "crumbs": [
+      "Project 2",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Boxplots and Histograms</span>"
+    ]
   }
 ]
