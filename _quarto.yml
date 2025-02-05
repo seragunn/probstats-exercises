@@ -22,6 +22,9 @@ book:
       chapters:
         - project-1/intro.qmd
         - project-1/bars-and-pies.qmd
+    - part: "Project 2"
+      chapters:
+        - project-2/calculating-statistics.qmd
 
 format:
   live-html:
