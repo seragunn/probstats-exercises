@@ -74,5 +74,16 @@
       "Project 1",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 1</span>"
     ]
+  },
+  {
+    "objectID": "project-2/calculating-statistics.html",
+    "href": "project-2/calculating-statistics.html",
+    "title": "3  Calculating Mean, Median, etc. in R",
+    "section": "",
+    "text": "3.1 Mode\nWe’ve seen the mean() function before in Activity 1. This calculates the mean of a set of data. For instance\nLikewise, the median(), sd(), var(), and range() functions exists to calculate the median, (sample) standard deviation, (sample) variance, and range respectively. Remember that the sample s.d. or var formulas have a denominator of \\(n - 1\\) rather than \\(n\\).\nMode is a less common calculation and the mode() function in R does not calculate the mode but does something much different having to do with programming internals.\nInstead, we can calculate the mode as we did in Activity 1 by using the table() function and then reading the output to determine which data point occurred the most.",
+    "crumbs": [
+      "Project 2",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Calculating Mean, Median, etc. in R</span>"
+    ]
   }
 ]
