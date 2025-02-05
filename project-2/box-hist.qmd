@@ -1,0 +1,54 @@
+# Boxplots and Histograms
+
+To create a basic box and whisker plot, we use the `boxplot()` command. As per
+usual, we define our data in a variable and then use that variable in the
+`boxplot` function.
+
+```{webr}
+data <- c(26, 16, 20, 21, 22, 21, 21, 22, 23, 16, 16, 24, 23, 20, 17, 21, 20, 15, 20, 20, 21, 23, 24, 24, 19, 16, 17, 23, 21, 20)
+boxplot(data)
+```
+
+Remember that the lines of the boxplot correspond to the quartiles (minimum,
+25% mark, 50% mark, 75% mark, maximum). A related and quite useful function is
+`summary()` which will print out all of these values as numbers for us.
+
+```{webr}
+summary(data)
+```
+
+Compare the output of this command to where the lines of boxplot are positioned.
+
+## Histograms
+
+Histograms are created with the `hist()` function. For instance
+
+```{webr}
+hist(data)
+```
+
+Unlike boxplots, we usually want to configure our histogram, i.e. set a number
+of bins and/or declare the beginning and end of each bin.
+
+We can do this by adding `breaks=...` to the end of our histogram function. And
+the two most common types of breaks are to set a number of bins or to set where
+the boundaries of those bins are.
+
+```{webr}
+hist(data, breaks=3) # setting breaks to a number makes that many bins
+
+hist(data, breaks=c(0, 10, 20, 30)) # setting breaks to a list makes those the boundaries between bins
+```
+
+There is one more option we need to discuss which is the `right=FALSE` option.
+By default, bins will include their right endpoint, so a bin that goes from
+$10$ to $20$ will include every data point equal to $20$. Adding `right=FALSE`
+moves all the $20$ data points into the next bin over (bins will include the
+left point but not the right point). Compare:
+
+```{webr}
+hist(data, breaks=c(0, 10, 20, 30), right=FALSE)
+```
+
+There are $6$ data points equal to $20$. In the first histogram those $6$ count
+for the middle bin, in the second histogram the count for the right bin.

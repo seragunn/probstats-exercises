@@ -25,6 +25,7 @@ book:
     - part: "Project 2"
       chapters:
         - project-2/calculating-statistics.qmd
+        - project-2/box-hist.qmd
 
 format:
   live-html:
