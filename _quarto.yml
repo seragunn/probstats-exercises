@@ -26,6 +26,7 @@ book:
       chapters:
         - project-2/calculating-statistics.qmd
         - project-2/box-hist.qmd
+        - project-2/visualizing-shape.qmd
 
 format:
   live-html:
