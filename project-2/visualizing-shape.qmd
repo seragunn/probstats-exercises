@@ -17,6 +17,12 @@ highest average temperature.
 3. Writing `nottem == min(nottem)` we check each entry of the data for whether
    it equals the minimum. The month that has the minimum will display as `TRUE`
 in the output. Which month and year did the lowest average temperature occur?
+
+:::: {.callout-warning}
+If you accidentally use only 1 equals sign you will overwrite the `nottem`
+dataset. You can reset it with `rm(nottem)`
+::::
+
 4. Which month and year did the highest average temperatures occur?
 :::
 
