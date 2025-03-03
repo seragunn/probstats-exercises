@@ -151,5 +151,49 @@
       "Project 2",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 2</span>"
     ]
+  },
+  {
+    "objectID": "project-3/intro-to-sampling.html",
+    "href": "project-3/intro-to-sampling.html",
+    "title": "6  Activity 3",
+    "section": "",
+    "text": "6.1 Working by hand\nR has tools for generating random coin flips, dice rolls, drawings, choosing random decimals, and more. Before we get to that, let’s practice doing this by hand.",
+    "crumbs": [
+      "Project 3",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 3</span>"
+    ]
+  },
+  {
+    "objectID": "project-3/intro-to-sampling.html#working-by-hand",
+    "href": "project-3/intro-to-sampling.html#working-by-hand",
+    "title": "6  Activity 3",
+    "section": "",
+    "text": "Exercise 6.1  \n\nDraw a 6 by 6 grid and label the rows and columns with the numbers 1 to 6. There should be enough room in each cell to maintain a tally.\nFind two disjoint rectangles in the grid with the same area. These will represent two mutually exclusive events. Indicate these events with a border.\nRoll your pair of dice 30 times. One die of your choice will refer to the row and the other to the column. Make a tally for each time the dice roll lands in that cell of your grid. E.g. if you roll a 2 and a 3 you make a mark in row 2, col 3.",
+    "crumbs": [
+      "Project 3",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 3</span>"
+    ]
+  },
+  {
+    "objectID": "project-3/intro-to-sampling.html#working-with-sample",
+    "href": "project-3/intro-to-sampling.html#working-with-sample",
+    "title": "6  Activity 3",
+    "section": "6.2 Working with sample",
+    "text": "6.2 Working with sample\nIn R, to sample whole numbers like dice rolls, we can use the sample() function. Here we sample \\(6\\) numbers from \\(1\\) to \\(6\\).\n\n\n\n\n\n\n\n\n\nExercise 6.2  \n\nRun this example a few times. Do you notice anything?\nWhat error message do you get when you ask to sample \\(10\\) dice rolls with sample(1:6, 10)?\n\n\nWhen we get error messages like this, we might need help interpreting them. Search engines and Large Language Models are good tools to use for interpreting error messages. Here the issue is that by default, sample assumes we are drawing numbers from a hat without returning our drawn numbers to the hat (so they will never repeat). To change this behavior, we add replace=TRUE to our function as follows.\n\n\n\n\n\n\n\n\n\nExercise 6.3 Run this and write down the output.\n\nIf you remember, in Activity 1 we we generated a barplot by rolling dice ourselves. Let’s use our sample function to speed that up.\n\n\n\n\n\n\n\n\n\nExercise 6.4  \n\nRun the above code and report the table.\nIf we want to add two dice together we can do this by adding one sample function to another. Change the first line to read\n\nThen change the last line from count to barplot(count). Draw a rough sketch of what you see.\n\n\n\n\n\n\n\nNote\n\n\n\nTo better understand what doing sample() + sample() does, imagine the first sample is some list like 3, 1, 6, 2, 5, ... and the second is a list like 4, 1, 4, 2, 5, .... When we add these lists, R creates the list 7, 2, 10, 4, 10, ..., adding in pairs.",
+    "crumbs": [
+      "Project 3",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 3</span>"
+    ]
+  },
+  {
+    "objectID": "project-3/intro-to-sampling.html#using-sample-to-fill-our-grid",
+    "href": "project-3/intro-to-sampling.html#using-sample-to-fill-our-grid",
+    "title": "6  Activity 3",
+    "section": "6.3 Using sample to fill our grid",
+    "text": "6.3 Using sample to fill our grid\nGoing back to our 6x6 grid. We want to take our dice rolls and record not their sum but their row and column. That looks something like\n\n\n\n\n\n\n\n\n\nExercise 6.5  \n\nRun this a few times. With only 30 samples and 36 cells, we’re not going to see very large numbers. What is the largest number you see if you run this 5 times or so?\nNow set \\(n\\) to \\(10000\\) (i.e. n &lt;- 10000) and record that table. We expect to see each outcome with a probability of \\(1/36\\) each time we roll and \\(10000/36 \\approx 277.8\\) overall.\nWhat is the relative frequency of each of your mutually exclusive events from Exercise 6.1? Remember: relative frequency means how many times the dice landed in that rectangle (add up the numbers) divided by \\(n\\). You can edit the next code box to help out with this.\n\n\n\n\n\n\n\n\n\n\nNow consider the events:\n\nThe dice are both the same (\\(1,1\\), \\(2,2\\), \\(3,3\\), etc.) which is the main diagonal of your grid\nThe sum of the dice is \\(7\\) (\\(1,6\\), \\(2,5\\), \\(3,4\\), etc.) which is the other diagonal\nThe first die is \\(1\\) (the first row) The next code box will help you calculate the count of each of these events. Write those numbers down.\n\nLook back at the grid and write down the count of the events A and B (same number and sum is 7), A and C (same number and first row), B and C (sum is 7 and first row).\nWhich pairs are mutually exclusive (no overlap) and which are independent?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThese events each cover 6 out of 36 cells. So each has a probability of \\(6/36 = 1/6\\). Independent means that the intersection satisfies: \\(P(X \\text{ and } Y) = P(X)P(Y) = \\frac16 \\cdot \\frac16 = \\frac1{36}\\)",
+    "crumbs": [
+      "Project 3",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 3</span>"
+    ]
   }
 ]
