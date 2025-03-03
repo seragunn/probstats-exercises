@@ -1,0 +1,136 @@
+# Activity 3
+
+## Working by hand
+
+R has tools for generating random coin flips, dice rolls, drawings, choosing
+random decimals, and more. Before we get to that, let's practice doing this by
+hand.
+
+::: {#exr-dice-activity}
+1. Draw a 6 by 6 grid and label the rows and columns with the numbers 1 to 6.
+   There should be enough room in each cell to maintain a tally.
+2. Find two disjoint rectangles in the grid with the same area. These will
+   represent two *mutually exclusive* events. Indicate these events with a
+border.
+3. Roll your pair of dice 30 times. One die of your choice will refer to the
+   row and the other to the column. Make a tally for each time the dice roll
+lands in that cell of your grid. E.g. if you roll a 2 and a 3 you make a mark
+in row 2, col 3.
+:::
+
+## Working with sample
+
+In R, to sample whole numbers like dice rolls, we can use the `sample()`
+function. Here we sample $6$ numbers from $1$ to $6$.
+
+```{webr}
+sample(1:6, 6)
+```
+
+::: {#exr-sampling}
+1. Run this example a few times. Do you notice anything?
+2. What error message do you get when you ask to sample $10$ dice rolls with
+   `sample(1:6, 10)`?
+:::
+
+When we get error messages like this, we might need help interpreting them.
+Search engines and Large Language Models are good tools to use for interpreting
+error messages. Here the issue is that by default, `sample` assumes we are
+drawing numbers from a hat without returning our drawn numbers to the hat (so
+they will never repeat). To change this behavior, we add `replace=TRUE` to our
+function as follows.
+
+```{webr}
+sample(1:6, 10, replace=TRUE)
+```
+
+::: {#exr-sampling-with-replacement}
+Run this and write down the output.
+:::
+
+If you remember, in Activity 1 we we generated a barplot by rolling dice
+ourselves. Let's use our `sample` function to speed that up.
+
+```{webr}
+dice_rolls <- sample(1:6, 1000, replace=TRUE)
+count <- table(dice_rolls)
+count
+```
+
+::: {#exr-sampling-bar-graph}
+1. Run the above code and report the table.
+2. If we want to add two dice together we can do this by adding one `sample`
+function to another. Change the first line to read
+
+```{R}
+#| echo: false
+dice_rolls <- sample(1:6, 1000, replace=TRUE) + sample(1:6, 1000, replace=TRUE)
+```
+
+Then change the last line from `count` to `barplot(count)`. Draw a rough sketch
+of what you see.
+:::
+
+::: {.callout-note}
+To better understand what doing `sample() + sample()` does, imagine the first sample is some list like `3, 1, 6, 2, 5, ...` and the second is a list like `4, 1, 4, 2, 5, ...`. When we add these lists, R creates the list `7, 2, 10, 4, 10, ...`, adding in pairs.
+:::
+
+## Using sample to fill our grid
+
+Going back to our 6x6 grid. We want to take our dice rolls and record not their
+sum but their row and column. That looks something like
+
+```{webr}
+# Set the number of simulations
+n <- 30
+
+# Simulate rolling two dice
+die1 <- sample(1:6, n, replace=TRUE)
+die2 <- sample(1:6, n, replace=TRUE)
+
+# Create a 6x6 table
+outcome_table <- matrix(0, nrow = 6, ncol = 6)
+
+# Go through each pair and tally where they land
+for (i in 1:n) {
+  outcome_table[die1[i], die2[i]] <- outcome_table[die1[i], die2[i]] + 1
+}
+
+outcome_table
+```
+
+::: {#exr-dice-grid}
+1. Run this a few times. With only 30 samples and 36 cells, we're not going to
+   see very large numbers. What is the largest number you see if you run this 5
+times or so?
+2. Now set $n$ to $10000$ (i.e. `n <- 10000`) and record that table. We expect
+   to see each outcome with a probability of $1/36$ each time we roll and
+$10000/36 \approx 277.8$ overall.
+3. What is the relative frequency of each of your mutually exclusive events from @exr-dice-activity? Remember: relative frequency means how many times the dice landed in that rectangle (add up the numbers) divided by $n$. You can edit the next code box to help out with this.
+
+```{webr}
+(250 + 270 + 280) / 10000
+```
+
+4. Now consider the events:
+    a. The dice are both the same ($1,1$, $2,2$, $3,3$, etc.) which is the main diagonal of your grid
+    b. The sum of the dice is $7$ ($1,6$, $2,5$, $3,4$, etc.) which is the other diagonal
+    c. The first die is $1$ (the first row)
+The next code box will help you calculate the count of each of these events. Write those numbers down.
+5. Look back at the grid and write down the count of the events A and B (same number and sum is 7), A and C (same number and first row), B and C (sum is 7 and first row).
+6. Which pairs are mutually exclusive (no overlap) and which are *independent*?
+:::
+
+```{webr}
+A <- sum(diag(outcome_table))
+B <- outcome_table[1,6] + outcome_table[2,5] + outcome_table[3,4] + outcome_table[4,3] + outcome_table[5,2] + outcome_table[6,1]
+C <- sum(outcome_table[1,])
+
+A
+B
+C
+```
+
+::: {.callout-note}
+These events each cover 6 out of 36 cells. So each has a probability of $6/36 = 1/6$. **Independent** means that the intersection satisfies: $P(X \text{ and } Y) = P(X)P(Y) = \frac16 \cdot \frac16 = \frac1{36}$
+:::
