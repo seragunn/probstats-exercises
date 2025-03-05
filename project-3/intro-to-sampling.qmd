@@ -63,7 +63,6 @@ count
 function to another. Change the first line to read
 
 ```{R}
-#| echo: false
 dice_rolls <- sample(1:6, 1000, replace=TRUE) + sample(1:6, 1000, replace=TRUE)
 ```
 
