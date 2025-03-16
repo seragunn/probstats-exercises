@@ -195,5 +195,49 @@
       "Project 3",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 3</span>"
     ]
+  },
+  {
+    "objectID": "project-4/binomial.html",
+    "href": "project-4/binomial.html",
+    "title": "7  Binomial Distribution",
+    "section": "",
+    "text": "7.1 Cumulative probabilities\nThe Binomial Distribution is a model of doing something random several times. For example, rolling multiple dice or flipping multiple coins.\nIf \\(X\\) represents the number of successes in \\(n\\) random experiments with a probability of success of \\(p\\) and probability of failure \\(q = 1 - p\\) then \\[\nP(X = k) = nCk \\cdot p^k q^{n - k}, \\quad \\text{Where } nCk = \\frac{n!}{k!(n - k)!}.\n\\tag{7.1}\\]\nFor example, if \\(X\\) is the number of \\(6\\)s rolled among \\(10\\) dice then \\(p =\n\\frac16\\) is the probability of getting a \\(6\\) and \\(q = 1 - \\frac16 = \\frac56\\) is the probability of not getting a \\(6\\). So \\[\nP(X = k) = P(\\text{rolling } k \\text{ sixes}) = 10Ck \\cdot \\left( \\frac16 \\right)^k \\left( \\frac56 \\right)^{n-k}.\n\\]\nIn R, we calculate these probabilities with the dbinom function. E.g. for \\(n = 10, p = \\frac16, k = 3\\):\nIf we change dbinom to pbinom, we get not the probability of \\(k\\) successes but the probability of \\(\\le k\\) successes.\nE.g. the probability of rolling \\(0, 1\\) or \\(2\\) ones among \\(5\\) dice rolls is\nIn math notation: \\[\nP(X \\le 2) = P(X = 0, 1 \\text{ or } 2) = P(X = 0) + P(X = 1) + P(X = 2)\n\\]",
+    "crumbs": [
+      "Project 4",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Binomial Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "project-4/binomial.html#cumulative-probabilities",
+    "href": "project-4/binomial.html#cumulative-probabilities",
+    "title": "7  Binomial Distribution",
+    "section": "",
+    "text": "Exercise 7.2  \n\nGo back to Exercise 7.1 and now instead of calculating the probability of making exactly \\(3\\) free throws to the probability of making \\(\\le 3\\) free throws (change dbinom to pbinom).\nTo get the probability of making \\(\\ge k\\) free throws rather than \\(\\le k\\) we can add lower.tail=FALSE to the function (lower tail referring to \\(\\le\\)). Compute the probability of making \\(\\ge 4\\) free throws this way.",
+    "crumbs": [
+      "Project 4",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Binomial Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "project-4/binomial.html#random-number-generation",
+    "href": "project-4/binomial.html#random-number-generation",
+    "title": "7  Binomial Distribution",
+    "section": "7.2 Random number generation",
+    "text": "7.2 Random number generation\nWe’ve seen how to calculate probabilities. We can also make simulations. For instance, to simulate this experiment of throwing 5 free throws 100 times, we can use the rbinom function. The output is a list of \\(k\\)’s. E.g. if the output starts 5 4 2 1 ... that means the first simulation had 5 successes, the second 4, the third 2, the fourth 1, etc.\n\n\n\n\n\n\n\nExercise 7.3  \n\nRun this cell and write down the first 10 numbers.\nIn those first 10 experiments, what percent of the time did you land exactly \\(3\\) free throws? Is this relative frequency greater than or smaller than the probability you calculated in Exercise 7.1 Q2?\nNow change the line to table(rbinom(...)) to make the summary table we looked at in Lab 1. Write down that table.\nHow many times out of 100 was the number of successes \\(0, 1, 2\\) or \\(3\\)? Is this relative frequency bigger or smaller than the true probability you calculated in Exercise 7.2 Q1?",
+    "crumbs": [
+      "Project 4",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Binomial Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "project-4/binomial.html#summary",
+    "href": "project-4/binomial.html#summary",
+    "title": "7  Binomial Distribution",
+    "section": "7.3 Summary",
+    "text": "7.3 Summary\nFor \\(X\\) representing the number of successes in \\(n\\) experiments with a probability \\(p\\) of success:\n\n\\(P(X = k)\\) is dbinom(k, size=n, prob=p)\n\\(P(X \\le k)\\) is pbinom(k, size=n, prob=p)\n\\(P(X \\ge k)\\) is pbinom(k, size=n, prob=p, lower.tail=FALSE)\nGenerating \\(100\\) sample values for \\(X\\) is rbinom(100, size=n, prob=p)",
+    "crumbs": [
+      "Project 4",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Binomial Distribution</span>"
+    ]
   }
 ]
