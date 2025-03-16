@@ -1,0 +1,116 @@
+# Activity 4
+
+The Binomial Distribution is a model of doing something random several times.
+For example, rolling multiple dice or flipping multiple coins.
+
+If $X$ represents the number of successes in $n$ random experiments with a
+probability of success of $p$ and probability of failure $q = 1 - p$ then
+$$
+P(X = k) = nCk \cdot p^k q^{n - k}, \quad \text{Where } nCk = \frac{n!}{k!(n - k)!}.
+$$ {#eq-binom-pmf}
+
+For example, if $X$ is the number of $6$s rolled among $10$ dice then $p =
+\frac16$ is the probability of getting a $6$ and $q = 1 - \frac16 = \frac56$
+is the probability of not getting a $6$. So
+$$
+P(X = k) = P(\text{rolling } k \text{ sixes}) = 10Ck \cdot \left( \frac16 \right)^k \left( \frac56 \right)^{n-k}.
+$$
+
+In R, we calculate these probabilities with the `dbinom` function. E.g. for $n = 10, p = \frac16, k = 3$:
+
+```{webr}
+dbinom(3, size=10, prob=1/6)
+
+# Same as:
+
+choose(10, 3) * (1/6)^3 * (5/6)^7
+```
+
+::: {.callout-note}
+This can also be written `dbinom(3, 10, 1/6)` without writing `size=` or
+`prob=` but I find it helps to write those explicitly to help know which number
+is $k, n$ or $p$.
+:::
+
+::: {#exr-dbinom}
+Suppose in basketball, you are able to successfully make a free throw $70\%$ of
+the time or $p = 0.7$.
+
+1. What is the probability that you miss: $q = 1 - p$?
+2. If you shoot $5$ times, write down the formula (i.e. write @eq-binom-pmf
+   with the given $p, q, n, k$) for the probability that you land $3$ out of
+$5$ free throws.
+3. Using `dbinom(k, size=n, prob=p)` compute this probability (fill in your
+   values for $p, n, k$)
+:::
+
+```{webr}
+dbinom(k, size=n, prob=p)
+```
+
+## Cumulative probabilities
+
+If we change `dbinom` to `pbinom`, we get not the probability of $k$ successes
+but the probability of $\le k$ successes.
+
+E.g. the probability of rolling $0, 1$ or $2$ ones among $5$ dice rolls is
+```{webr}
+dbinom(0, size=5, prob=1/6)
++ dbinom(1, size=5, prob=1/6)
++ dbinom(2, size=5, prob=1/6)
+
+# Or more simply
+
+pbinom(2, size=5, prob=1/6)
+```
+
+In math notation:
+$$
+P(X \le 2) = P(X = 0, 1 \text{ or } 2) = P(X = 0) + P(X = 1) + P(X = 2)
+$$
+
+::: {#exr-pbinom}
+1. Go back to @exr-dbinom and now instead of calculating the probability of
+   making exactly $3$ free throws to the probability of making $\le 3$ free
+throws (change `dbinom` to `pbinom`).
+2. To get the probability of making $\ge k$ free throws rather than $\le k$ we
+   can add `lower.tail=FALSE` to the function (lower tail referring to $\le$).
+   Compute the probability of making $\ge 4$ free throws this way.
+:::
+
+```{webr}
+pbinom(k, size=n, prob=p, lower.tail=FALSE)
+```
+
+## Random number generation
+
+We've seen how to calculate probabilities. We can also make simulations. For
+instance, to simulate this experiment of throwing 5 free throws 100 times, we
+can use the `rbinom` function. The output is a list of $k$'s. E.g. if the
+output starts `5 4 2 1 ...` that means the first simulation had 5 successes,
+the second 4, the third 2, the fourth 1, etc.
+
+```{webr}
+rbinom(100, size=5, prob=0.7)
+```
+
+::: {#exr-rbinom}
+1. Run this cell and write down the first 10 numbers.
+2. In those first 10 experiments, what percent of the time did you land exactly
+   $3$ free throws? Is this *relative frequency* greater than or smaller than
+the probability you calculated in @exr-dbinom Q2?
+3. Now change the line to `table(rbinom(...))` to make the summary table we
+   looked at in Lab 1. Write down that table.
+4. How many times out of 100 was the number of successes $0, 1, 2$ or $3$? Is
+   this relative frequency bigger or smaller than the true probability you
+calculated in @exr-pbinom Q1?
+:::
+
+## Summary
+
+For $X$ representing the number of successes in $n$ experiments with a probability $p$ of success:
+
+1. $P(X = k)$ is `dbinom(k, size=n, prob=p)`
+2. $P(X \le k)$ is `pbinom(k, size=n, prob=p)`
+3. $P(X \ge k)$ is `pbinom(k, size=n, prob=p, lower.tail=FALSE)`
+4. Generating $100$ sample values for $X$ is `rbinom(100, size=n, prob=p)`

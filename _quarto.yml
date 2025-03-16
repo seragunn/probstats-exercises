@@ -30,6 +30,9 @@ book:
     - part: "Project 3"
       chapters:
         - project-3/intro-to-sampling.qmd
+    - part: "Project 4"
+      chapters:
+        - project-4/binomial.qmd
 
 format:
   live-html:
