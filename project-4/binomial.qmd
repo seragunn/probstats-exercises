@@ -13,7 +13,7 @@ For example, if $X$ is the number of $6$s rolled among $10$ dice then $p =
 \frac16$ is the probability of getting a $6$ and $q = 1 - \frac16 = \frac56$
 is the probability of not getting a $6$. So
 $$
-P(X = k) = P(\text{rolling } k \text{ sixes}) = 10Ck \cdot \left( \frac16 \right)^k \left( \frac56 \right)^{n-k}.
+P(X = k) = P(\text{rolling } k \text{ sixes}) = 10Ck \cdot \left( \frac16 \right)^k \left( \frac56 \right)^{10-k}.
 $$
 
 In R, we calculate these probabilities with the `dbinom` function. E.g. for $n = 10, p = \frac16, k = 3$:
@@ -73,13 +73,26 @@ $$
 1. Go back to @exr-dbinom and now instead of calculating the probability of
    making exactly $3$ free throws to the probability of making $\le 3$ free
 throws (change `dbinom` to `pbinom`).
-2. To get the probability of making $\ge k$ free throws rather than $\le k$ we
+2. To get the probability of making $> k$ free throws rather than $\le k$ we
    can add `lower.tail=FALSE` to the function (lower tail referring to $\le$).
-   Compute the probability of making $\ge 4$ free throws this way.
+   Compute the probability of making $> 4$ free throws this way.
+:::
+
+::: {.callout-tip}
+Alternatively, if you have, say, a $35\%$ chance of making $\le k$ throws, then
+you must have a $65\%$ chance of making $> k$ throws. These are *complementary
+events*.
+$$
+P(X > k) = 1 - P(X \le k).
+$$
+In R: that means that `1 - pbinom(k, n, p)` is equivalent to `pbinom(k, n, p, lower.tail=FALSE)`.
 :::
 
 ```{webr}
 pbinom(k, size=n, prob=p, lower.tail=FALSE)
+
+# equivalent to
+# 1 - pbinom(k, size=n, prob=p)
 ```
 
 ## Random number generation
@@ -112,5 +125,5 @@ For $X$ representing the number of successes in $n$ experiments with a probabili
 
 1. $P(X = k)$ is `dbinom(k, size=n, prob=p)`
 2. $P(X \le k)$ is `pbinom(k, size=n, prob=p)`
-3. $P(X \ge k)$ is `pbinom(k, size=n, prob=p, lower.tail=FALSE)`
+3. $P(X > k)$ is `pbinom(k, size=n, prob=p, lower.tail=FALSE)`
 4. Generating $100$ sample values for $X$ is `rbinom(100, size=n, prob=p)`
