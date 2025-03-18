@@ -287,7 +287,7 @@ P(X = k) = nCk \cdot p^k q^{n - k}, \quad \text{Where } nCk = \frac{n!}{k!(n - k
 \tag{7.1}\]</span></span></p>
 <p>For example, if <span class="math inline">\(X\)</span> is the number of <span class="math inline">\(6\)</span>s rolled among <span class="math inline">\(10\)</span> dice then <span class="math inline">\(p =
 \frac16\)</span> is the probability of getting a <span class="math inline">\(6\)</span> and <span class="math inline">\(q = 1 - \frac16 = \frac56\)</span> is the probability of not getting a <span class="math inline">\(6\)</span>. So <span class="math display">\[
-P(X = k) = P(\text{rolling } k \text{ sixes}) = 10Ck \cdot \left( \frac16 \right)^k \left( \frac56 \right)^{n-k}.
+P(X = k) = P(\text{rolling } k \text{ sixes}) = 10Ck \cdot \left( \frac16 \right)^k \left( \frac56 \right)^{10-k}.
 \]</span></p>
 <p>In R, we calculate these probabilities with the <code>dbinom</code> function. E.g. for <span class="math inline">\(n = 10, p = \frac16, k = 3\)</span>:</p>
 <div>
@@ -346,15 +346,30 @@ P(X \le 2) = P(X = 0, 1 \text{ or } 2) = P(X = 0) + P(X = 1) + P(X = 2)
 <p><span class="theorem-title"><strong>Exercise 7.2</strong></span> &nbsp;</p>
 <ol type="1">
 <li>Go back to <a href="#exr-dbinom" class="quarto-xref">Exercise&nbsp;<span>7.1</span></a> and now instead of calculating the probability of making exactly <span class="math inline">\(3\)</span> free throws to the probability of making <span class="math inline">\(\le 3\)</span> free throws (change <code>dbinom</code> to <code>pbinom</code>).</li>
-<li>To get the probability of making <span class="math inline">\(\ge k\)</span> free throws rather than <span class="math inline">\(\le k\)</span> we can add <code>lower.tail=FALSE</code> to the function (lower tail referring to <span class="math inline">\(\le\)</span>). Compute the probability of making <span class="math inline">\(\ge 4\)</span> free throws this way.</li>
+<li>To get the probability of making <span class="math inline">\(&gt; k\)</span> free throws rather than <span class="math inline">\(\le k\)</span> we can add <code>lower.tail=FALSE</code> to the function (lower tail referring to <span class="math inline">\(\le\)</span>). Compute the probability of making <span class="math inline">\(&gt; 4\)</span> free throws this way.</li>
 </ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Alternatively, if you have, say, a <span class="math inline">\(35\%\)</span> chance of making <span class="math inline">\(\le k\)</span> throws, then you must have a <span class="math inline">\(65\%\)</span> chance of making <span class="math inline">\(&gt; k\)</span> throws. These are <em>complementary events</em>. <span class="math display">\[
+P(X &gt; k) = 1 - P(X \le k).
+\]</span> In R: that means that <code>1 - pbinom(k, n, p)</code> is equivalent to <code>pbinom(k, n, p, lower.tail=FALSE)</code>.</p>
+</div>
 </div>
 <div>
 <div id="webr-4" class="exercise-cell">
 
 </div>
 <script type="webr-4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGJpbm9tKGssIHNpemU9biwgcHJvYj1wLCBsb3dlci50YWlsPUZBTFNFKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGJpbm9tKGssIHNpemU9biwgcHJvYj1wLCBsb3dlci50YWlsPUZBTFNFKVxuXG4jIGVxdWl2YWxlbnQgdG9cbiMgMSAtIHBiaW5vbShrLCBzaXplPW4sIHByb2I9cCkifQ==
 </script>
 </div>
 </section>
@@ -385,7 +400,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicmJpbm9tKDEwMCwgc2l6ZT01
 <ol type="1">
 <li><span class="math inline">\(P(X = k)\)</span> is <code>dbinom(k, size=n, prob=p)</code></li>
 <li><span class="math inline">\(P(X \le k)\)</span> is <code>pbinom(k, size=n, prob=p)</code></li>
-<li><span class="math inline">\(P(X \ge k)\)</span> is <code>pbinom(k, size=n, prob=p, lower.tail=FALSE)</code></li>
+<li><span class="math inline">\(P(X &gt; k)\)</span> is <code>pbinom(k, size=n, prob=p, lower.tail=FALSE)</code></li>
 <li>Generating <span class="math inline">\(100\)</span> sample values for <span class="math inline">\(X\)</span> is <code>rbinom(100, size=n, prob=p)</code></li>
 </ol>
 
