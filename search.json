@@ -239,5 +239,38 @@
       "Project 4",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 4</span>"
     ]
+  },
+  {
+    "objectID": "project-5/normal.html",
+    "href": "project-5/normal.html",
+    "title": "8  Activity 5",
+    "section": "",
+    "text": "8.1 Inverse normal calculations\nThe first calculation we’ll do is \\(P(X &lt; x)\\) where \\(X\\) follows a normal distribution. The code for this is pnorm(x, mean=μ, sd=σ) or just pnorm(x, μ, σ) for short.\nLet us also do a couple calculations where we change \\(\\mu\\) and \\(\\sigma\\). Remember: pnorm if it’s the probability of “below \\(x\\)” and 1 - pnorm if “above \\(x\\).”\nAs we just saw, pnorm answers the question “what is the probability of being above or below this threshold?” The inverse of this is “what threshold corresponds to a given probability?” This is what qnorm(p, μ, σ) function does.",
+    "crumbs": [
+      "Project 5",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Activity 5</span>"
+    ]
+  },
+  {
+    "objectID": "project-5/normal.html#inverse-normal-calculations",
+    "href": "project-5/normal.html#inverse-normal-calculations",
+    "title": "8  Activity 5",
+    "section": "",
+    "text": "Tip\n\n\n\n\\(p\\) is always the proportion which are below the threshold. If you want the threshold for “this percent above”, first compute \\(1 - p\\) to get the proportion which is below. Alternatively, one can use the lower.tail=FALSE parameter.\n\n\n\n\n\n\n\n\n\nExercise 8.3  \n\nFor the IQ test with \\(\\mu = 100, \\sigma = 15\\), what is the IQ score for which \\(98\\%\\) of people are below? This is qnorm(0.98, 100, 15).\nWhat is the IQ score for which \\(90\\%\\) of people are above? (First: if \\(90\\%\\) are above, what percent are below?)\nFor an exam with a mean of \\(71\\) and standard deviation of \\(6.5\\). What is the approximate \\(25\\)-th and \\(75\\)-th percentile for that exam? I.e. what exam score has \\(25\\%\\) of people below it and which has \\(75\\%\\) below it?\nFor the group of patients with a systolic pressure mean of \\(127\\) and standard deviation of \\(4.6\\), what is the threshold for which only \\(5\\%\\) are below and what is the threshold for which only \\(5\\%\\) are above? (Again, \\(5\\%\\) above means \\(??\\%\\) below?)",
+    "crumbs": [
+      "Project 5",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Activity 5</span>"
+    ]
+  },
+  {
+    "objectID": "project-5/normal.html#binomial-distributions",
+    "href": "project-5/normal.html#binomial-distributions",
+    "title": "8  Activity 5",
+    "section": "8.2 Binomial distributions",
+    "text": "8.2 Binomial distributions\nRecall the mean and standard deviation of a binomial distribution \\(X \\sim \\operatorname{Bin}(n, p)\\) are\n\\[\n\\mu = np, \\quad \\sigma = \\sqrt{npq} = \\sqrt{np(1 - p)}.\n\\]\n\nExercise 8.4 Suppose you flip \\(100\\) coins. What is the probability of getting between \\(40\\) and \\(60\\) heads?\n\nUsing a normal distribution approximation, we first compute \\(\\mu, \\sigma\\). Then we use the formula \\(P(40 &lt; X &lt; 60) = P(X &lt; 60) - P(X &lt; 40)\\). Run the following cell and report the result.\n\n\n\n\n\n\n\n\nNow suppose we flip \\(10000\\) coins and ask for \\(P(4950 &lt; X &lt; 5050)\\). In the previous code cell, change \\(n\\) to \\(10000\\) and change the \\(60\\) and \\(40\\) to \\(5050, 4950\\) and report the result.\nWe can also use the pbinom function directly. To how many decimal places does this agree with your answer to Q1?\n\n\n\n\n\n\n\n\nAgain, change the \\(100\\)’s to \\(10000\\)’s and change \\(60\\) to \\(5050\\) and \\(40\\) to \\(4950\\). To how many decimal places does this agree with Q2?\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn general, expect the normal approximation to be more accurate the larger \\(n\\) is.\n\n\n\nExercise 8.5 A multiple choice test has \\(n = 100\\) questions. Between the questions you know and random guessing, you have a \\(p = 0.8\\) chance of answering a question correctly.\n\nCompute \\(\\mu = np\\) and \\(\\sigma = \\sqrt{np(1-p)}\\).\nUse those values of \\(\\mu\\) and \\(\\sigma\\) and a normal approximation, to compute the probability that you score \\(85\\) or above.\n\n\n\n\n\n\n\n\nTo compute that with pbinom note that “\\(85\\) and above” is opposite of “\\(84\\) and below.” So you would use 1 - pbinom(84, n, p). Run the following and compare with the previous value.\n\n\n\n\n\n\n\n\nLastly, we’ll look at using the qnorm function and qbinom functions.\n\nExercise 8.6 With the same setup: \\(n = 100, p = 0.8\\) and your values for \\(\\mu\\) and \\(\\sigma\\) from before.\n\nUse qnorm to compute the threshold for the maximum score you can expect to receive \\(95\\%\\) of the time. I.e. the threshold \\(x\\) such that your score is \\(&lt; x\\) \\(95\\%\\) of the time.\n\n\n\n\n\n\n\n\nDo the same for qbinom and note that qbinom takes \\(n=100\\) and \\(p=0.8\\) directly rather than the values you’ve computed for \\(\\mu\\) and \\(\\sigma\\).",
+    "crumbs": [
+      "Project 5",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Activity 5</span>"
+    ]
   }
 ]
