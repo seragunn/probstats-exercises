@@ -1,0 +1,134 @@
+# Activity 5
+
+The first calculation we'll do is $P(X < x)$ where $X$ follows a normal
+distribution. The code for this is `pnorm(x, mean=μ, sd=σ)` or just `pnorm(x, μ, σ)` for short.
+
+```{webr}
+pnorm(100, mean=100, sd=15)
+```
+
+::: {#exr-pnorm-IQ}
+The IQ scale is defined to have a mean of $100$ and standard deviation of $15$. Using the function `pnorm(x, mean=100, sd=15)`, compute the following.
+
+1. What *percent* of people have an IQ below $100$? (i.e. `pnorm(100, mean=100, sd=15)`, remember to convert to a percent by moving the decimal over)
+2. What *percent* of people have an IQ below $85$?
+3. What *percent* of people have an IQ **above** $150$? Remember: $P(X > x) = 1 - P(X < x)$ so use `1 - pnorm` for the calculation.
+4. You may have seen statements like "so-and-so has an IQ of *some large number*." Using $P(X > x) = 1 - P(X < x)$ compute the probability that someone would have an IQ of $180$ or more.
+
+:::: {.callout-tip}
+In Q4: the `e-08` at the end means `1/10^8` or `1/10,000,000` with 8 zeros.
+E.g. `3e-08` means "3 in 10 million." This calculation demonstrates that these
+extraordinarily high numbers are unreliable as there are simply not enough data
+points to calibrate an IQ test to decide between a 1 in a million versus 1 in
+10 thousand level.
+
+IQ tests will usually have a range that they are calibrated to test. That range
+might be something like $\mu \pm 3 \sigma$ ($= 100 \pm 3 \cdot 15 = 55$ to
+$145$).
+::::
+:::
+
+Let us also do a couple calculations where we change $\mu$ and $\sigma$. Remember: `pnorm` if it's the probability of "below $x$" and `1 - pnorm` if "above $x$."
+
+::: {#exr-pnorm}
+1. Suppose a math department gives a common final exam for one of their classes. The exam has a mean of $71$ and a standard deviation of $6.5$. Approximately what percentage of students scored above $60$ on this exam?
+2. You have data of the blood pressure for a certain patient group (e.g. people taking a certain drug). For that group, the **mean** systolic pressure is $127 \; \mathrm{mmHg}$ with a standard deviation of $4.6$.
+    a) If a patient in this group has a systolic pressure of $139 \; \mathrm{mmHg}$ what is the $z$-score for that measurement (using $z = (x - \mu)/\sigma$)? Is that measurement unusual based on our $z > 2$ threshold?
+    b) Compute the probability of seeing a patient with a systolic pressure of $139$ *or above*. Note: you can do this either with `1 - pnorm(z)` or `1 - pnorm(x, μ, σ)`. Do the calculation both ways for practice.
+:::
+
+```{webr}
+
+```
+
+## Inverse normal calculations
+
+As we just saw, `pnorm` answers the question "what is the probability of being above or below this threshold?" The inverse of this is "what threshold corresponds to a given probability?" This is what `qnorm(p, μ, σ)` function does.
+
+::: {.callout-tip}
+$p$ is always the proportion which are *below* the threshold. If you want the threshold for "this percent above", first compute $1 - p$ to get the proportion which is below. Alternatively, one can use the `lower.tail=FALSE` parameter.
+:::
+
+```{webr}
+qnorm(0.98, 100, 15)
+```
+
+::: {#exr-qnorm}
+1. For the IQ test with $\mu = 100, \sigma = 15$, what is the IQ score for which $98\%$ of people are below? This is `qnorm(0.98, 100, 15)`.
+2. What is the IQ score for which $90\%$ of people are **above**? (First: if $90\%$ are above, what percent are below?)
+3. For an exam with a mean of $71$ and standard deviation of $6.5$. What is the approximate $25$-th and $75$-th percentile for that exam? I.e. what exam score has $25\%$ of people below it and which has $75\%$ below it?
+4. For the group of patients with a systolic pressure mean of $127$ and standard deviation of $4.6$, what is the threshold for which only $5\%$ are below and what is the threshold for which only $5\%$ are above? (Again, $5\%$ above means $??\%$ below?)
+:::
+
+## Binomial distributions
+
+Recall the mean and standard deviation of a binomial distribution $X \sim \operatorname{Bin}(n, p)$ are
+
+$$
+\mu = np, \quad \sigma = \sqrt{npq} = \sqrt{np(1 - p)}.
+$$
+
+::: {#exr-binom-normal-1}
+Suppose you flip $100$ coins. What is the probability of getting between $40$ and $60$ heads?
+
+1. Using a normal distribution approximation, we first compute $\mu, \sigma$. Then we use the formula $P(40 < X < 60) = P(X < 60) - P(X < 40)$. Run the following cell and report the result.
+
+```{webr}
+n <- 100
+p <- 0.5
+
+m <- n*p
+s <- sqrt(n*p*(1-p))
+
+pnorm(60, mean=m, sd=s) - pnorm(40, mean=m, sd=s)
+```
+
+2. Now suppose we flip $10000$ coins and ask for $P(4950 < X < 5050)$. In the previous code cell, change $n$ to $10000$ and change the $60$ and $40$ to $5050, 4950$ and report the result.
+
+3. We can also use the `pbinom` function directly. To how many decimal places does this agree with your answer to Q1?
+
+```{webr}
+pbinom(60, 100, 0.5) - pbinom(40, 100, 0.5)
+```
+
+4. Again, change the $100$'s to $10000$'s and change $60$ to $5050$ and $40$ to $4950$. To how many decimal places does this agree with Q2?
+:::
+
+::: {.callout-tip}
+In general, expect the normal approximation to be more accurate the larger $n$ is.
+:::
+
+::: {#exr-binom-normal-2}
+A multiple choice test has $n = 100$ questions. Between the questions you know and random guessing, you have a $p = 0.8$ chance of answering a question correctly.
+
+1. Compute $\mu = np$ and $\sigma = \sqrt{np(1-p)}$.
+2. Use those values of $\mu$ and $\sigma$ and a normal approximation, to compute the probability that you score $85$ or above.
+
+```{webr}
+1 - pnorm(85, μ, σ)
+```
+
+3. To compute that with `pbinom` note that "$85$ and above" is opposite of "$84$ and below." So you would use `1 - pbinom(84, n, p)`. Run the following and compare with the previous value.
+
+```{webr}
+1 - pbinom(84, size=100, prob=0.8)
+```
+:::
+
+Lastly, we'll look at using the `qnorm` function and `qbinom` functions.
+
+::: {#exr-binom-normal-3}
+With the same setup: $n = 100, p = 0.8$ and your values for $\mu$ and $\sigma$ from before.
+
+1. Use `qnorm` to compute the threshold for the maximum score you can expect to receive $95\%$ of the time. I.e. the threshold $x$ such that your score is $< x$ $95\%$ of the time.
+
+```{webr}
+qnorm(0.95, μ, σ)
+```
+
+2. Do the same for `qbinom` and note that `qbinom` takes $n=100$ and $p=0.8$ directly rather than the values you've computed for $\mu$ and $\sigma$.
+
+```{webr}
+qbinom(0.95, 100, 0.8)
+```
+:::

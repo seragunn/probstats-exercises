@@ -33,6 +33,9 @@ book:
     - part: "Project 4"
       chapters:
         - project-4/binomial.qmd
+    - part: "Project 5"
+      chapters:
+        - project-5/normal.qmd
 
 format:
   live-html:
