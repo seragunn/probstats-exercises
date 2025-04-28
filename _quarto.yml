@@ -36,6 +36,9 @@ book:
     - part: "Project 5"
       chapters:
         - project-5/normal.qmd
+    - part: "Project 6"
+      chapters:
+        - project-6/ci.qmd
 
 format:
   live-html:
