@@ -272,5 +272,60 @@
       "Project 5",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Activity 5</span>"
     ]
+  },
+  {
+    "objectID": "project-6/ci.html",
+    "href": "project-6/ci.html",
+    "title": "9  Activity 6",
+    "section": "",
+    "text": "9.1 Using the likelihood function to estimate \\(p\\)\nA bag contains \\(10\\) balls, some black and some white. You experiment to find the number of black and white balls by sampling from the bag with replacement. The following function outputs a 0 if the ball was white and 1 if the ball was black. We do this 10 times.\nOpen this Desmos graph in a new tab (right-click → open in new tab).",
+    "crumbs": [
+      "Project 6",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Activity 6</span>"
+    ]
+  },
+  {
+    "objectID": "project-6/ci.html#using-the-likelihood-function-to-estimate-p",
+    "href": "project-6/ci.html#using-the-likelihood-function-to-estimate-p",
+    "title": "9  Activity 6",
+    "section": "",
+    "text": "Note\n\n\n\nA likelihood function is just a probability calculation as a function of some parameter. E.g. the probability of drawing \\(5\\) black balls out of \\(10\\) is higher (more likely) when \\(p = 0.5\\) than it is when \\(p = 0.05\\).\n\n\n\n\nExercise 9.2 Complete the following steps than write down your numbers for \\(u\\) and \\(v\\):\n\nAt the top, let \\(b =\\) the number of 1s you observed in the previous experiment.\nStarting with \\(u = 0\\) and \\(v = 1\\), slowly drag \\(u\\) to the right until \\(A\\), which represents the area under the curve, is as close to 0.975 (97.5%) as you can make it. \nNow move \\(v\\) to the left until \\(A\\) is as close to 0.95 (95%) as you can make it. \nReport \\(u\\) and \\(v\\).\n\n\n\n\n\n\n\n\nNote\n\n\n\nContext: moving \\(u\\) until \\(A\\) was \\(\\approx 97.5\\%\\) means there was a \\(2.5\\%\\) chance of being less than \\(u\\) and likewise a \\(2.5\\%\\) change of being bigger than \\(v\\). So overall there is a \\(5\\%\\) chance of not being between \\(u\\) and \\(v\\) and a \\(95\\%\\) chance of being between \\(u\\) and \\(v\\).\n\n\n\nExercise 9.3 The qbeta function performs what we just did in Desmos. Specifically, we run\n\n\n\n\n\n\nto find \\(u\\) and \\(v\\) respectively. (The \\(+1\\) is due to some \\(-1\\)s that appear in the beta distribution behind the scenes.)\n\nChange the \\(8\\) and \\(2\\) to your number of 1s (black balls) and 0s (white balls) respectively. Then report the exact values of \\(u\\) and \\(v\\).\nRewrite this with your values of \\(u\\) and \\(v\\): “a 95% CI for p is \\((u, v)\\).”\nYou will notice that this confidence interval is quite wide because with only \\(10\\) samples it’s hard to pinpoint the true proportion of black balls. Let’s change \\(n\\) to \\(1000\\) and try again:\n\n\n\n\n\n\n\nTake these numbers back to the qbeta box to compute a new \\(u\\) and \\(v\\) and report a new confidence interval (as in 2.).\n\n\n\n\n\n\n\nNote\n\n\n\nTechnically these qbeta-intervals are “credible intervals” not “confidence intervals” but they function the same.",
+    "crumbs": [
+      "Project 6",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Activity 6</span>"
+    ]
+  },
+  {
+    "objectID": "project-6/ci.html#using-the-normal-approximation",
+    "href": "project-6/ci.html#using-the-normal-approximation",
+    "title": "9  Activity 6",
+    "section": "9.2 Using the Normal approximation",
+    "text": "9.2 Using the Normal approximation\nRecall our formula for the normal approximation confidence interval is \\[\n\\hat p \\pm 1.96 \\sqrt{\\frac{\\hat p \\hat q}{n}}\n\\] or more generally, use qnorm(1 - alpha / 2) instead of 1.96.\n\nExercise 9.4  \n\nWith the numbers for \\(n = 1000\\) what are \\(\\hat p\\) and \\(\\hat q\\)? Hint: if we saw \\(413\\) black balls, then \\(\\hat p = 413/1000 = 0.413\\) (move the decimal place over). \\(\\hat q\\) is the same but for the white balls.\nCompute \\(E = 1.96 \\sqrt{\\hat p \\hat q / n}\\):\n\n\n\n\n\n\n\n(modify the \\(.413\\) and \\(.587\\) as necessary). 3. Compute \\(\\hat p - E\\) and \\(\\hat p + E\\):\n\n\n\n\n\n\n\nAre these numbers similar to your \\(u\\) and \\(v\\) from the previous exercise?\n\n\n\nExercise 9.5 Now run through the steps of the previous exercise but with the numbers for \\(n = 10\\) from Exercise 9.1. (Remember to change the /1000 to /10 in part 2.) Are these numbers similar to the first set of \\(u\\) and \\(v\\) we found?",
+    "crumbs": [
+      "Project 6",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Activity 6</span>"
+    ]
+  },
+  {
+    "objectID": "project-6/ci.html#miscellanea",
+    "href": "project-6/ci.html#miscellanea",
+    "title": "9  Activity 6",
+    "section": "9.3 Miscellanea",
+    "text": "9.3 Miscellanea\nUsing the formula \\(n = \\frac{1.96^2 \\cdot 0.25}{E^2}\\) (which we use if \\(\\hat p\\) is unknown) we can estimate how many samples we need to achieve a desired error.\n\nExercise 9.6  \n\nSuppose we want to be really really sure of \\(p\\) and we want the error to be no more than \\(0.001\\) (e.g. our confidence interval would be \\(0.399\\) to \\(0.401\\)). Compute this \\(n\\) (either by typing in the formula or using your own calculator)\n\n\n\n\n\n\n\n\nNow let’s use this for a qbeta confidence interval:\n\n\n\n\n\n\n\n\nThis has all assumed we wanted to be 95% confident. Suppose instead we want to be 99% confident.\n\nWhat is \\(\\alpha = 1 - 0.99\\)?\nWhat is \\(\\alpha / 2\\)?\nWhat is \\(1 - \\alpha / 2\\)?\n\nTake your value of \\(1 - \\alpha / 2\\) and compute qnorm(1 - alpha / 2)\n\n\n\n\n\n\n\n\nReplace the \\(1.96\\) with this value when we were computing the normal approximation confidence interval:\n\n\n\n\n\n\n\n\nCompared to the confidence interval from Exercise 9.4, is this 99% confidence interval wider or narrower* than the 95% confidence interval?",
+    "crumbs": [
+      "Project 6",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Activity 6</span>"
+    ]
+  },
+  {
+    "objectID": "project-6/ci.html#t-distribution",
+    "href": "project-6/ci.html#t-distribution",
+    "title": "9  Activity 6",
+    "section": "9.4 t-distribution",
+    "text": "9.4 t-distribution\nFor the following scenarios, compute\n\n\\(1 - \\alpha/2\\)\nqt(1 - \\alpha / 2, df = n - 1) (as an analogue of the 1.96 threshold)\n\\(E = \\text{quantile-for-t} \\cdot \\frac{s}{\\sqrt n}\\).\n\n\n\n\n\n\n\nTip\n\n\n\nReminder: quantiles are percentiles but for a decimal rather than a percent and the “t distribution” is like the normal distribution but with slightly larger percentiles due to the extra uncertainty in using \\(s\\) rather than \\(\\sigma\\).\n\n\nReport something like \\(95\\%\\text{-CI for } \\mu = \\bar x \\pm E = 41 \\pm 3\\)\n\nExample 9.1 Suppose scores for an exam have a mean of \\(75\\) and sample standard deviation of \\(6\\) with \\(n = 30\\). For a 95% confidence interval for \\(\\mu\\) (\\(\\alpha = 0.05\\)):\n\n\\(1 - 0.05 / 2 = 0.975\\)\nqt(0.975, df=29) = 2.04523\n\\(E = 2.04523 \\cdot 6 / \\sqrt{30} = 2.240437\\)\n\nA 95% CI for \\(\\mu\\) is \\(75 \\pm 2.24\\) or \\((72.76, 77.24)\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 9.7  \n\n\\(\\bar x = 70, s = 10, n = 49\\) and we want a \\(99\\%\\) confidence interval (\\(\\alpha = 0.01\\))\n\\(\\bar x = 125, s = 12, n = 217\\) and we want a \\(90\\%\\) confidence interval (\\(\\alpha = 0.1\\))\n\\(\\bar x = 60, s = 8, n = 5103\\) and we want a \\(96\\%\\) confidence interval (\\(\\alpha = 0.04\\))",
+    "crumbs": [
+      "Project 6",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Activity 6</span>"
+    ]
   }
 ]
