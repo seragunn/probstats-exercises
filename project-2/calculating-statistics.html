@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.8.2">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-21178ce9c6d9aa40f92a5a0c1af1a00b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4c2a856fd55a7e7abeeee394298324b6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a523e57d1f3ecad7377bee3592b8cfa6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -91,7 +91,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -281,6 +281,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Project 7</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project-7/hyptest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Activity 7</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -339,15 +356,15 @@ Tip
 <p>The short-hand for a consecutive list like <code>1, 2, 3, 4, 5, 6</code> is <code>1:6</code>. Try changing the <code>dice_values</code> variable to <code>1:20</code> and get the average dice value on a 20 sided die—common in tabletop games like Dungeons &amp; Dragons.</p>
 </div>
 </div>
-<div id="d95772af" class="cell" data-execution_count="1">
+<div id="58322a23" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <script>
-var ID = "mqxjxEUX"
+var ID = "PG4CZuwY"
 </script>
-<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="mqxjxEUX" data-controltype="" onsubmit="return false;">
+<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="PG4CZuwY" data-controltype="" onsubmit="return false;">
   <div class="form-group ">
     <div class="controls">
-      <div class="form" id="controls_mqxjxEUX" correct="-1" attempts="0">
+      <div class="form" id="controls_PG4CZuwY" correct="-1" attempts="0">
      What is the average roll on a 20 sided die? 
 
     
@@ -355,17 +372,17 @@ var ID = "mqxjxEUX"
     <div style="padding-top: 5px">
     <br>
 <div class="input-group" aria-label="Input form: Numeric answer">
-    <input id="mqxjxEUX" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
+    <input id="PG4CZuwY" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
 </div>
 
      </div>
     </div>
-    <div id="mqxjxEUX_message" class="qqmessage" style="padding-bottom: 15px">
+    <div id="PG4CZuwY_message" class="qqmessage" style="padding-bottom: 15px">
     </div>
 
 <script>
-document.getElementById('controls_mqxjxEUX').addEventListener("quizquestion_answer", (e) => {
-          var o = document.getElementById('controls_mqxjxEUX')
+document.getElementById('controls_PG4CZuwY').addEventListener("quizquestion_answer", (e) => {
+          var o = document.getElementById('controls_PG4CZuwY')
           var atts = Number(o.getAttribute("attempts"))
           o.setAttribute("correct",  e.detail.correct);
           o.setAttribute("attempts", atts + 1)
@@ -373,13 +390,13 @@ document.getElementById('controls_mqxjxEUX').addEventListener("quizquestion_answ
 </script>
 
 <script text="text/javascript">
-document.getElementById("mqxjxEUX").addEventListener("change", function() {
+document.getElementById("PG4CZuwY").addEventListener("change", function() {
   var correct = (Math.abs(this.value - 10.5) <= 0.001);
-  var msgBox = document.getElementById('mqxjxEUX_message');
+  var msgBox = document.getElementById('PG4CZuwY_message');
   
   if(correct) {
     msgBox.innerHTML = "<div class='pluto-output admonition note alert alert-success'> <span>✔&nbsp; Correct </span> </div>";
-    var explanation = document.getElementById("explanation_mqxjxEUX")
+    var explanation = document.getElementById("explanation_PG4CZuwY")
     if (explanation != null) {
        explanation.style.display = "none";
     }
@@ -390,7 +407,7 @@ document.getElementById("mqxjxEUX").addEventListener("change", function() {
 
   } else {
     msgBox.innerHTML = "<div class='pluto-output admonition alert alert-danger'> <span>Χ&nbsp; Incorrect </span> </div>";
-    var explanation = document.getElementById("explanation_mqxjxEUX")
+    var explanation = document.getElementById("explanation_PG4CZuwY")
     if (explanation != null) {
        explanation.style.display = "block";
     }

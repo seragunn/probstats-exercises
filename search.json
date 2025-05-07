@@ -327,5 +327,49 @@
       "Project 6",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Activity 6</span>"
     ]
+  },
+  {
+    "objectID": "project-7/hyptest.html",
+    "href": "project-7/hyptest.html",
+    "title": "10  Activity 7",
+    "section": "",
+    "text": "10.1 Testing means\nWe will first work with hypothesis testing by manual calculation before switching to the built-in functions.\nYou are researching the effects of exercise on heart rate. In the general population, the mean bpm is 80. Among your sample of 36 people you find a mean of 75 bpm with a standard deviation of 10.",
+    "crumbs": [
+      "Project 7",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Activity 7</span>"
+    ]
+  },
+  {
+    "objectID": "project-7/hyptest.html#testing-means",
+    "href": "project-7/hyptest.html#testing-means",
+    "title": "10  Activity 7",
+    "section": "",
+    "text": "Exercise 10.1  \n\nIdentify \\(\\mu_0, \\bar x, n\\) and \\(s\\) from the given information.\nIdentify \\(H_0\\) and \\(H_1\\) for the claim that people who exercise regularly have a lower heart rate than the general population.\nCompute \\(t = \\dfrac{\\bar x - \\mu}{s / \\sqrt n}\\).\n\n\n\n\n\n\n\n\n\nCompute the threshold at the \\(\\alpha = 0.01\\) level using the formula q = qt(1 - α, df=n-1)\n\n\n\n\n\n\n\n\n\nBecause are testing for a lower bpm are we comparing \\(t\\) to \\(q\\) or to \\(-q\\)?\nUsing the threshold, what is our conclusion about \\(H_0\\)?\nCompute the p-value using the formula pt(t, df=n-1)\n\n\n\n\n\n\n\n\n\nBased on the p-value would we reach the same conclusion about \\(H_0\\) if instead \\(\\alpha = 0.001\\)? (I.e. if we wanted to be \\(99.9\\%\\) confident)\n\n\n\n10.1.1 Computing thresholds\nUsing the formula qt(1 - α, n - 1) or with 1 - α/2 for a two-sided threshold, compute both the one-sided and two-sided thresholds for:\n\nExercise 10.2  \n\n\\(\\alpha = 0.05, n = 25\\)\n\\(\\alpha = 0.01, n = 50\\)\n\n\n\n\n\n\n\n\nNow, using your thresholds, test the following hypotheses. Do we reject or fail to reject \\(H_0\\)?\n\nExercise 10.3  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(\\alpha = 0.01, n = 50\\) and test statistic \\(t = 2.5\\)\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(\\alpha = 0.01, n = 50\\) and test statistic \\(t = 2.5\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05, n = 25\\) and test statistic \\(t = -1.6\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05, n = 25\\) and test statistic \\(t = -1.9\\)\n\n\n\n\n\n\n\n\nTip\n\n\n\nRecall: values that do not exceed the threshold are “usual” and we should not reject \\(H_0\\). Values that exceed the threshold are “unusual” and we reject \\(H_0\\).\n\n\n\n\n10.1.2 Computing p-values\n\nFor \\(P(T \\le t)\\) we use pt(tscore, df)\nFor \\(P(T \\ge t)\\) we use 1 - pt(tscore, df)\nFor a two-sided test, we double this value and the easiest way to compute it is to take the negative value of the tscore and use 2*pt(tscore, df)\n\nFor the following situations, compute the p-value.\n\nExercise 10.4  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(n = 50\\) and test statistic \\(t = \\dfrac{\\bar x - \\mu}{s / \\sqrt n} = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(n = 50\\) and test statistic \\(t = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(n = 25\\) and test statistic \\(t = -1.6\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(n = 25\\) and test statistic \\(t = -1.9\\)",
+    "crumbs": [
+      "Project 7",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Activity 7</span>"
+    ]
+  },
+  {
+    "objectID": "project-7/hyptest.html#hypothesis-testing-for-proportions",
+    "href": "project-7/hyptest.html#hypothesis-testing-for-proportions",
+    "title": "10  Activity 7",
+    "section": "10.2 Hypothesis testing for proportions",
+    "text": "10.2 Hypothesis testing for proportions\nApproximately 10% of people are left-handed. This proportion is higher in certain populations. In a sample of \\(100\\) people with dyslexia, \\(20\\) are left-handed\n\nExercise 10.5  \n\nIdentify \\(p_0, \\hat p, \\hat q\\) and \\(n\\) from the given information.\nIdentify \\(H_0\\) and \\(H_1\\) for the claim that the proportion of left-handedness is greater among people with dyslexia than the general population.\nCompute \\(z = \\dfrac{\\hat p - p_0}{\\sqrt{\\hat p \\hat q / n}}\\).\n\n\n\n\n\n\n\n\n\nCompute the threshold at the \\(\\alpha = 0.01\\) level using the formula q = qnorm(1 - α)\n\n\n\n\n\n\n\n\n\nBecause are testing for a higher proportion are we comparing \\(z\\) to \\(q\\) or to \\(-q\\)?\nUsing the threshold, what is our conclusion about \\(H_0\\)?\nCompute the p-value using the formula \\(P(Z \\ge z) = 1 - \\mathtt{pnorm}(z)\\)\n\n\n\n\n\n\n\n\n\nBased on the p-value would we reach the same conclusion about \\(H_0\\) if instead \\(\\alpha = 0.001\\)? (I.e. if we wanted to be \\(99.9\\%\\) confident)\n\n\n\n10.2.1 Computing thresholds\nUsing the formula qnorm(1 - α) or with 1 - α/2 for a two-sided threshold, compute both the one-sided and two-sided thresholds for:\n\nExercise 10.6  \n\n\\(\\alpha = 0.05\\)\n\\(\\alpha = 0.01\\)\n\n\n\n\n\n\n\n\nNow, using your thresholds, test the following hypotheses. Do we reject or fail to reject \\(H_0\\)?\n\nExercise 10.7  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(\\alpha = 0.01\\) and test statistic \\(z = 2.5\\)\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(\\alpha = 0.01\\) and test statistic \\(z = 2.5\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05\\) and test statistic \\(z = -1.6\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05\\) and test statistic \\(z = -1.9\\)\n\n\n\n\n10.2.2 Computing p-values\n\nExercise 10.8  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) and test statistic \\(z = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu \\neq \\mu_0\\) and test statistic \\(z = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) and test statistic \\(z = -1.6\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) and test statistic \\(z = -1.9\\)",
+    "crumbs": [
+      "Project 7",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Activity 7</span>"
+    ]
+  },
+  {
+    "objectID": "project-7/hyptest.html#using-software-two-sample-hypotheses",
+    "href": "project-7/hyptest.html#using-software-two-sample-hypotheses",
+    "title": "10  Activity 7",
+    "section": "10.3 Using software (two-sample hypotheses)",
+    "text": "10.3 Using software (two-sample hypotheses)\nSuppose we have some data about rates of seasonal depression in New York versus in California. Suppose \\(5\\%\\) of people (\\(x = 62, n = 1240\\)) report seasonal depression in New York versus \\(3\\%\\) (\\(x = 33, n = 1100\\)) in California. We wish to test the claim that the more northern state (New York) has a greater incidence of seasonal depression. We do this with the following R function.\n\n\n\n\n\n\n\nExercise 10.9  \n\nWrite the hypotheses \\(H_0\\) and \\(H_1\\) for our claim about \\(p_1\\) and \\(p_2\\).\nFrom the output, what is the p-value for the claim?\nAt the \\(\\alpha = 0.01\\), does the p-value suggest evidence for the claim that New Yorkers experience a greater incidence rate for seasonal depression? I.e. do we reject \\(H_0\\)?\n\n\n\nA study on the heart rate of (cisgender) men and women collects some data on the resting heart rate of each group of people. The statistician overseeing the project runs the following code to test the hypothesis that these two groups have a different resting heart rate.\n\n\n\n\n\n\n\nExercise 10.10  \n\nWrite the hypotheses \\(H_0\\) and \\(H_1\\) for our claim about \\(\\mu_1\\) and \\(\\mu_2\\).\nWhat is the mean heart rate for the men in the sample? For the women?\nFrom the output, what is the p-value for the claim?\nAt the \\(\\alpha = 0.01\\), does the p-value suggest evidence for the claim that the two groups have a different resting heart rate?",
+    "crumbs": [
+      "Project 7",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Activity 7</span>"
+    ]
   }
 ]
