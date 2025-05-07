@@ -1,0 +1,322 @@
+# Activity 7
+
+We will first work with hypothesis testing by manual calculation before
+switching to the built-in functions.
+
+## Testing means
+
+You are researching the effects of exercise on heart rate. In the general population, the mean bpm is 80. Among your sample of 36 people you find a mean of 75 bpm with a standard deviation of 10.
+
+::: {#exr-bpm}
+1. Identify $\mu_0, \bar x, n$ and $s$ from the given information.
+2. Identify $H_0$ and $H_1$ for the claim that people who exercise regularly have a *lower* heart rate than the general population.
+3. Compute $t = \dfrac{\bar x - \mu}{s / \sqrt n}$.
+```{webr}
+#| exercise: ex_1_tscore
+(xbar - mu) / (s / sqrt(n))
+```
+```{webr}
+#| exercise: ex_1_tscore
+#| check: true
+if (.result == -3) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Check that you've replaced the variables correctly")
+}
+```
+4. Compute the threshold at the $\alpha = 0.01$ level using the formula `q = qt(1 - α, df=n-1)`
+```{webr}
+#| exercise: ex_1_threshold
+qt(______, df=______)
+```
+```{webr}
+#| exercise: ex_1_threshold
+#| check: true
+if (isTRUE(all.equal(.result, qt(0.99, 35)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+5. Because are testing for a *lower* bpm are we comparing $t$ to $q$ or to $-q$?
+6. Using the threshold, what is our conclusion about $H_0$?
+7. Compute the p-value using the formula `pt(t, df=n-1)`
+```{webr}
+#| exercise: ex_1_pvalue
+pt(______, df=_______)
+```
+```{webr}
+#| exercise: ex_1_pvalue
+#| check: true
+if (isTRUE(all.equal(.result, pt(-3, 35)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+8. Based on the p-value would we reach the same conclusion about $H_0$ if instead $\alpha = 0.001$? (I.e. if we wanted to be $99.9\%$ confident)
+:::
+
+### Computing thresholds
+
+Using the formula `qt(1 - α, n - 1)` or with `1 - α/2` for a two-sided threshold, compute both the one-sided and two-sided thresholds for:
+
+::: {#exr-qt}
+1. $\alpha = 0.05, n = 25$ 
+2. $\alpha = 0.01, n = 50$
+:::
+
+```{webr}
+
+```
+
+Now, using your thresholds, test the following hypotheses. Do we *reject* or *fail to reject* $H_0$?
+
+::: {#exr-using-thresholds}
+1. $H_1 : \mu > \mu_0$ with $\alpha = 0.01, n = 50$ and test statistic $t = 2.5$
+2. $H_1 : \mu \neq \mu_0$ with $\alpha = 0.01, n = 50$ and test statistic $t = 2.5$
+3. $H_1 : \mu < \mu_0$ with $\alpha = 0.05, n = 25$ and test statistic $t = -1.6$
+4. $H_1 : \mu < \mu_0$ with $\alpha = 0.05, n = 25$ and test statistic $t = -1.9$
+:::
+
+::: {.callout-tip}
+Recall: values that do not exceed the threshold are "usual" and we should not reject $H_0$. Values that exceed the threshold are "unusual" and we reject $H_0$.
+:::
+
+### Computing p-values
+
+* For $P(T \le t)$ we use `pt(tscore, df)`
+* For $P(T \ge t)$ we use `1 - pt(tscore, df)`
+* For a two-sided test, we double this value and the easiest way to compute it is to take the **negative** value of the tscore and use `2*pt(tscore, df)`
+
+For the following situations, compute the p-value.
+
+::: {#exr-pvalues-means}
+1. $H_1 : \mu > \mu_0$ with $n = 50$ and test statistic $t = \dfrac{\bar x - \mu}{s / \sqrt n} = 2.5$
+```{webr}
+#| exercise: ex_2_1
+```
+```{webr}
+#| exercise: ex_2_1
+#| check: true
+if (isTRUE(all.equal(.result, 1-pt(2.5, 49)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+2. $H_1 : \mu \neq \mu_0$ with $n = 50$ and test statistic $t = 2.5$
+```{webr}
+#| exercise: ex_2_2
+```
+```{webr}
+#| exercise: ex_2_2
+#| check: true
+if (isTRUE(all.equal(.result, 2*pt(-2.5, 49)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+3. $H_1 : \mu < \mu_0$ with $n = 25$ and test statistic $t = -1.6$
+```{webr}
+#| exercise: ex_2_3
+```
+```{webr}
+#| exercise: ex_2_3
+#| check: true
+if (isTRUE(all.equal(.result, pt(-1.6, 24)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+4. $H_1 : \mu < \mu_0$ with $n = 25$ and test statistic $t = -1.9$
+```{webr}
+#| exercise: ex_2_4
+```
+```{webr}
+#| exercise: ex_2_4
+#| check: true
+if (isTRUE(all.equal(.result, pt(-1.9, 24)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+:::
+
+## Hypothesis testing for proportions
+
+Approximately 10\% of people are left-handed. This proportion is higher in
+certain populations. In a sample of $100$ people with dyslexia, $20$ are left-handed
+
+::: {#exr-left-handed}
+1. Identify $p_0, \hat p, \hat q$ and $n$ from the given information.
+2. Identify $H_0$ and $H_1$ for the claim that the proportion of left-handedness is *greater* among people with dyslexia than the general population.
+3. Compute $z = \dfrac{\hat p - p_0}{\sqrt{\hat p \hat q / n}}$.
+```{webr}
+#| exercise: ex_3_zscore
+
+```
+```{webr}
+#| exercise: ex_3_zscore
+#| check: true
+if (isTRUE(all.equal(.result, (0.2 - 0.1)/sqrt(0.2*0.8/100)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+4. Compute the threshold at the $\alpha = 0.01$ level using the formula `q = qnorm(1 - α)`
+```{webr}
+#| exercise: ex_3_threshold
+qnorm()
+```
+```{webr}
+#| exercise: ex_3_threshold
+#| check: true
+if (isTRUE(all.equal(.result, qnorm(0.99)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+5. Because are testing for a *higher* proportion are we comparing $z$ to $q$ or to $-q$?
+6. Using the threshold, what is our conclusion about $H_0$?
+7. Compute the p-value using the formula $P(Z \ge z) = 1 - \mathtt{pnorm}(z)$
+```{webr}
+#| exercise: ex_3_pvalue
+pnorm()
+```
+```{webr}
+#| exercise: ex_3_pvalue
+#| check: true
+zscore <- (0.2 - 0.1)/sqrt(0.2*0.8/100)
+if (isTRUE(all.equal(.result, 1 - pnorm(zscore)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+8. Based on the p-value would we reach the same conclusion about $H_0$ if instead $\alpha = 0.001$? (I.e. if we wanted to be $99.9\%$ confident)
+:::
+
+### Computing thresholds
+
+Using the formula `qnorm(1 - α)` or with `1 - α/2` for a two-sided threshold, compute both the one-sided and two-sided thresholds for:
+
+
+::: {#exr-qt}
+1. $\alpha = 0.05$ 
+2. $\alpha = 0.01$
+:::
+
+```{webr}
+
+```
+
+Now, using your thresholds, test the following hypotheses. Do we *reject* or *fail to reject* $H_0$?
+
+::: {#exr-using-thresholds}
+1. $H_1 : \mu > \mu_0$ with $\alpha = 0.01$ and test statistic $z = 2.5$
+2. $H_1 : \mu \neq \mu_0$ with $\alpha = 0.01$ and test statistic $z = 2.5$
+3. $H_1 : \mu < \mu_0$ with $\alpha = 0.05$ and test statistic $z = -1.6$
+4. $H_1 : \mu < \mu_0$ with $\alpha = 0.05$ and test statistic $z = -1.9$
+:::
+
+### Computing p-values
+
+::: {#exr-pvalues-prop}
+1. $H_1 : \mu > \mu_0$ and test statistic $z = 2.5$
+```{webr}
+#| exercise: ex_4_1
+```
+```{webr}
+#| exercise: ex_4_1
+#| check: true
+if (isTRUE(all.equal(.result, pnorm(2.5)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+2. $H_1 : \mu \neq \mu_0$ and test statistic $z = 2.5$
+```{webr}
+#| exercise: ex_4_2
+```
+```{webr}
+#| exercise: ex_4_2
+#| check: true
+if (isTRUE(all.equal(.result, 2*pnorm(-2.5)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+3. $H_1 : \mu < \mu_0$ and test statistic $z = -1.6$
+```{webr}
+#| exercise: ex_4_3
+```
+```{webr}
+#| exercise: ex_4_3
+#| check: true
+if (isTRUE(all.equal(.result, pnorm(-1.6)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+4. $H_1 : \mu < \mu_0$ and test statistic $z = -1.9$
+```{webr}
+#| exercise: ex_4_4
+```
+```{webr}
+#| exercise: ex_4_4
+#| check: true
+if (isTRUE(all.equal(.result, pnorm(-1.9)))) {
+  list(correct = TRUE, message = "Nice work!")
+} else {
+  list(correct = FALSE, message = "Try again")
+}
+```
+:::
+
+## Using software (two-sample hypotheses)
+
+Suppose we have some data about rates of seasonal depression in New York versus
+in California. Suppose $5\%$ of people ($x = 62, n = 1240$) report seasonal depression
+in New York versus $3\%$ ($x = 33, n = 1100$) in California. We wish to test the claim
+that the more northern state (New York) has a *greater* incidence of seasonal
+depression. We do this with the following R function.
+
+```{webr}
+prop.test(x = c(62, 33), n = c(1240, 1100), alternative="greater")
+```
+
+::: {#exr-proptest}
+1. Write the hypotheses $H_0$ and $H_1$ for our claim about $p_1$ and $p_2$.
+2. From the output, what is the p-value for the claim?
+3. At the $\alpha = 0.01$, does the p-value suggest evidence for the claim that New Yorkers experience a greater incidence rate for seasonal depression? I.e. do we reject $H_0$?
+:::
+
+---
+
+A study on the heart rate of (cisgender) men and women collects some data on the
+resting heart rate of each group of people. The statistician overseeing the
+project runs the following code to test the hypothesis that these two groups
+have a *different* resting heart rate.
+
+```{webr}
+men <- c(88,84,98,101,96,78,75,95,55,64,61,73,60,113,79,70,83,80,110,60,78,96,78,94,109,90,77,62,101,112,107,96,64,94,97,64,79,65,63,77,75,93,75,105,84,108,68,92,74,72,20,123,45,64,103,86,49,75,122,80,38,106,81,82,87,21,64,100,87,64,95,96,69,105,75,101,29,88,98,86,98,90,67,95,80)
+women <- c(63,83,55,96,50,84,47,68,101,85,79,91,75,78,95,65,49,115,69,65,61,63,71,50,80,86,67,36,40,93,68,81,83,83,68,55,50,78,39,81,56,72,88,70,5,34,50,50,89,59,62,51,70,88,79,66,80,79,60,54,105,68,55,93,76,46,83,95,55,55,107,59,70,114,104,66,66,67,73,83,53,63,71,86,74,71,70,83,68,70,69,72,84,60,79,91,86,63,40,62)
+
+t.test(men, women, alternative="two.sided")
+```
+
+::: {#exr-ttest}
+1. Write the hypotheses $H_0$ and $H_1$ for our claim about $\mu_1$ and $\mu_2$.
+2. What is the mean heart rate for the men in the sample? For the women?
+3. From the output, what is the p-value for the claim?
+4. At the $\alpha = 0.01$, does the p-value suggest evidence for the claim that the two groups have a different resting heart rate?
+:::

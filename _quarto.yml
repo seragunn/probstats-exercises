@@ -39,6 +39,9 @@ book:
     - part: "Project 6"
       chapters:
         - project-6/ci.qmd
+    - part: "Project 7"
+      chapters:
+        - project-7/hyptest.qmd
 
 format:
   live-html:
