@@ -235,7 +235,7 @@ Now, using your thresholds, test the following hypotheses. Do we *reject* or *fa
 ```{webr}
 #| exercise: ex_4_1
 #| check: true
-if (isTRUE(all.equal(.result, pnorm(2.5)))) {
+if (isTRUE(all.equal(.result, 1 - pnorm(2.5)))) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
