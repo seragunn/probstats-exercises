@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.2">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../project-2/visualizing-shape.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-21178ce9c6d9aa40f92a5a0c1af1a00b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a523e57d1f3ecad7377bee3592b8cfa6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3c5333e56ad6d1bf138ab44a25129ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -149,6 +150,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Probability and Statistics Exercises</span>
     </a>
@@ -185,6 +188,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -421,7 +428,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2FtcGxlKDE6NiwgMTAsIHJl
 
 </div>
 <script type="webr-3-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGljZV9yb2xscyA8LSBzYW1wbGUoMTo2LCAxMDAwLCByZXBsYWNlPVRSVUUpXG5jb3VudCA8LSB0YWJsZShkaWNlX3JvbGxzKVxuY291bnQifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGljZV9yb2xscyA9IHNhbXBsZSgxOjYsIDEwMDAsIHJlcGxhY2U9VFJVRSlcbmNvdW50ID0gdGFibGUoZGljZV9yb2xscylcbmNvdW50In0=
 </script>
 </div>
 </div>
@@ -432,7 +439,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGljZV9yb2xscyA8LSBzYW1w
 <li>If we want to add two dice together we can do this by adding one <code>sample</code> function to another. Change the first line to read</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dice_rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">1000</span>, <span class="at">replace=</span><span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">1000</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dice_rolls <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">1000</span>, <span class="at">replace=</span><span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">1000</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Then change the last line from <code>count</code> to <code>barplot(count)</code>. Draw a rough sketch of what you see.</p>
 </div>
@@ -459,7 +466,7 @@ Note
 
 </div>
 <script type="webr-4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBTZXQgdGhlIG51bWJlciBvZiBzaW11bGF0aW9uc1xubiA8LSAzMFxuXG4jIFNpbXVsYXRlIHJvbGxpbmcgdHdvIGRpY2VcbmRpZTEgPC0gc2FtcGxlKDE6NiwgbiwgcmVwbGFjZT1UUlVFKVxuZGllMiA8LSBzYW1wbGUoMTo2LCBuLCByZXBsYWNlPVRSVUUpXG5cbiMgQ3JlYXRlIGEgNng2IHRhYmxlXG5vdXRjb21lX3RhYmxlIDwtIG1hdHJpeCgwLCBucm93ID0gNiwgbmNvbCA9IDYpXG5cbiMgR28gdGhyb3VnaCBlYWNoIHBhaXIgYW5kIHRhbGx5IHdoZXJlIHRoZXkgbGFuZFxuZm9yIChpIGluIDE6bikge1xuICBvdXRjb21lX3RhYmxlW2RpZTFbaV0sIGRpZTJbaV1dIDwtIG91dGNvbWVfdGFibGVbZGllMVtpXSwgZGllMltpXV0gKyAxXG59XG5cbm91dGNvbWVfdGFibGUifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBTZXQgdGhlIG51bWJlciBvZiBzaW11bGF0aW9uc1xubiA9IDMwXG5cbiMgU2ltdWxhdGUgcm9sbGluZyB0d28gZGljZVxuZGllMSA9IHNhbXBsZSgxOjYsIG4sIHJlcGxhY2U9VFJVRSlcbmRpZTIgPSBzYW1wbGUoMTo2LCBuLCByZXBsYWNlPVRSVUUpXG5cbiMgQ3JlYXRlIGEgNng2IHRhYmxlXG5vdXRjb21lX3RhYmxlID0gbWF0cml4KDAsIG5yb3cgPSA2LCBuY29sID0gNilcblxuIyBHbyB0aHJvdWdoIGVhY2ggcGFpciBhbmQgdGFsbHkgd2hlcmUgdGhleSBsYW5kXG5mb3IgKGkgaW4gMTpuKSB7XG4gIG91dGNvbWVfdGFibGVbZGllMVtpXSwgZGllMltpXV0gPSBvdXRjb21lX3RhYmxlW2RpZTFbaV0sIGRpZTJbaV1dICsgMVxufVxuXG5vdXRjb21lX3RhYmxlIn0=
 </script>
 </div>
 </div>
@@ -467,7 +474,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBTZXQgdGhlIG51bWJlciBv
 <p><span class="theorem-title"><strong>Exercise 6.5</strong></span> &nbsp;</p>
 <ol type="1">
 <li>Run this a few times. With only 30 samples and 36 cells, we’re not going to see very large numbers. What is the largest number you see if you run this 5 times or so?</li>
-<li>Now set <span class="math inline">\(n\)</span> to <span class="math inline">\(10000\)</span> (i.e.&nbsp;<code>n &lt;- 10000</code>) and record that table. We expect to see each outcome with a probability of <span class="math inline">\(1/36\)</span> each time we roll and <span class="math inline">\(10000/36 \approx 277.8\)</span> overall.</li>
+<li>Now set <span class="math inline">\(n\)</span> to <span class="math inline">\(10000\)</span> (i.e.&nbsp;<code>n = 10000</code>) and record that table. We expect to see each outcome with a probability of <span class="math inline">\(1/36\)</span> each time we roll and <span class="math inline">\(10000/36 \approx 277.8\)</span> overall.</li>
 <li>What is the relative frequency of each of your mutually exclusive events from <a href="#exr-dice-activity" class="quarto-xref">Exercise&nbsp;<span>6.1</span></a>? Remember: relative frequency means how many times the dice landed in that rectangle (add up the numbers) divided by <span class="math inline">\(n\)</span>. You can edit the next code box to help out with this.</li>
 </ol>
 <div class="cell">
@@ -497,7 +504,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiKDI1MCArIDI3MCArIDI4MCkg
 
 </div>
 <script type="webr-6-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiQSA8LSBzdW0oZGlhZyhvdXRjb21lX3RhYmxlKSlcbkIgPC0gb3V0Y29tZV90YWJsZVsxLDZdICsgb3V0Y29tZV90YWJsZVsyLDVdICsgb3V0Y29tZV90YWJsZVszLDRdICsgb3V0Y29tZV90YWJsZVs0LDNdICsgb3V0Y29tZV90YWJsZVs1LDJdICsgb3V0Y29tZV90YWJsZVs2LDFdXG5DIDwtIHN1bShvdXRjb21lX3RhYmxlWzEsXSlcblxuQVxuQlxuQyJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiQSA9IHN1bShkaWFnKG91dGNvbWVfdGFibGUpKVxuQiA9IG91dGNvbWVfdGFibGVbMSw2XSArIG91dGNvbWVfdGFibGVbMiw1XSArIG91dGNvbWVfdGFibGVbMyw0XSArIG91dGNvbWVfdGFibGVbNCwzXSArIG91dGNvbWVfdGFibGVbNSwyXSArIG91dGNvbWVfdGFibGVbNiwxXVxuQyA9IHN1bShvdXRjb21lX3RhYmxlWzEsXSlcblxuQVxuQlxuQyJ9
 </script>
 </div>
 </div>
@@ -598,13 +605,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
