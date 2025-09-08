@@ -74,11 +74,11 @@ Suppose you flip $100$ coins. What is the probability of getting between $40$ an
 1. Using a normal distribution approximation, we first compute $\mu, \sigma$. Then we use the formula $P(40 < X < 60) = P(X < 60) - P(X < 40)$. Run the following cell and report the result.
 
 ```{webr}
-n <- 100
-p <- 0.5
+n = 100
+p = 0.5
 
-m <- n*p
-s <- sqrt(n*p*(1-p))
+m = n*p
+s = sqrt(n*p*(1-p))
 
 pnorm(60, mean=m, sd=s) - pnorm(40, mean=m, sd=s)
 ```

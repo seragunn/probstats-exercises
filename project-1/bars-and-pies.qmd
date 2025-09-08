@@ -6,8 +6,8 @@ Take two dice and roll the pair of them 25 times, keeping track of the sum of
 their values. Fill those into the `dice_rolls` variable below.
 
 ```{webr}
-dice_rolls <- c()
-sum_count <- table(dice_rolls)
+dice_rolls = c()
+sum_count = table(dice_rolls)
 sum_count
 ```
 
@@ -63,8 +63,8 @@ use the `?` operator.
    `$` operator. Let's use this now to create a pie chart of character gender
 in Star Wars. Make a quick sketch of the resulting chart.
 ```{webr}
-data <- starwars$gender
-count <- table(data)
+data = starwars$gender
+count = table(data)
 pie(count)
 ```
 3. Try replacing `gender` by a different column like `height`, `sex`, or

@@ -4,7 +4,7 @@ We've seen the `mean()` function before in Activity 1. This calculates the mean
 of a set of data. For instance
 
 ```{webr}
-dice_values <- c(1, 2, 3, 4, 5, 6)
+dice_values = c(1, 2, 3, 4, 5, 6)
 mean(dice_values)
 ```
 
@@ -24,7 +24,7 @@ numericq(10.5; label="What is the average roll on a 20 sided die?")
 Likewise, the `median()`, `sd()`, `var()`, and `range()` functions exists to calculate the median, (sample) standard deviation, (sample) variance, and range respectively. Remember that the sample s.d. or var formulas have a denominator of $n - 1$ rather than $n$.
 
 ```{webr}
-data <- c(4.9, 0.7, 1.8, 1.1, 0.6, 1.8)
+data = c(4.9, 0.7, 1.8, 1.1, 0.6, 1.8)
 mean(data)
 median(data)
 sd(data)
@@ -43,6 +43,6 @@ Instead, we can calculate the mode as we did in Activity 1 by using the
 occurred the most.
 
 ```{webr}
-data <- c(4.9, 0.7, 1.8, 1.1, 0.6, 1.8)
+data = c(4.9, 0.7, 1.8, 1.1, 0.6, 1.8)
 table(data)
 ```

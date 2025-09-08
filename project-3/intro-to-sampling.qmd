@@ -52,8 +52,8 @@ If you remember, in Activity 1 we we generated a barplot by rolling dice
 ourselves. Let's use our `sample` function to speed that up.
 
 ```{webr}
-dice_rolls <- sample(1:6, 1000, replace=TRUE)
-count <- table(dice_rolls)
+dice_rolls = sample(1:6, 1000, replace=TRUE)
+count = table(dice_rolls)
 count
 ```
 
@@ -63,7 +63,7 @@ count
 function to another. Change the first line to read
 
 ```{R}
-dice_rolls <- sample(1:6, 1000, replace=TRUE) + sample(1:6, 1000, replace=TRUE)
+dice_rolls = sample(1:6, 1000, replace=TRUE) + sample(1:6, 1000, replace=TRUE)
 ```
 
 Then change the last line from `count` to `barplot(count)`. Draw a rough sketch
@@ -81,18 +81,18 @@ sum but their row and column. That looks something like
 
 ```{webr}
 # Set the number of simulations
-n <- 30
+n = 30
 
 # Simulate rolling two dice
-die1 <- sample(1:6, n, replace=TRUE)
-die2 <- sample(1:6, n, replace=TRUE)
+die1 = sample(1:6, n, replace=TRUE)
+die2 = sample(1:6, n, replace=TRUE)
 
 # Create a 6x6 table
-outcome_table <- matrix(0, nrow = 6, ncol = 6)
+outcome_table = matrix(0, nrow = 6, ncol = 6)
 
 # Go through each pair and tally where they land
 for (i in 1:n) {
-  outcome_table[die1[i], die2[i]] <- outcome_table[die1[i], die2[i]] + 1
+  outcome_table[die1[i], die2[i]] = outcome_table[die1[i], die2[i]] + 1
 }
 
 outcome_table
@@ -102,7 +102,7 @@ outcome_table
 1. Run this a few times. With only 30 samples and 36 cells, we're not going to
    see very large numbers. What is the largest number you see if you run this 5
 times or so?
-2. Now set $n$ to $10000$ (i.e. `n <- 10000`) and record that table. We expect
+2. Now set $n$ to $10000$ (i.e. `n = 10000`) and record that table. We expect
    to see each outcome with a probability of $1/36$ each time we roll and
 $10000/36 \approx 277.8$ overall.
 3. What is the relative frequency of each of your mutually exclusive events from @exr-dice-activity? Remember: relative frequency means how many times the dice landed in that rectangle (add up the numbers) divided by $n$. You can edit the next code box to help out with this.
@@ -121,9 +121,9 @@ The next code box will help you calculate the count of each of these events. Wri
 :::
 
 ```{webr}
-A <- sum(diag(outcome_table))
-B <- outcome_table[1,6] + outcome_table[2,5] + outcome_table[3,4] + outcome_table[4,3] + outcome_table[5,2] + outcome_table[6,1]
-C <- sum(outcome_table[1,])
+A = sum(diag(outcome_table))
+B = outcome_table[1,6] + outcome_table[2,5] + outcome_table[3,4] + outcome_table[4,3] + outcome_table[5,2] + outcome_table[6,1]
+C = sum(outcome_table[1,])
 
 A
 B

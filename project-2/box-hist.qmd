@@ -5,7 +5,7 @@ usual, we define our data in a variable and then use that variable in the
 `boxplot` function.
 
 ```{webr}
-data <- c(26, 16, 20, 21, 22, 21, 21, 22, 23, 16, 16, 24, 23, 20, 17, 21, 20, 15, 20, 20, 21, 23, 24, 24, 19, 16, 17, 23, 21, 20)
+data = c(26, 16, 20, 21, 22, 21, 21, 22, 23, 16, 16, 24, 23, 20, 17, 21, 20, 15, 20, 20, 21, 23, 24, 24, 19, 16, 17, 23, 21, 20)
 boxplot(data)
 ```
 

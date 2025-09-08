@@ -35,9 +35,9 @@ into a matrix first.
 #| fig-width: 8
 #| fig-height: 8
 # this converts the data into a matrix with 12 columns
-temperatures <- matrix(nottem, ncol=12, byrow=TRUE)
+temperatures = matrix(nottem, ncol=12, byrow=TRUE)
 # this labels the columns with the abbreviated month name
-colnames(temperatures) <- month.abb
+colnames(temperatures) = month.abb
 
 boxplot(temperatures)                     # add a # in front for Q2
 # boxplot(temperatures[,c("Jan", "Dec")]) # remove the # in front for Q2
@@ -79,8 +79,8 @@ You'll notice that R gives us a very long list. If we wanted to get just a sneak
 Now that we know what the dataset looks like, we see that there are two columns: `eruptions` (time of each eruption in mins) and `waiting` (time to next eruption in mins). Let's extract these variables and use a histogram to help us picture the data.
 
 ```{webr}
-eruption_time <- faithful$eruptions
-waiting_time  <- faithful$waiting
+eruption_time = faithful$eruptions
+waiting_time  = faithful$waiting
 
 hist(eruption_time)
 hist(waiting_time)
@@ -100,7 +100,7 @@ summary(faithful)
 4. For comparison, here are some histograms of the Nottingham Castle temperatures. These have one hill so they're uni\_\_\_?
 
 ```{webr}
-df <- data.frame(temperatures)
+df = data.frame(temperatures)
 hist(df$Jan)
 hist(df$Jul)
 ```
