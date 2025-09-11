@@ -5,11 +5,23 @@ webr:
 ---
 # Activity 1
 
+Welcome to the MTH 113 labs! At the start of the class, find a blank page in
+your notebook which you will hand in as your "lab report." At the top of the
+page, please write your name, the lab number (Lab 1 today) and MTH 113.
+
+For each question, provide the answer or output on your lab report. For
+example, the very first question, you should be writing down the values of your
+dice rolls. Then for question 2 you should write down both the table and
+provide a sketch of the bar graph that is created.
+
+Any plots you are asked to provide do not need to be drawn super meticulously,
+just enough to communicate the rough size of everything.
+
 ## Dice activity
 
 ::: {#exr-dice-activity}
 1. Take two dice and roll the pair of them 25 times, **keeping track of the sum of
-their values**. Record this and following answers on a blank piece of paper.
+their values**. Record this and following answers on your lab sheet.
 Fill those into the `dice_rolls` variable below.
 
 Your numbers should be between 2 and 12.
@@ -20,8 +32,9 @@ sum_count = table(dice_rolls)
 sum_count
 ```
 
-2. From the `sum_count` table, report how many times you rolled a 2, 3, 4, etc.
-   After you have done that, change the last line from `sum_count` to
+2. From the `sum_count` table
+    a) report how many times you rolled a 2, 3, 4, etc.
+    b) after you have done that, change the last line from `sum_count` to
 `barplot(sum_count)` and run that to get a barplot.
 3. Which sum (or sums) occurred the most number of times?
 4. Based on your data, are we more likely to roll a 2 or a 7?
@@ -41,9 +54,7 @@ mean(dice_rolls)
 
 R, and it's many packages, contain many different datasets for practicing its
 features. One of these is the `starwars` dataset.
-
-You can see the [full dataset here](https://github.com/tidyverse/dplyr/blob/main/data-raw/starwars.csv){target="_blank"}.
-
+[You can see the full dataset here](https://github.com/tidyverse/dplyr/blob/main/data-raw/starwars.csv){target="_blank"}.
 
 ::: {#exr-starwars-data}
 1. What types of variables are included in this dataset? Give an example for
@@ -62,6 +73,7 @@ pie(count)
 3. Replace the word `gender` in line 1 by different variables.
 For which of these is a pie chart a reasonable way to represent the data
 and which of these is a pie chart hard to read meaningful information from?
+*You do not need to provide additional pie charts for these other variables.*
     * gender
     * sex
     * homeworld
