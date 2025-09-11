@@ -20,8 +20,9 @@ just enough to communicate the rough size of everything.
 ## Dice activity
 
 ::: {#exr-dice-activity}
-1. Take two dice and roll the pair of them 25 times, **keeping track of the sum of
-their values**. Record this and following answers on your lab sheet.
+1. Take two dice and roll the pair of them 25 times, **keeping track of the sum
+   of their values** (e.g. rolling a 4 and 5: ⚃⚄ is recorded as 9). Record this
+and following answers on your lab sheet.
 Fill those into the `dice_rolls` variable below.
 
 Your numbers should be between 2 and 12.
