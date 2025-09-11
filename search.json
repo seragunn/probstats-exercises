@@ -12,364 +12,364 @@
   {
     "objectID": "project-1/intro.html",
     "href": "project-1/intro.html",
-    "title": "1  Intro to R",
+    "title": "Intro to R",
     "section": "",
     "text": "R is a programming language for statistical computation and data visualization. It is widely used by stacticians, data scientists, and researchers and has a rich ecosystem of packages and libraries to facilitate data manipulation, visualization, statistical modeling, and more. R is free to download, use, and modify.\nR can be installed to your computer, but in class we will use R entirely in the browser. No installation necessary!\nLet’s get started by looking at some code. Press the “Run Code” button or click inside the text-editor and press Ctrl or Cmd + Enter to execute the code. It may take a few seconds for your browser to load the R software.",
     "crumbs": [
-      "Project 1",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro to R</span>"
+      "Introduction to Data",
+      "Intro to R"
     ]
   },
   {
     "objectID": "project-1/intro.html#syntax-and-functions",
     "href": "project-1/intro.html#syntax-and-functions",
-    "title": "1  Intro to R",
-    "section": "1.1 Syntax and Functions",
-    "text": "1.1 Syntax and Functions\nYou may have noticed some symbols like # or = or c(...) in the code. These are called syntax and I will summarize new syntax and functions at the end of each section.\n\n# denotes a comment, this is a term in programming to mean text that is not computed, but merely serves to describe the adjacent code. For instance, the following two lines are identical as far as R is concerned—the comment is only read by us and not by R.\n\n1 + 1 # Computes 1 + 1\n1 + 1\n\nWe use the = to introduce variables. For instance, we might write “if \\(x =\n3\\) and \\(y = 4\\) then \\(x * y = 12\\).” In R, this looks like\n\n\n\n\n\n\n\n\nExercise 1.2 In the box above, let \\(x = 3, y = 4, z = -2, w = 1\\) and compute \\(x + y * z - w\\).\n\n\nc(1, 2, 3, 4, ...) is R’s notation for a list. The c stands for “combine” or “collect.”\ntable(...) takes a list of data and returns a table counting the number of occurrences of each value.\nbarplot(...) creates a bar graph",
+    "title": "Intro to R",
+    "section": "Syntax and Functions",
+    "text": "Syntax and Functions\nYou may have noticed some symbols like # or = or c(...) in the code. These are called syntax and I will summarize new syntax and functions at the end of each section.\n\n# denotes a comment, this is a term in programming to mean text that is not computed, but merely serves to describe the adjacent code. For instance, the following two lines are identical as far as R is concerned—the comment is only read by us and not by R.\n\n1 + 1 # Computes 1 + 1\n1 + 1\n\nWe use the = to introduce variables. For instance, we might write “if \\(x =\n3\\) and \\(y = 4\\) then \\(x * y = 12\\).” In R, this looks like\n\n\n\n\n\n\n\n\nExercise 2 In the box above, let \\(x = 3, y = 4, z = -2, w = 1\\) and compute \\(x + y * z - w\\).\n\n\nc(1, 2, 3, 4, ...) is R’s notation for a list. The c stands for “combine” or “collect.”\ntable(...) takes a list of data and returns a table counting the number of occurrences of each value.\nbarplot(...) creates a bar graph",
     "crumbs": [
-      "Project 1",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro to R</span>"
+      "Introduction to Data",
+      "Intro to R"
     ]
   },
   {
     "objectID": "project-1/bars-and-pies.html",
     "href": "project-1/bars-and-pies.html",
-    "title": "2  Activity 1",
+    "title": "1  Activity 1",
     "section": "",
-    "text": "2.1 Dice activity",
+    "text": "1.1 Dice activity\nWelcome to the MTH 113 labs! At the start of the class, find a blank page in your notebook which you will hand in as your “lab report.” At the top of the page, please write your name, the lab number (Lab 1 today) and MTH 113.\nFor each question, provide the answer or output on your lab report. For example, the very first question, you should be writing down the values of your dice rolls. Then for question 2 you should write down both the table and provide a sketch of the bar graph that is created.\nAny plots you are asked to provide do not need to be drawn super meticulously, just enough to communicate the rough size of everything.",
     "crumbs": [
-      "Project 1",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 1</span>"
+      "Introduction to Data",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Activity 1</span>"
     ]
   },
   {
     "objectID": "project-1/bars-and-pies.html#dice-activity",
     "href": "project-1/bars-and-pies.html#dice-activity",
-    "title": "2  Activity 1",
+    "title": "1  Activity 1",
     "section": "",
-    "text": "Exercise 2.1  \n\nTake two dice and roll the pair of them 25 times, keeping track of the sum of their values. Record this and following answers on a blank piece of paper. Fill those into the dice_rolls variable below.\n\nYour numbers should be between 2 and 12.\n\n\n\n\n\n\n\nFrom the sum_count table, report how many times you rolled a 2, 3, 4, etc. After you have done that, change the last line from sum_count to barplot(sum_count) and run that to get a barplot.\nWhich sum (or sums) occurred the most number of times?\nBased on your data, are we more likely to roll a 2 or a 7?\nThe function mean() returns the mean of a dataset. Run the next code box and report the mean of the data.\n\n\n\n\n\n\n\n\nNote\n\n\n\nIt is likely the case that in 25 rolls there were some totals you never rolled, if so, report those numbers as 0.",
+    "text": "Exercise 1.1  \n\nTake two dice and roll the pair of them 25 times, keeping track of the sum of their values. Record this and following answers on your lab sheet. Fill those into the dice_rolls variable below.\n\nYour numbers should be between 2 and 12.\n\n\n\n\n\n\n\nFrom the sum_count table\n\nreport how many times you rolled a 2, 3, 4, etc.\nafter you have done that, change the last line from sum_count to barplot(sum_count) and run that to get a barplot.\n\nWhich sum (or sums) occurred the most number of times?\nBased on your data, are we more likely to roll a 2 or a 7?\nThe function mean() returns the mean of a dataset. Run the next code box and report the mean of the data.\n\n\n\n\n\n\n\n\nNote\n\n\n\nIt is likely the case that in 25 rolls there were some totals you never rolled, if so, report those numbers as 0.",
     "crumbs": [
-      "Project 1",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 1</span>"
+      "Introduction to Data",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Activity 1</span>"
     ]
   },
   {
     "objectID": "project-1/bars-and-pies.html#data-activity",
     "href": "project-1/bars-and-pies.html#data-activity",
-    "title": "2  Activity 1",
-    "section": "2.2 Data activity",
-    "text": "2.2 Data activity\nR, and it’s many packages, contain many different datasets for practicing its features. One of these is the starwars dataset.\nYou can see the full dataset here.\n\nExercise 2.2  \n\nWhat types of variables are included in this dataset? Give an example for each type (quantitative discrete, quantitative continuous, qualitative)\nWe can interact with this data set in R as starwars. Specifically we can use the $ operator to specify which column we wish to retrieve. Let’s use this now to create a pie chart of character gender in Star Wars. Make a quick sketch of the resulting chart.\n\n\n\n\n\n\n\n\nReplace the word gender in line 1 by different variables. For which of these is a pie chart a reasonable way to represent the data and which of these is a pie chart hard to read meaningful information from?\n\ngender\nsex\nhomeworld\nspecies",
+    "title": "1  Activity 1",
+    "section": "1.2 Data activity",
+    "text": "1.2 Data activity\nR, and it’s many packages, contain many different datasets for practicing its features. One of these is the starwars dataset. You can see the full dataset here.\n\nExercise 1.2  \n\nWhat types of variables are included in this dataset? Give an example for each type (quantitative discrete, quantitative continuous, qualitative)\nWe can interact with this data set in R as starwars. Specifically we can use the $ operator to specify which column we wish to retrieve. Let’s use this now to create a pie chart of character gender in Star Wars. Make a quick sketch of the resulting chart.\n\n\n\n\n\n\n\n\nReplace the word gender in line 1 by different variables. For which of these is a pie chart a reasonable way to represent the data and which of these is a pie chart hard to read meaningful information from? You do not need to provide additional pie charts for these other variables.\n\ngender\nsex\nhomeworld\nspecies",
     "crumbs": [
-      "Project 1",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 1</span>"
+      "Introduction to Data",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Activity 1</span>"
     ]
   },
   {
     "objectID": "project-1/bars-and-pies.html#syntax-and-functions",
     "href": "project-1/bars-and-pies.html#syntax-and-functions",
-    "title": "2  Activity 1",
-    "section": "2.3 Syntax and Functions",
-    "text": "2.3 Syntax and Functions\n\nmean(...) the mean or average of a list of numbers\n$ takes a specific column from a dataset e.g. starwars$height\npie(...) creates a pie chart",
+    "title": "1  Activity 1",
+    "section": "1.3 Syntax and Functions",
+    "text": "1.3 Syntax and Functions\n\nmean(...) the mean or average of a list of numbers\n$ takes a specific column from a dataset e.g. starwars$height\npie(...) creates a pie chart",
     "crumbs": [
-      "Project 1",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 1</span>"
+      "Introduction to Data",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Activity 1</span>"
     ]
   },
   {
     "objectID": "project-2/calculating-statistics.html",
     "href": "project-2/calculating-statistics.html",
-    "title": "3  Calculating Mean, Median, etc. in R",
+    "title": "Calculating Mean, Median, etc. in R",
     "section": "",
     "text": "We’ve seen the mean() function before in Activity 1. This calculates the mean of a set of data. For instance",
     "crumbs": [
-      "Project 2",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Calculating Mean, Median, etc. in R</span>"
+      "Summarizing Data",
+      "Calculating Mean, Median, etc. in R"
     ]
   },
   {
     "objectID": "project-2/calculating-statistics.html#mode",
     "href": "project-2/calculating-statistics.html#mode",
-    "title": "3  Calculating Mean, Median, etc. in R",
-    "section": "3.1 Mode",
-    "text": "3.1 Mode\nMode is a less common calculation and the mode() function in R does not calculate the mode but does something much different having to do with programming internals.\nInstead, we can calculate the mode as we did in Activity 1 by using the table() function and then reading the output to determine which data point occurred the most.",
+    "title": "Calculating Mean, Median, etc. in R",
+    "section": "Mode",
+    "text": "Mode\nMode is a less common calculation and the mode() function in R does not calculate the mode but does something much different having to do with programming internals.\nInstead, we can calculate the mode as we did in Activity 1 by using the table() function and then reading the output to determine which data point occurred the most.",
     "crumbs": [
-      "Project 2",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Calculating Mean, Median, etc. in R</span>"
+      "Summarizing Data",
+      "Calculating Mean, Median, etc. in R"
     ]
   },
   {
     "objectID": "project-2/box-hist.html",
     "href": "project-2/box-hist.html",
-    "title": "4  Boxplots and Histograms",
+    "title": "Boxplots and Histograms",
     "section": "",
-    "text": "4.1 Histograms\nTo create a basic box and whisker plot, we use the boxplot() command. As per usual, we define our data in a variable and then use that variable in the boxplot function.\nRemember that the lines of the boxplot correspond to the quartiles (minimum, 25% mark, 50% mark, 75% mark, maximum). A related and quite useful function is summary() which will print out all of these values as numbers for us.\nCompare the output of this command to where the lines of boxplot are positioned.\nHistograms are created with the hist() function. For instance\nUnlike boxplots, we usually want to configure our histogram, i.e. set a number of bins and/or declare the beginning and end of each bin.\nWe can do this by adding breaks=... to the end of our histogram function. And the two most common types of breaks are to set a number of bins or to set where the boundaries of those bins are.\nThere is one more option we need to discuss which is the right=FALSE option. By default, bins will include their right endpoint, so a bin that goes from \\(10\\) to \\(20\\) will include every data point equal to \\(20\\). Adding right=FALSE moves all the \\(20\\) data points into the next bin over (bins will include the left point but not the right point). Compare:\nThere are \\(6\\) data points equal to \\(20\\). In the first histogram those \\(6\\) count for the middle bin, in the second histogram the count for the right bin.",
+    "text": "Histograms\nTo create a basic box and whisker plot, we use the boxplot() command. As per usual, we define our data in a variable and then use that variable in the boxplot function.\nRemember that the lines of the boxplot correspond to the quartiles (minimum, 25% mark, 50% mark, 75% mark, maximum). A related and quite useful function is summary() which will print out all of these values as numbers for us.\nCompare the output of this command to where the lines of boxplot are positioned.\nHistograms are created with the hist() function. For instance\nUnlike boxplots, we usually want to configure our histogram, i.e. set a number of bins and/or declare the beginning and end of each bin.\nWe can do this by adding breaks=... to the end of our histogram function. And the two most common types of breaks are to set a number of bins or to set where the boundaries of those bins are.\nThere is one more option we need to discuss which is the right=FALSE option. By default, bins will include their right endpoint, so a bin that goes from \\(10\\) to \\(20\\) will include every data point equal to \\(20\\). Adding right=FALSE moves all the \\(20\\) data points into the next bin over (bins will include the left point but not the right point). Compare:\nThere are \\(6\\) data points equal to \\(20\\). In the first histogram those \\(6\\) count for the middle bin, in the second histogram the count for the right bin.",
     "crumbs": [
-      "Project 2",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Boxplots and Histograms</span>"
+      "Summarizing Data",
+      "Boxplots and Histograms"
     ]
   },
   {
     "objectID": "project-2/visualizing-shape.html",
     "href": "project-2/visualizing-shape.html",
-    "title": "5  Activity 2",
+    "title": "2  Activity 2",
     "section": "",
-    "text": "5.1 Box plots\nThe nottem data set records the monthly average air temperatures at Nottingham Castle from 1920 to 1939.\nNext, we will use box and whisker plots to compare the median temperatures per month. If we just called boxplot(nottem) right now, it would do a single boxplot of the entire data set. So we have to prepare our data by converting it into a matrix first.",
+    "text": "2.1 Box plots\nThe nottem data set records the monthly average air temperatures at Nottingham Castle from 1920 to 1939.\nNext, we will use box and whisker plots to compare the median temperatures per month. If we just called boxplot(nottem) right now, it would do a single boxplot of the entire data set. So we have to prepare our data by converting it into a matrix first.",
     "crumbs": [
-      "Project 2",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 2</span>"
+      "Summarizing Data",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 2</span>"
     ]
   },
   {
     "objectID": "project-2/visualizing-shape.html#box-plots",
     "href": "project-2/visualizing-shape.html#box-plots",
-    "title": "5  Activity 2",
+    "title": "2  Activity 2",
     "section": "",
-    "text": "Exercise 5.1  \n\nPer the output, what was the average temperature in March of 1926?\nUsing the min() function, find the lowest average temperature during this period of time. I.e. min(nottem). Do the same with max() to find the highest average temperature.\nWriting nottem == min(nottem) we check each entry of the data for whether it equals the minimum. The month that has the minimum will display as TRUE in the output. Which month and year did the lowest average temperature occur?\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you accidentally use only 1 equals sign you will overwrite the nottem dataset. You can reset it with rm(nottem)\n\n\n\nWhich month and year did the highest average temperatures occur?\n\n\n\n\n\n\n\n\n\n\nExercise 5.2  \n\nReading the plot, what are the top 5 months in order sorted by the median of their average temperatures? Note: the median is the line in the middle of the box.\nIt’s a bit hard to compare January and December at the moment, change the last line to read boxplot(temperatures[,c(\"Jan\", \"Dec\")]) and then state which of these two months has the higher median average temperature and which has the higher maximum average temperature.\n\nNow let’s look at the numbers.\n\n\n\n\n\n\n\nBetween January and December, which has the greater mean average temperature?\nFor this particular data, would you say the means are generally close to or far from the medians?",
+    "text": "Exercise 2.1  \n\nPer the output, what was the average temperature in March of 1926?\nUsing the min() function, find the lowest average temperature during this period of time. I.e. min(nottem). Do the same with max() to find the highest average temperature.\nWriting nottem == min(nottem) we check each entry of the data for whether it equals the minimum. The month that has the minimum will display as TRUE in the output. Which month and year did the lowest average temperature occur?\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you accidentally use only 1 equals sign you will overwrite the nottem dataset. You can reset it with rm(nottem)\n\n\n\nWhich month and year did the highest average temperatures occur?\n\n\n\n\n\n\n\n\n\n\nExercise 2.2  \n\nReading the plot, what are the top 5 months in order sorted by the median of their average temperatures? Note: the median is the line in the middle of the box.\nIt’s a bit hard to compare January and December at the moment, change the last line to read boxplot(temperatures[,c(\"Jan\", \"Dec\")]) and then state which of these two months has the higher median average temperature and which has the higher maximum average temperature.\n\nNow let’s look at the numbers.\n\n\n\n\n\n\n\nBetween January and December, which has the greater mean average temperature?\nFor this particular data, would you say the means are generally close to or far from the medians?",
     "crumbs": [
-      "Project 2",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 2</span>"
+      "Summarizing Data",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 2</span>"
     ]
   },
   {
     "objectID": "project-2/visualizing-shape.html#histograms",
     "href": "project-2/visualizing-shape.html#histograms",
-    "title": "5  Activity 2",
-    "section": "5.2 Histograms",
-    "text": "5.2 Histograms\nThe faithful dataset contains data on the length of eruption times and waiting times in between eruptions for the Old Faithful geyser in Yellowstone National Park.\nAs always, we’ll start by asking R to show us what’s in the variable:\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou’ll notice that R gives us a very long list. If we wanted to get just a sneak peak at the first 10 rows, we could have instead used the function: head(faithful, 10).\n\n\nNow that we know what the dataset looks like, we see that there are two columns: eruptions (time of each eruption in mins) and waiting (time to next eruption in mins). Let’s extract these variables and use a histogram to help us picture the data.\n\n\n\n\n\n\n\nExercise 5.3  \n\nNotice that the data doesn’t have just one hill but two hills to it. What is the name for this shape of data?\nUse the summary function to get the median and mean of each column. Per the histogram, is there a lot of data near the mean/median or does the data lie elsewhere in the picture?\n\n\n\n\n\n\n\n\nIn the code box before this, change hist to boxplot for both eruption time and waiting time. Do these box plots give an accurate picture of how the data looks and is distributed? (Remember: exactly 50% of the data will be positioned in the box and 25% on each whisker.)\nFor comparison, here are some histograms of the Nottingham Castle temperatures. These have one hill so they’re uni___?",
+    "title": "2  Activity 2",
+    "section": "2.2 Histograms",
+    "text": "2.2 Histograms\nThe faithful dataset contains data on the length of eruption times and waiting times in between eruptions for the Old Faithful geyser in Yellowstone National Park.\nAs always, we’ll start by asking R to show us what’s in the variable:\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou’ll notice that R gives us a very long list. If we wanted to get just a sneak peak at the first 10 rows, we could have instead used the function: head(faithful, 10).\n\n\nNow that we know what the dataset looks like, we see that there are two columns: eruptions (time of each eruption in mins) and waiting (time to next eruption in mins). Let’s extract these variables and use a histogram to help us picture the data.\n\n\n\n\n\n\n\nExercise 2.3  \n\nNotice that the data doesn’t have just one hill but two hills to it. What is the name for this shape of data?\nUse the summary function to get the median and mean of each column. Per the histogram, is there a lot of data near the mean/median or does the data lie elsewhere in the picture?\n\n\n\n\n\n\n\n\nIn the code box before this, change hist to boxplot for both eruption time and waiting time. Do these box plots give an accurate picture of how the data looks and is distributed? (Remember: exactly 50% of the data will be positioned in the box and 25% on each whisker.)\nFor comparison, here are some histograms of the Nottingham Castle temperatures. These have one hill so they’re uni___?",
     "crumbs": [
-      "Project 2",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 2</span>"
+      "Summarizing Data",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 2</span>"
     ]
   },
   {
     "objectID": "project-2/visualizing-shape.html#scatter-plots",
     "href": "project-2/visualizing-shape.html#scatter-plots",
-    "title": "5  Activity 2",
-    "section": "5.3 Scatter Plots",
-    "text": "5.3 Scatter Plots\nOne question you could ask when seeing the Faithful histograms is whether longer waiting times lead to longer eruption times. In order to visualize that question, we’re going to need to plot both variables at the same time. The tool for this is the scatter plot which puts a point at each \\((x, y)\\) coordinate where \\(x\\) is waiting time and \\(y\\) is an eruption time.\n\n\n\n\n\n\n\nExercise 5.4  \n\nPer the scatter plot, are points which have a lower waiting time (further to the left) associated with a higher or lower eruption time (up/down)?\nIf the waiting time to the latest eruption is 80 minutes, about how long does the trend line predict the eruption time will be?\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe will discuss scatter plots in more detail later in the course.",
+    "title": "2  Activity 2",
+    "section": "2.3 Scatter Plots",
+    "text": "2.3 Scatter Plots\nOne question you could ask when seeing the Faithful histograms is whether longer waiting times lead to longer eruption times. In order to visualize that question, we’re going to need to plot both variables at the same time. The tool for this is the scatter plot which puts a point at each \\((x, y)\\) coordinate where \\(x\\) is waiting time and \\(y\\) is an eruption time.\n\n\n\n\n\n\n\nExercise 2.4  \n\nPer the scatter plot, are points which have a lower waiting time (further to the left) associated with a higher or lower eruption time (up/down)?\nIf the waiting time to the latest eruption is 80 minutes, about how long does the trend line predict the eruption time will be?\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe will discuss scatter plots in more detail later in the course.",
     "crumbs": [
-      "Project 2",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 2</span>"
+      "Summarizing Data",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 2</span>"
     ]
   },
   {
     "objectID": "project-3/intro-to-sampling.html",
     "href": "project-3/intro-to-sampling.html",
-    "title": "6  Activity 3",
+    "title": "3  Activity 3",
     "section": "",
-    "text": "6.1 Working by hand\nR has tools for generating random coin flips, dice rolls, drawings, choosing random decimals, and more. Before we get to that, let’s practice doing this by hand.",
+    "text": "3.1 Working by hand\nR has tools for generating random coin flips, dice rolls, drawings, choosing random decimals, and more. Before we get to that, let’s practice doing this by hand.",
     "crumbs": [
-      "Project 3",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 3</span>"
+      "Introduction to Sampling",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Activity 3</span>"
     ]
   },
   {
     "objectID": "project-3/intro-to-sampling.html#working-by-hand",
     "href": "project-3/intro-to-sampling.html#working-by-hand",
-    "title": "6  Activity 3",
+    "title": "3  Activity 3",
     "section": "",
-    "text": "Exercise 6.1  \n\nDraw a 6 by 6 grid and label the rows and columns with the numbers 1 to 6. There should be enough room in each cell to maintain a tally.\nFind two disjoint rectangles in the grid with the same area. These will represent two mutually exclusive events. Indicate these events with a border.\nRoll your pair of dice 30 times. One die of your choice will refer to the row and the other to the column. Make a tally for each time the dice roll lands in that cell of your grid. E.g. if you roll a 2 and a 3 you make a mark in row 2, col 3.",
+    "text": "Exercise 3.1  \n\nDraw a 6 by 6 grid and label the rows and columns with the numbers 1 to 6. There should be enough room in each cell to maintain a tally.\nFind two disjoint rectangles in the grid with the same area. These will represent two mutually exclusive events. Indicate these events with a border.\nRoll your pair of dice 30 times. One die of your choice will refer to the row and the other to the column. Make a tally for each time the dice roll lands in that cell of your grid. E.g. if you roll a 2 and a 3 you make a mark in row 2, col 3.",
     "crumbs": [
-      "Project 3",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 3</span>"
+      "Introduction to Sampling",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Activity 3</span>"
     ]
   },
   {
     "objectID": "project-3/intro-to-sampling.html#working-with-sample",
     "href": "project-3/intro-to-sampling.html#working-with-sample",
-    "title": "6  Activity 3",
-    "section": "6.2 Working with sample",
-    "text": "6.2 Working with sample\nIn R, to sample whole numbers like dice rolls, we can use the sample() function. Here we sample \\(6\\) numbers from \\(1\\) to \\(6\\).\n\n\n\n\n\n\n\n\n\nExercise 6.2  \n\nRun this example a few times. Do you notice anything?\nWhat error message do you get when you ask to sample \\(10\\) dice rolls with sample(1:6, 10)?\n\n\nWhen we get error messages like this, we might need help interpreting them. Search engines and Large Language Models are good tools to use for interpreting error messages. Here the issue is that by default, sample assumes we are drawing numbers from a hat without returning our drawn numbers to the hat (so they will never repeat). To change this behavior, we add replace=TRUE to our function as follows.\n\n\n\n\n\n\n\n\n\nExercise 6.3 Run this and write down the output.\n\nIf you remember, in Activity 1 we we generated a barplot by rolling dice ourselves. Let’s use our sample function to speed that up.\n\n\n\n\n\n\n\n\n\nExercise 6.4  \n\nRun the above code and report the table.\nIf we want to add two dice together we can do this by adding one sample function to another. Change the first line to read\n\n\ndice_rolls = sample(1:6, 1000, replace=TRUE) + sample(1:6, 1000, replace=TRUE)\n\nThen change the last line from count to barplot(count). Draw a rough sketch of what you see.\n\n\n\n\n\n\n\nNote\n\n\n\nTo better understand what doing sample() + sample() does, imagine the first sample is some list like 3, 1, 6, 2, 5, ... and the second is a list like 4, 1, 4, 2, 5, .... When we add these lists, R creates the list 7, 2, 10, 4, 10, ..., adding in pairs.",
+    "title": "3  Activity 3",
+    "section": "3.2 Working with sample",
+    "text": "3.2 Working with sample\nIn R, to sample whole numbers like dice rolls, we can use the sample() function. Here we sample \\(6\\) numbers from \\(1\\) to \\(6\\).\n\n\n\n\n\n\n\n\n\nExercise 3.2  \n\nRun this example a few times. Do you notice anything?\nWhat error message do you get when you ask to sample \\(10\\) dice rolls with sample(1:6, 10)?\n\n\nWhen we get error messages like this, we might need help interpreting them. Search engines and Large Language Models are good tools to use for interpreting error messages. Here the issue is that by default, sample assumes we are drawing numbers from a hat without returning our drawn numbers to the hat (so they will never repeat). To change this behavior, we add replace=TRUE to our function as follows.\n\n\n\n\n\n\n\n\n\nExercise 3.3 Run this and write down the output.\n\nIf you remember, in Activity 1 we we generated a barplot by rolling dice ourselves. Let’s use our sample function to speed that up.\n\n\n\n\n\n\n\n\n\nExercise 3.4  \n\nRun the above code and report the table.\nIf we want to add two dice together we can do this by adding one sample function to another. Change the first line to read\n\n\ndice_rolls = sample(1:6, 1000, replace=TRUE) + sample(1:6, 1000, replace=TRUE)\n\nThen change the last line from count to barplot(count). Draw a rough sketch of what you see.\n\n\n\n\n\n\n\nNote\n\n\n\nTo better understand what doing sample() + sample() does, imagine the first sample is some list like 3, 1, 6, 2, 5, ... and the second is a list like 4, 1, 4, 2, 5, .... When we add these lists, R creates the list 7, 2, 10, 4, 10, ..., adding in pairs.",
     "crumbs": [
-      "Project 3",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 3</span>"
+      "Introduction to Sampling",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Activity 3</span>"
     ]
   },
   {
     "objectID": "project-3/intro-to-sampling.html#using-sample-to-fill-our-grid",
     "href": "project-3/intro-to-sampling.html#using-sample-to-fill-our-grid",
-    "title": "6  Activity 3",
-    "section": "6.3 Using sample to fill our grid",
-    "text": "6.3 Using sample to fill our grid\nGoing back to our 6x6 grid. We want to take our dice rolls and record not their sum but their row and column. That looks something like\n\n\n\n\n\n\n\n\n\nExercise 6.5  \n\nRun this a few times. With only 30 samples and 36 cells, we’re not going to see very large numbers. What is the largest number you see if you run this 5 times or so?\nNow set \\(n\\) to \\(10000\\) (i.e. n = 10000) and record that table. We expect to see each outcome with a probability of \\(1/36\\) each time we roll and \\(10000/36 \\approx 277.8\\) overall.\nWhat is the relative frequency of each of your mutually exclusive events from Exercise 6.1? Remember: relative frequency means how many times the dice landed in that rectangle (add up the numbers) divided by \\(n\\). You can edit the next code box to help out with this.\n\n\n\n\n\n\n\n\n\n\nNow consider the events:\n\nThe dice are both the same (\\(1,1\\), \\(2,2\\), \\(3,3\\), etc.) which is the main diagonal of your grid\nThe sum of the dice is \\(7\\) (\\(1,6\\), \\(2,5\\), \\(3,4\\), etc.) which is the other diagonal\nThe first die is \\(1\\) (the first row) The next code box will help you calculate the count of each of these events. Write those numbers down.\n\nLook back at the grid and write down the count of the events A and B (same number and sum is 7), A and C (same number and first row), B and C (sum is 7 and first row).\nWhich pairs are mutually exclusive (no overlap) and which are independent?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThese events each cover 6 out of 36 cells. So each has a probability of \\(6/36 = 1/6\\). Independent means that the intersection satisfies: \\(P(X \\text{ and } Y) = P(X)P(Y) = \\frac16 \\cdot \\frac16 = \\frac1{36}\\)",
+    "title": "3  Activity 3",
+    "section": "3.3 Using sample to fill our grid",
+    "text": "3.3 Using sample to fill our grid\nGoing back to our 6x6 grid. We want to take our dice rolls and record not their sum but their row and column. That looks something like\n\n\n\n\n\n\n\n\n\nExercise 3.5  \n\nRun this a few times. With only 30 samples and 36 cells, we’re not going to see very large numbers. What is the largest number you see if you run this 5 times or so?\nNow set \\(n\\) to \\(10000\\) (i.e. n = 10000) and record that table. We expect to see each outcome with a probability of \\(1/36\\) each time we roll and \\(10000/36 \\approx 277.8\\) overall.\nWhat is the relative frequency of each of your mutually exclusive events from Exercise 3.1? Remember: relative frequency means how many times the dice landed in that rectangle (add up the numbers) divided by \\(n\\). You can edit the next code box to help out with this.\n\n\n\n\n\n\n\n\n\n\nNow consider the events:\n\nThe dice are both the same (\\(1,1\\), \\(2,2\\), \\(3,3\\), etc.) which is the main diagonal of your grid\nThe sum of the dice is \\(7\\) (\\(1,6\\), \\(2,5\\), \\(3,4\\), etc.) which is the other diagonal\nThe first die is \\(1\\) (the first row) The next code box will help you calculate the count of each of these events. Write those numbers down.\n\nLook back at the grid and write down the count of the events A and B (same number and sum is 7), A and C (same number and first row), B and C (sum is 7 and first row).\nWhich pairs are mutually exclusive (no overlap) and which are independent?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThese events each cover 6 out of 36 cells. So each has a probability of \\(6/36 = 1/6\\). Independent means that the intersection satisfies: \\(P(X \\text{ and } Y) = P(X)P(Y) = \\frac16 \\cdot \\frac16 = \\frac1{36}\\)",
     "crumbs": [
-      "Project 3",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 3</span>"
+      "Introduction to Sampling",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Activity 3</span>"
     ]
   },
   {
     "objectID": "project-4/binomial.html",
     "href": "project-4/binomial.html",
-    "title": "7  Activity 4",
+    "title": "4  Activity 4",
     "section": "",
-    "text": "7.1 Cumulative probabilities\nThe Binomial Distribution is a model of doing something random several times. For example, rolling multiple dice or flipping multiple coins.\nIf \\(X\\) represents the number of successes in \\(n\\) random experiments with a probability of success of \\(p\\) and probability of failure \\(q = 1 - p\\) then \\[\nP(X = k) = nCk \\cdot p^k q^{n - k}, \\quad \\text{Where } nCk = \\frac{n!}{k!(n - k)!}.\n\\tag{7.1}\\]\nFor example, if \\(X\\) is the number of \\(6\\)s rolled among \\(10\\) dice then \\(p =\n\\frac16\\) is the probability of getting a \\(6\\) and \\(q = 1 - \\frac16 = \\frac56\\) is the probability of not getting a \\(6\\). So \\[\nP(X = k) = P(\\text{rolling } k \\text{ sixes}) = 10Ck \\cdot \\left( \\frac16 \\right)^k \\left( \\frac56 \\right)^{10-k}.\n\\]\nIn R, we calculate these probabilities with the dbinom function. E.g. for \\(n = 10, p = \\frac16, k = 3\\):\nIf we change dbinom to pbinom, we get not the probability of \\(k\\) successes but the probability of \\(\\le k\\) successes.\nE.g. the probability of rolling \\(0, 1\\) or \\(2\\) ones among \\(5\\) dice rolls is\nIn math notation: \\[\nP(X \\le 2) = P(X = 0, 1 \\text{ or } 2) = P(X = 0) + P(X = 1) + P(X = 2)\n\\]",
+    "text": "4.1 Cumulative probabilities\nThe Binomial Distribution is a model of doing something random several times. For example, rolling multiple dice or flipping multiple coins.\nIf \\(X\\) represents the number of successes in \\(n\\) random experiments with a probability of success of \\(p\\) and probability of failure \\(q = 1 - p\\) then \\[\nP(X = k) = nCk \\cdot p^k q^{n - k}, \\quad \\text{Where } nCk = \\frac{n!}{k!(n - k)!}.\n\\tag{4.1}\\]\nFor example, if \\(X\\) is the number of \\(6\\)s rolled among \\(10\\) dice then \\(p =\n\\frac16\\) is the probability of getting a \\(6\\) and \\(q = 1 - \\frac16 = \\frac56\\) is the probability of not getting a \\(6\\). So \\[\nP(X = k) = P(\\text{rolling } k \\text{ sixes}) = 10Ck \\cdot \\left( \\frac16 \\right)^k \\left( \\frac56 \\right)^{10-k}.\n\\]\nIn R, we calculate these probabilities with the dbinom function. E.g. for \\(n = 10, p = \\frac16, k = 3\\):\nIf we change dbinom to pbinom, we get not the probability of \\(k\\) successes but the probability of \\(\\le k\\) successes.\nE.g. the probability of rolling \\(0, 1\\) or \\(2\\) ones among \\(5\\) dice rolls is\nIn math notation: \\[\nP(X \\le 2) = P(X = 0, 1 \\text{ or } 2) = P(X = 0) + P(X = 1) + P(X = 2)\n\\]",
     "crumbs": [
-      "Project 4",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 4</span>"
+      "The Binomial Distrubution",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Activity 4</span>"
     ]
   },
   {
     "objectID": "project-4/binomial.html#cumulative-probabilities",
     "href": "project-4/binomial.html#cumulative-probabilities",
-    "title": "7  Activity 4",
+    "title": "4  Activity 4",
     "section": "",
-    "text": "Exercise 7.2  \n\nGo back to Exercise 7.1 and now instead of calculating the probability of making exactly \\(3\\) free throws to the probability of making \\(\\le 3\\) free throws (change dbinom to pbinom).\nTo get the probability of making \\(&gt; k\\) free throws rather than \\(\\le k\\) we can add lower.tail=FALSE to the function (lower tail referring to \\(\\le\\)). Compute the probability of making \\(&gt; 4\\) free throws this way.\n\n\n\n\n\n\n\n\nTip\n\n\n\nAlternatively, if you have, say, a \\(35\\%\\) chance of making \\(\\le k\\) throws, then you must have a \\(65\\%\\) chance of making \\(&gt; k\\) throws. These are complementary events. \\[\nP(X &gt; k) = 1 - P(X \\le k).\n\\] In R: that means that 1 - pbinom(k, n, p) is equivalent to pbinom(k, n, p, lower.tail=FALSE).",
+    "text": "Exercise 4.2  \n\nGo back to Exercise 4.1 and now instead of calculating the probability of making exactly \\(3\\) free throws to the probability of making \\(\\le 3\\) free throws (change dbinom to pbinom).\nTo get the probability of making \\(&gt; k\\) free throws rather than \\(\\le k\\) we can add lower.tail=FALSE to the function (lower tail referring to \\(\\le\\)). Compute the probability of making \\(&gt; 4\\) free throws this way.\n\n\n\n\n\n\n\n\nTip\n\n\n\nAlternatively, if you have, say, a \\(35\\%\\) chance of making \\(\\le k\\) throws, then you must have a \\(65\\%\\) chance of making \\(&gt; k\\) throws. These are complementary events. \\[\nP(X &gt; k) = 1 - P(X \\le k).\n\\] In R: that means that 1 - pbinom(k, n, p) is equivalent to pbinom(k, n, p, lower.tail=FALSE).",
     "crumbs": [
-      "Project 4",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 4</span>"
+      "The Binomial Distrubution",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Activity 4</span>"
     ]
   },
   {
     "objectID": "project-4/binomial.html#random-number-generation",
     "href": "project-4/binomial.html#random-number-generation",
-    "title": "7  Activity 4",
-    "section": "7.2 Random number generation",
-    "text": "7.2 Random number generation\nWe’ve seen how to calculate probabilities. We can also make simulations. For instance, to simulate this experiment of throwing 5 free throws 100 times, we can use the rbinom function. The output is a list of \\(k\\)’s. E.g. if the output starts 5 4 2 1 ... that means the first simulation had 5 successes, the second 4, the third 2, the fourth 1, etc.\n\n\n\n\n\n\n\nExercise 7.3  \n\nRun this cell and write down the first 10 numbers.\nIn those first 10 experiments, what percent of the time did you land exactly \\(3\\) free throws? Is this relative frequency greater than or smaller than the probability you calculated in Exercise 7.1 Q2?\nNow change the line to table(rbinom(...)) to make the summary table we looked at in Lab 1. Write down that table.\nHow many times out of 100 was the number of successes \\(0, 1, 2\\) or \\(3\\)? Is this relative frequency bigger or smaller than the true probability you calculated in Exercise 7.2 Q1?",
+    "title": "4  Activity 4",
+    "section": "4.2 Random number generation",
+    "text": "4.2 Random number generation\nWe’ve seen how to calculate probabilities. We can also make simulations. For instance, to simulate this experiment of throwing 5 free throws 100 times, we can use the rbinom function. The output is a list of \\(k\\)’s. E.g. if the output starts 5 4 2 1 ... that means the first simulation had 5 successes, the second 4, the third 2, the fourth 1, etc.\n\n\n\n\n\n\n\nExercise 4.3  \n\nRun this cell and write down the first 10 numbers.\nIn those first 10 experiments, what percent of the time did you land exactly \\(3\\) free throws? Is this relative frequency greater than or smaller than the probability you calculated in Exercise 4.1 Q2?\nNow change the line to table(rbinom(...)) to make the summary table we looked at in Lab 1. Write down that table.\nHow many times out of 100 was the number of successes \\(0, 1, 2\\) or \\(3\\)? Is this relative frequency bigger or smaller than the true probability you calculated in Exercise 4.2 Q1?",
     "crumbs": [
-      "Project 4",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 4</span>"
+      "The Binomial Distrubution",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Activity 4</span>"
     ]
   },
   {
     "objectID": "project-4/binomial.html#summary",
     "href": "project-4/binomial.html#summary",
-    "title": "7  Activity 4",
-    "section": "7.3 Summary",
-    "text": "7.3 Summary\nFor \\(X\\) representing the number of successes in \\(n\\) experiments with a probability \\(p\\) of success:\n\n\\(P(X = k)\\) is dbinom(k, size=n, prob=p)\n\\(P(X \\le k)\\) is pbinom(k, size=n, prob=p)\n\\(P(X &gt; k)\\) is pbinom(k, size=n, prob=p, lower.tail=FALSE)\nGenerating \\(100\\) sample values for \\(X\\) is rbinom(100, size=n, prob=p)",
+    "title": "4  Activity 4",
+    "section": "4.3 Summary",
+    "text": "4.3 Summary\nFor \\(X\\) representing the number of successes in \\(n\\) experiments with a probability \\(p\\) of success:\n\n\\(P(X = k)\\) is dbinom(k, size=n, prob=p)\n\\(P(X \\le k)\\) is pbinom(k, size=n, prob=p)\n\\(P(X &gt; k)\\) is pbinom(k, size=n, prob=p, lower.tail=FALSE)\nGenerating \\(100\\) sample values for \\(X\\) is rbinom(100, size=n, prob=p)",
     "crumbs": [
-      "Project 4",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 4</span>"
+      "The Binomial Distrubution",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Activity 4</span>"
     ]
   },
   {
     "objectID": "project-5/normal.html",
     "href": "project-5/normal.html",
-    "title": "8  Activity 5",
+    "title": "5  Activity 5",
     "section": "",
-    "text": "8.1 Inverse normal calculations\nThe first calculation we’ll do is \\(P(X &lt; x)\\) where \\(X\\) follows a normal distribution. The code for this is pnorm(x, mean=μ, sd=σ) or just pnorm(x, μ, σ) for short.\nLet us also do a couple calculations where we change \\(\\mu\\) and \\(\\sigma\\). Remember: pnorm if it’s the probability of “below \\(x\\)” and 1 - pnorm if “above \\(x\\).”\nAs we just saw, pnorm answers the question “what is the probability of being above or below this threshold?” The inverse of this is “what threshold corresponds to a given probability?” This is what qnorm(p, μ, σ) function does.",
+    "text": "5.1 Inverse normal calculations\nThe first calculation we’ll do is \\(P(X &lt; x)\\) where \\(X\\) follows a normal distribution. The code for this is pnorm(x, mean=μ, sd=σ) or just pnorm(x, μ, σ) for short.\nLet us also do a couple calculations where we change \\(\\mu\\) and \\(\\sigma\\). Remember: pnorm if it’s the probability of “below \\(x\\)” and 1 - pnorm if “above \\(x\\).”\nAs we just saw, pnorm answers the question “what is the probability of being above or below this threshold?” The inverse of this is “what threshold corresponds to a given probability?” This is what qnorm(p, μ, σ) function does.",
     "crumbs": [
-      "Project 5",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Activity 5</span>"
+      "The Normal Distribution",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 5</span>"
     ]
   },
   {
     "objectID": "project-5/normal.html#inverse-normal-calculations",
     "href": "project-5/normal.html#inverse-normal-calculations",
-    "title": "8  Activity 5",
+    "title": "5  Activity 5",
     "section": "",
-    "text": "Tip\n\n\n\n\\(p\\) is always the proportion which are below the threshold. If you want the threshold for “this percent above”, first compute \\(1 - p\\) to get the proportion which is below. Alternatively, one can use the lower.tail=FALSE parameter.\n\n\n\n\n\n\n\n\n\nExercise 8.3  \n\nFor the IQ test with \\(\\mu = 100, \\sigma = 15\\), what is the IQ score for which \\(98\\%\\) of people are below? This is qnorm(0.98, 100, 15).\nWhat is the IQ score for which \\(90\\%\\) of people are above? (First: if \\(90\\%\\) are above, what percent are below?)\nFor an exam with a mean of \\(71\\) and standard deviation of \\(6.5\\). What is the approximate \\(25\\)-th and \\(75\\)-th percentile for that exam? I.e. what exam score has \\(25\\%\\) of people below it and which has \\(75\\%\\) below it?\nFor the group of patients with a systolic pressure mean of \\(127\\) and standard deviation of \\(4.6\\), what is the threshold for which only \\(5\\%\\) are below and what is the threshold for which only \\(5\\%\\) are above? (Again, \\(5\\%\\) above means \\(??\\%\\) below?)",
+    "text": "Tip\n\n\n\n\\(p\\) is always the proportion which are below the threshold. If you want the threshold for “this percent above”, first compute \\(1 - p\\) to get the proportion which is below. Alternatively, one can use the lower.tail=FALSE parameter.\n\n\n\n\n\n\n\n\n\nExercise 5.3  \n\nFor the IQ test with \\(\\mu = 100, \\sigma = 15\\), what is the IQ score for which \\(98\\%\\) of people are below? This is qnorm(0.98, 100, 15).\nWhat is the IQ score for which \\(90\\%\\) of people are above? (First: if \\(90\\%\\) are above, what percent are below?)\nFor an exam with a mean of \\(71\\) and standard deviation of \\(6.5\\). What is the approximate \\(25\\)-th and \\(75\\)-th percentile for that exam? I.e. what exam score has \\(25\\%\\) of people below it and which has \\(75\\%\\) below it?\nFor the group of patients with a systolic pressure mean of \\(127\\) and standard deviation of \\(4.6\\), what is the threshold for which only \\(5\\%\\) are below and what is the threshold for which only \\(5\\%\\) are above? (Again, \\(5\\%\\) above means \\(??\\%\\) below?)",
     "crumbs": [
-      "Project 5",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Activity 5</span>"
+      "The Normal Distribution",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 5</span>"
     ]
   },
   {
     "objectID": "project-5/normal.html#binomial-distributions",
     "href": "project-5/normal.html#binomial-distributions",
-    "title": "8  Activity 5",
-    "section": "8.2 Binomial distributions",
-    "text": "8.2 Binomial distributions\nRecall the mean and standard deviation of a binomial distribution \\(X \\sim \\operatorname{Bin}(n, p)\\) are\n\\[\n\\mu = np, \\quad \\sigma = \\sqrt{npq} = \\sqrt{np(1 - p)}.\n\\]\n\nExercise 8.4 Suppose you flip \\(100\\) coins. What is the probability of getting between \\(40\\) and \\(60\\) heads?\n\nUsing a normal distribution approximation, we first compute \\(\\mu, \\sigma\\). Then we use the formula \\(P(40 &lt; X &lt; 60) = P(X &lt; 60) - P(X &lt; 40)\\). Run the following cell and report the result.\n\n\n\n\n\n\n\n\nNow suppose we flip \\(10000\\) coins and ask for \\(P(4950 &lt; X &lt; 5050)\\). In the previous code cell, change \\(n\\) to \\(10000\\) and change the \\(60\\) and \\(40\\) to \\(5050, 4950\\) and report the result.\nWe can also use the pbinom function directly. To how many decimal places does this agree with your answer to Q1?\n\n\n\n\n\n\n\n\nAgain, change the \\(100\\)’s to \\(10000\\)’s and change \\(60\\) to \\(5050\\) and \\(40\\) to \\(4950\\). To how many decimal places does this agree with Q2?\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn general, expect the normal approximation to be more accurate the larger \\(n\\) is.\n\n\n\nExercise 8.5 A multiple choice test has \\(n = 100\\) questions. Between the questions you know and random guessing, you have a \\(p = 0.8\\) chance of answering a question correctly.\n\nCompute \\(\\mu = np\\) and \\(\\sigma = \\sqrt{np(1-p)}\\).\nUse those values of \\(\\mu\\) and \\(\\sigma\\) and a normal approximation, to compute the probability that you score \\(85\\) or above.\n\n\n\n\n\n\n\n\nTo compute that with pbinom note that “\\(85\\) and above” is opposite of “\\(84\\) and below.” So you would use 1 - pbinom(84, n, p). Run the following and compare with the previous value.\n\n\n\n\n\n\n\n\nLastly, we’ll look at using the qnorm function and qbinom functions.\n\nExercise 8.6 With the same setup: \\(n = 100, p = 0.8\\) and your values for \\(\\mu\\) and \\(\\sigma\\) from before.\n\nUse qnorm to compute the threshold for the maximum score you can expect to receive \\(95\\%\\) of the time. I.e. the threshold \\(x\\) such that your score is \\(&lt; x\\) \\(95\\%\\) of the time.\n\n\n\n\n\n\n\n\nDo the same for qbinom and note that qbinom takes \\(n=100\\) and \\(p=0.8\\) directly rather than the values you’ve computed for \\(\\mu\\) and \\(\\sigma\\).",
+    "title": "5  Activity 5",
+    "section": "5.2 Binomial distributions",
+    "text": "5.2 Binomial distributions\nRecall the mean and standard deviation of a binomial distribution \\(X \\sim \\operatorname{Bin}(n, p)\\) are\n\\[\n\\mu = np, \\quad \\sigma = \\sqrt{npq} = \\sqrt{np(1 - p)}.\n\\]\n\nExercise 5.4 Suppose you flip \\(100\\) coins. What is the probability of getting between \\(40\\) and \\(60\\) heads?\n\nUsing a normal distribution approximation, we first compute \\(\\mu, \\sigma\\). Then we use the formula \\(P(40 &lt; X &lt; 60) = P(X &lt; 60) - P(X &lt; 40)\\). Run the following cell and report the result.\n\n\n\n\n\n\n\n\nNow suppose we flip \\(10000\\) coins and ask for \\(P(4950 &lt; X &lt; 5050)\\). In the previous code cell, change \\(n\\) to \\(10000\\) and change the \\(60\\) and \\(40\\) to \\(5050, 4950\\) and report the result.\nWe can also use the pbinom function directly. To how many decimal places does this agree with your answer to Q1?\n\n\n\n\n\n\n\n\nAgain, change the \\(100\\)’s to \\(10000\\)’s and change \\(60\\) to \\(5050\\) and \\(40\\) to \\(4950\\). To how many decimal places does this agree with Q2?\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn general, expect the normal approximation to be more accurate the larger \\(n\\) is.\n\n\n\nExercise 5.5 A multiple choice test has \\(n = 100\\) questions. Between the questions you know and random guessing, you have a \\(p = 0.8\\) chance of answering a question correctly.\n\nCompute \\(\\mu = np\\) and \\(\\sigma = \\sqrt{np(1-p)}\\).\nUse those values of \\(\\mu\\) and \\(\\sigma\\) and a normal approximation, to compute the probability that you score \\(85\\) or above.\n\n\n\n\n\n\n\n\nTo compute that with pbinom note that “\\(85\\) and above” is opposite of “\\(84\\) and below.” So you would use 1 - pbinom(84, n, p). Run the following and compare with the previous value.\n\n\n\n\n\n\n\n\nLastly, we’ll look at using the qnorm function and qbinom functions.\n\nExercise 5.6 With the same setup: \\(n = 100, p = 0.8\\) and your values for \\(\\mu\\) and \\(\\sigma\\) from before.\n\nUse qnorm to compute the threshold for the maximum score you can expect to receive \\(95\\%\\) of the time. I.e. the threshold \\(x\\) such that your score is \\(&lt; x\\) \\(95\\%\\) of the time.\n\n\n\n\n\n\n\n\nDo the same for qbinom and note that qbinom takes \\(n=100\\) and \\(p=0.8\\) directly rather than the values you’ve computed for \\(\\mu\\) and \\(\\sigma\\).",
     "crumbs": [
-      "Project 5",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Activity 5</span>"
+      "The Normal Distribution",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 5</span>"
     ]
   },
   {
     "objectID": "project-6/ci.html",
     "href": "project-6/ci.html",
-    "title": "9  Activity 6",
+    "title": "6  Activity 6",
     "section": "",
-    "text": "9.1 Using the likelihood function to estimate \\(p\\)\nA bag contains \\(10\\) balls, some black and some white. You experiment to find the number of black and white balls by sampling from the bag with replacement. The following function outputs a 0 if the ball was white and 1 if the ball was black. We do this 10 times.\nOpen this Desmos graph in a new tab (right-click → open in new tab).",
+    "text": "6.1 Using the likelihood function to estimate \\(p\\)\nA bag contains \\(10\\) balls, some black and some white. You experiment to find the number of black and white balls by sampling from the bag with replacement. The following function outputs a 0 if the ball was white and 1 if the ball was black. We do this 10 times.\nOpen this Desmos graph in a new tab (right-click → open in new tab).",
     "crumbs": [
-      "Project 6",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Activity 6</span>"
+      "Confidence Intervals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 6</span>"
     ]
   },
   {
     "objectID": "project-6/ci.html#using-the-likelihood-function-to-estimate-p",
     "href": "project-6/ci.html#using-the-likelihood-function-to-estimate-p",
-    "title": "9  Activity 6",
+    "title": "6  Activity 6",
     "section": "",
-    "text": "Note\n\n\n\nA likelihood function is just a probability calculation as a function of some parameter. E.g. the probability of drawing \\(5\\) black balls out of \\(10\\) is higher (more likely) when \\(p = 0.5\\) than it is when \\(p = 0.05\\).\n\n\n\n\nExercise 9.2 Complete the following steps than write down your numbers for \\(u\\) and \\(v\\):\n\nAt the top, let \\(b =\\) the number of 1s you observed in the previous experiment.\nStarting with \\(u = 0\\) and \\(v = 1\\), slowly drag \\(u\\) to the right until \\(A\\), which represents the area under the curve, is as close to 0.975 (97.5%) as you can make it. \nNow move \\(v\\) to the left until \\(A\\) is as close to 0.95 (95%) as you can make it. \nReport \\(u\\) and \\(v\\).\n\n\n\n\n\n\n\n\nNote\n\n\n\nContext: moving \\(u\\) until \\(A\\) was \\(\\approx 97.5\\%\\) means there was a \\(2.5\\%\\) chance of being less than \\(u\\) and likewise a \\(2.5\\%\\) change of being bigger than \\(v\\). So overall there is a \\(5\\%\\) chance of not being between \\(u\\) and \\(v\\) and a \\(95\\%\\) chance of being between \\(u\\) and \\(v\\).\n\n\n\nExercise 9.3 The qbeta function performs what we just did in Desmos. Specifically, we run\n\n\n\n\n\n\nto find \\(u\\) and \\(v\\) respectively. (The \\(+1\\) is due to some \\(-1\\)s that appear in the beta distribution behind the scenes.)\n\nChange the \\(8\\) and \\(2\\) to your number of 1s (black balls) and 0s (white balls) respectively. Then report the exact values of \\(u\\) and \\(v\\).\nRewrite this with your values of \\(u\\) and \\(v\\): “a 95% CI for p is \\((u, v)\\).”\nYou will notice that this confidence interval is quite wide because with only \\(10\\) samples it’s hard to pinpoint the true proportion of black balls. Let’s change \\(n\\) to \\(1000\\) and try again:\n\n\n\n\n\n\n\nTake these numbers back to the qbeta box to compute a new \\(u\\) and \\(v\\) and report a new confidence interval (as in 2.).\n\n\n\n\n\n\n\nNote\n\n\n\nTechnically these qbeta-intervals are “credible intervals” not “confidence intervals” but they function the same.",
+    "text": "Note\n\n\n\nA likelihood function is just a probability calculation as a function of some parameter. E.g. the probability of drawing \\(5\\) black balls out of \\(10\\) is higher (more likely) when \\(p = 0.5\\) than it is when \\(p = 0.05\\).\n\n\n\n\nExercise 6.2 Complete the following steps than write down your numbers for \\(u\\) and \\(v\\):\n\nAt the top, let \\(b =\\) the number of 1s you observed in the previous experiment.\nStarting with \\(u = 0\\) and \\(v = 1\\), slowly drag \\(u\\) to the right until \\(A\\), which represents the area under the curve, is as close to 0.975 (97.5%) as you can make it. \nNow move \\(v\\) to the left until \\(A\\) is as close to 0.95 (95%) as you can make it. \nReport \\(u\\) and \\(v\\).\n\n\n\n\n\n\n\n\nNote\n\n\n\nContext: moving \\(u\\) until \\(A\\) was \\(\\approx 97.5\\%\\) means there was a \\(2.5\\%\\) chance of being less than \\(u\\) and likewise a \\(2.5\\%\\) change of being bigger than \\(v\\). So overall there is a \\(5\\%\\) chance of not being between \\(u\\) and \\(v\\) and a \\(95\\%\\) chance of being between \\(u\\) and \\(v\\).\n\n\n\nExercise 6.3 The qbeta function performs what we just did in Desmos. Specifically, we run\n\n\n\n\n\n\nto find \\(u\\) and \\(v\\) respectively. (The \\(+1\\) is due to some \\(-1\\)s that appear in the beta distribution behind the scenes.)\n\nChange the \\(8\\) and \\(2\\) to your number of 1s (black balls) and 0s (white balls) respectively. Then report the exact values of \\(u\\) and \\(v\\).\nRewrite this with your values of \\(u\\) and \\(v\\): “a 95% CI for p is \\((u, v)\\).”\nYou will notice that this confidence interval is quite wide because with only \\(10\\) samples it’s hard to pinpoint the true proportion of black balls. Let’s change \\(n\\) to \\(1000\\) and try again:\n\n\n\n\n\n\n\nTake these numbers back to the qbeta box to compute a new \\(u\\) and \\(v\\) and report a new confidence interval (as in 2.).\n\n\n\n\n\n\n\nNote\n\n\n\nTechnically these qbeta-intervals are “credible intervals” not “confidence intervals” but they function the same.",
     "crumbs": [
-      "Project 6",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Activity 6</span>"
+      "Confidence Intervals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 6</span>"
     ]
   },
   {
     "objectID": "project-6/ci.html#using-the-normal-approximation",
     "href": "project-6/ci.html#using-the-normal-approximation",
-    "title": "9  Activity 6",
-    "section": "9.2 Using the Normal approximation",
-    "text": "9.2 Using the Normal approximation\nRecall our formula for the normal approximation confidence interval is \\[\n\\hat p \\pm 1.96 \\sqrt{\\frac{\\hat p \\hat q}{n}}\n\\] or more generally, use qnorm(1 - alpha / 2) instead of 1.96.\n\nExercise 9.4  \n\nWith the numbers for \\(n = 1000\\) what are \\(\\hat p\\) and \\(\\hat q\\)? Hint: if we saw \\(413\\) black balls, then \\(\\hat p = 413/1000 = 0.413\\) (move the decimal place over). \\(\\hat q\\) is the same but for the white balls.\nCompute \\(E = 1.96 \\sqrt{\\hat p \\hat q / n}\\):\n\n\n\n\n\n\n\n(modify the \\(.413\\) and \\(.587\\) as necessary). 3. Compute \\(\\hat p - E\\) and \\(\\hat p + E\\):\n\n\n\n\n\n\n\nAre these numbers similar to your \\(u\\) and \\(v\\) from the previous exercise?\n\n\n\nExercise 9.5 Now run through the steps of the previous exercise but with the numbers for \\(n = 10\\) from Exercise 9.1. (Remember to change the /1000 to /10 in part 2.) Are these numbers similar to the first set of \\(u\\) and \\(v\\) we found?",
+    "title": "6  Activity 6",
+    "section": "6.2 Using the Normal approximation",
+    "text": "6.2 Using the Normal approximation\nRecall our formula for the normal approximation confidence interval is \\[\n\\hat p \\pm 1.96 \\sqrt{\\frac{\\hat p \\hat q}{n}}\n\\] or more generally, use qnorm(1 - alpha / 2) instead of 1.96.\n\nExercise 6.4  \n\nWith the numbers for \\(n = 1000\\) what are \\(\\hat p\\) and \\(\\hat q\\)? Hint: if we saw \\(413\\) black balls, then \\(\\hat p = 413/1000 = 0.413\\) (move the decimal place over). \\(\\hat q\\) is the same but for the white balls.\nCompute \\(E = 1.96 \\sqrt{\\hat p \\hat q / n}\\):\n\n\n\n\n\n\n\n(modify the \\(.413\\) and \\(.587\\) as necessary). 3. Compute \\(\\hat p - E\\) and \\(\\hat p + E\\):\n\n\n\n\n\n\n\nAre these numbers similar to your \\(u\\) and \\(v\\) from the previous exercise?\n\n\n\nExercise 6.5 Now run through the steps of the previous exercise but with the numbers for \\(n = 10\\) from Exercise 6.1. (Remember to change the /1000 to /10 in part 2.) Are these numbers similar to the first set of \\(u\\) and \\(v\\) we found?",
     "crumbs": [
-      "Project 6",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Activity 6</span>"
+      "Confidence Intervals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 6</span>"
     ]
   },
   {
     "objectID": "project-6/ci.html#miscellanea",
     "href": "project-6/ci.html#miscellanea",
-    "title": "9  Activity 6",
-    "section": "9.3 Miscellanea",
-    "text": "9.3 Miscellanea\nUsing the formula \\(n = \\frac{1.96^2 \\cdot 0.25}{E^2}\\) (which we use if \\(\\hat p\\) is unknown) we can estimate how many samples we need to achieve a desired error.\n\nExercise 9.6  \n\nSuppose we want to be really really sure of \\(p\\) and we want the error to be no more than \\(0.001\\) (e.g. our confidence interval would be \\(0.399\\) to \\(0.401\\)). Compute this \\(n\\) (either by typing in the formula or using your own calculator)\n\n\n\n\n\n\n\n\nNow let’s use this for a qbeta confidence interval:\n\n\n\n\n\n\n\n\nThis has all assumed we wanted to be 95% confident. Suppose instead we want to be 99% confident.\n\nWhat is \\(\\alpha = 1 - 0.99\\)?\nWhat is \\(\\alpha / 2\\)?\nWhat is \\(1 - \\alpha / 2\\)?\n\nTake your value of \\(1 - \\alpha / 2\\) and compute qnorm(1 - alpha / 2)\n\n\n\n\n\n\n\n\nReplace the \\(1.96\\) with this value when we were computing the normal approximation confidence interval:\n\n\n\n\n\n\n\n\nCompared to the confidence interval from Exercise 9.4, is this 99% confidence interval wider or narrower* than the 95% confidence interval?",
+    "title": "6  Activity 6",
+    "section": "6.3 Miscellanea",
+    "text": "6.3 Miscellanea\nUsing the formula \\(n = \\frac{1.96^2 \\cdot 0.25}{E^2}\\) (which we use if \\(\\hat p\\) is unknown) we can estimate how many samples we need to achieve a desired error.\n\nExercise 6.6  \n\nSuppose we want to be really really sure of \\(p\\) and we want the error to be no more than \\(0.001\\) (e.g. our confidence interval would be \\(0.399\\) to \\(0.401\\)). Compute this \\(n\\) (either by typing in the formula or using your own calculator)\n\n\n\n\n\n\n\n\nNow let’s use this for a qbeta confidence interval:\n\n\n\n\n\n\n\n\nThis has all assumed we wanted to be 95% confident. Suppose instead we want to be 99% confident.\n\nWhat is \\(\\alpha = 1 - 0.99\\)?\nWhat is \\(\\alpha / 2\\)?\nWhat is \\(1 - \\alpha / 2\\)?\n\nTake your value of \\(1 - \\alpha / 2\\) and compute qnorm(1 - alpha / 2)\n\n\n\n\n\n\n\n\nReplace the \\(1.96\\) with this value when we were computing the normal approximation confidence interval:\n\n\n\n\n\n\n\n\nCompared to the confidence interval from Exercise 6.4, is this 99% confidence interval wider or narrower* than the 95% confidence interval?",
     "crumbs": [
-      "Project 6",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Activity 6</span>"
+      "Confidence Intervals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 6</span>"
     ]
   },
   {
     "objectID": "project-6/ci.html#t-distribution",
     "href": "project-6/ci.html#t-distribution",
-    "title": "9  Activity 6",
-    "section": "9.4 t-distribution",
-    "text": "9.4 t-distribution\nFor the following scenarios, compute\n\n\\(1 - \\alpha/2\\)\nqt(1 - \\alpha / 2, df = n - 1) (as an analogue of the 1.96 threshold)\n\\(E = \\text{quantile-for-t} \\cdot \\frac{s}{\\sqrt n}\\).\n\n\n\n\n\n\n\nTip\n\n\n\nReminder: quantiles are percentiles but for a decimal rather than a percent and the “t distribution” is like the normal distribution but with slightly larger percentiles due to the extra uncertainty in using \\(s\\) rather than \\(\\sigma\\).\n\n\nReport something like \\(95\\%\\text{-CI for } \\mu = \\bar x \\pm E = 41 \\pm 3\\)\n\nExample 9.1 Suppose scores for an exam have a mean of \\(75\\) and sample standard deviation of \\(6\\) with \\(n = 30\\). For a 95% confidence interval for \\(\\mu\\) (\\(\\alpha = 0.05\\)):\n\n\\(1 - 0.05 / 2 = 0.975\\)\nqt(0.975, df=29) = 2.04523\n\\(E = 2.04523 \\cdot 6 / \\sqrt{30} = 2.240437\\)\n\nA 95% CI for \\(\\mu\\) is \\(75 \\pm 2.24\\) or \\((72.76, 77.24)\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 9.7  \n\n\\(\\bar x = 70, s = 10, n = 49\\) and we want a \\(99\\%\\) confidence interval (\\(\\alpha = 0.01\\))\n\\(\\bar x = 125, s = 12, n = 217\\) and we want a \\(90\\%\\) confidence interval (\\(\\alpha = 0.1\\))\n\\(\\bar x = 60, s = 8, n = 5103\\) and we want a \\(96\\%\\) confidence interval (\\(\\alpha = 0.04\\))",
+    "title": "6  Activity 6",
+    "section": "6.4 t-distribution",
+    "text": "6.4 t-distribution\nFor the following scenarios, compute\n\n\\(1 - \\alpha/2\\)\nqt(1 - \\alpha / 2, df = n - 1) (as an analogue of the 1.96 threshold)\n\\(E = \\text{quantile-for-t} \\cdot \\frac{s}{\\sqrt n}\\).\n\n\n\n\n\n\n\nTip\n\n\n\nReminder: quantiles are percentiles but for a decimal rather than a percent and the “t distribution” is like the normal distribution but with slightly larger percentiles due to the extra uncertainty in using \\(s\\) rather than \\(\\sigma\\).\n\n\nReport something like \\(95\\%\\text{-CI for } \\mu = \\bar x \\pm E = 41 \\pm 3\\)\n\nExample 6.1 Suppose scores for an exam have a mean of \\(75\\) and sample standard deviation of \\(6\\) with \\(n = 30\\). For a 95% confidence interval for \\(\\mu\\) (\\(\\alpha = 0.05\\)):\n\n\\(1 - 0.05 / 2 = 0.975\\)\nqt(0.975, df=29) = 2.04523\n\\(E = 2.04523 \\cdot 6 / \\sqrt{30} = 2.240437\\)\n\nA 95% CI for \\(\\mu\\) is \\(75 \\pm 2.24\\) or \\((72.76, 77.24)\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 6.7  \n\n\\(\\bar x = 70, s = 10, n = 49\\) and we want a \\(99\\%\\) confidence interval (\\(\\alpha = 0.01\\))\n\\(\\bar x = 125, s = 12, n = 217\\) and we want a \\(90\\%\\) confidence interval (\\(\\alpha = 0.1\\))\n\\(\\bar x = 60, s = 8, n = 5103\\) and we want a \\(96\\%\\) confidence interval (\\(\\alpha = 0.04\\))",
     "crumbs": [
-      "Project 6",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Activity 6</span>"
+      "Confidence Intervals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 6</span>"
     ]
   },
   {
     "objectID": "project-7/hyptest.html",
     "href": "project-7/hyptest.html",
-    "title": "10  Activity 7",
+    "title": "7  Activity 7",
     "section": "",
-    "text": "10.1 Testing means\nWe will first work with hypothesis testing by manual calculation before switching to the built-in functions.\nYou are researching the effects of exercise on heart rate. In the general population, the mean bpm is 80. Among your sample of 36 people you find a mean of 75 bpm with a standard deviation of 10.",
+    "text": "7.1 Testing means\nWe will first work with hypothesis testing by manual calculation before switching to the built-in functions.\nYou are researching the effects of exercise on heart rate. In the general population, the mean bpm is 80. Among your sample of 36 people you find a mean of 75 bpm with a standard deviation of 10.",
     "crumbs": [
-      "Project 7",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Activity 7</span>"
+      "Hypothesis Testing",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 7</span>"
     ]
   },
   {
     "objectID": "project-7/hyptest.html#testing-means",
     "href": "project-7/hyptest.html#testing-means",
-    "title": "10  Activity 7",
+    "title": "7  Activity 7",
     "section": "",
-    "text": "Exercise 10.1  \n\nIdentify \\(\\mu_0, \\bar x, n\\) and \\(s\\) from the given information.\nIdentify \\(H_0\\) and \\(H_1\\) for the claim that people who exercise regularly have a lower heart rate than the general population.\nCompute \\(t = \\dfrac{\\bar x - \\mu}{s / \\sqrt n}\\).\n\n\n\n\n\n\n\n\n\nCompute the threshold at the \\(\\alpha = 0.01\\) level using the formula q = qt(1 - α, df=n-1)\n\n\n\n\n\n\n\n\n\nBecause are testing for a lower bpm are we comparing \\(t\\) to \\(q\\) or to \\(-q\\)?\nUsing the threshold, what is our conclusion about \\(H_0\\)?\nCompute the p-value using the formula pt(t, df=n-1)\n\n\n\n\n\n\n\n\n\nBased on the p-value would we reach the same conclusion about \\(H_0\\) if instead \\(\\alpha = 0.001\\)? (I.e. if we wanted to be \\(99.9\\%\\) confident)\n\n\n\n10.1.1 Computing thresholds\nUsing the formula qt(1 - α, n - 1) or with 1 - α/2 for a two-sided threshold, compute both the one-sided and two-sided thresholds for:\n\nExercise 10.2  \n\n\\(\\alpha = 0.05, n = 25\\)\n\\(\\alpha = 0.01, n = 50\\)\n\n\n\n\n\n\n\n\nNow, using your thresholds, test the following hypotheses. Do we reject or fail to reject \\(H_0\\)?\n\nExercise 10.3  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(\\alpha = 0.01, n = 50\\) and test statistic \\(t = 2.5\\)\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(\\alpha = 0.01, n = 50\\) and test statistic \\(t = 2.5\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05, n = 25\\) and test statistic \\(t = -1.6\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05, n = 25\\) and test statistic \\(t = -1.9\\)\n\n\n\n\n\n\n\n\nTip\n\n\n\nRecall: values that do not exceed the threshold are “usual” and we should not reject \\(H_0\\). Values that exceed the threshold are “unusual” and we reject \\(H_0\\).\n\n\n\n\n10.1.2 Computing p-values\n\nFor \\(P(T \\le t)\\) we use pt(tscore, df)\nFor \\(P(T \\ge t)\\) we use 1 - pt(tscore, df)\nFor a two-sided test, we double this value and the easiest way to compute it is to take the negative value of the tscore and use 2*pt(tscore, df)\n\nFor the following situations, compute the p-value.\n\nExercise 10.4  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(n = 50\\) and test statistic \\(t = \\dfrac{\\bar x - \\mu}{s / \\sqrt n} = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(n = 50\\) and test statistic \\(t = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(n = 25\\) and test statistic \\(t = -1.6\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(n = 25\\) and test statistic \\(t = -1.9\\)",
+    "text": "Exercise 7.1  \n\nIdentify \\(\\mu_0, \\bar x, n\\) and \\(s\\) from the given information.\nIdentify \\(H_0\\) and \\(H_1\\) for the claim that people who exercise regularly have a lower heart rate than the general population.\nCompute \\(t = \\dfrac{\\bar x - \\mu}{s / \\sqrt n}\\).\n\n\n\n\n\n\n\n\n\nCompute the threshold at the \\(\\alpha = 0.01\\) level using the formula q = qt(1 - α, df=n-1)\n\n\n\n\n\n\n\n\n\nBecause are testing for a lower bpm are we comparing \\(t\\) to \\(q\\) or to \\(-q\\)?\nUsing the threshold, what is our conclusion about \\(H_0\\)?\nCompute the p-value using the formula pt(t, df=n-1)\n\n\n\n\n\n\n\n\n\nBased on the p-value would we reach the same conclusion about \\(H_0\\) if instead \\(\\alpha = 0.001\\)? (I.e. if we wanted to be \\(99.9\\%\\) confident)\n\n\n\n7.1.1 Computing thresholds\nUsing the formula qt(1 - α, n - 1) or with 1 - α/2 for a two-sided threshold, compute both the one-sided and two-sided thresholds for:\n\nExercise 7.2  \n\n\\(\\alpha = 0.05, n = 25\\)\n\\(\\alpha = 0.01, n = 50\\)\n\n\n\n\n\n\n\n\nNow, using your thresholds, test the following hypotheses. Do we reject or fail to reject \\(H_0\\)?\n\nExercise 7.3  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(\\alpha = 0.01, n = 50\\) and test statistic \\(t = 2.5\\)\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(\\alpha = 0.01, n = 50\\) and test statistic \\(t = 2.5\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05, n = 25\\) and test statistic \\(t = -1.6\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05, n = 25\\) and test statistic \\(t = -1.9\\)\n\n\n\n\n\n\n\n\nTip\n\n\n\nRecall: values that do not exceed the threshold are “usual” and we should not reject \\(H_0\\). Values that exceed the threshold are “unusual” and we reject \\(H_0\\).\n\n\n\n\n7.1.2 Computing p-values\n\nFor \\(P(T \\le t)\\) we use pt(tscore, df)\nFor \\(P(T \\ge t)\\) we use 1 - pt(tscore, df)\nFor a two-sided test, we double this value and the easiest way to compute it is to take the negative value of the tscore and use 2*pt(tscore, df)\n\nFor the following situations, compute the p-value.\n\nExercise 7.4  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(n = 50\\) and test statistic \\(t = \\dfrac{\\bar x - \\mu}{s / \\sqrt n} = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(n = 50\\) and test statistic \\(t = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(n = 25\\) and test statistic \\(t = -1.6\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(n = 25\\) and test statistic \\(t = -1.9\\)",
     "crumbs": [
-      "Project 7",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Activity 7</span>"
+      "Hypothesis Testing",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 7</span>"
     ]
   },
   {
     "objectID": "project-7/hyptest.html#hypothesis-testing-for-proportions",
     "href": "project-7/hyptest.html#hypothesis-testing-for-proportions",
-    "title": "10  Activity 7",
-    "section": "10.2 Hypothesis testing for proportions",
-    "text": "10.2 Hypothesis testing for proportions\nApproximately 10% of people are left-handed. This proportion is higher in certain populations. In a sample of \\(100\\) people with dyslexia, \\(20\\) are left-handed\n\nExercise 10.5  \n\nIdentify \\(p_0, \\hat p, \\hat q\\) and \\(n\\) from the given information.\nIdentify \\(H_0\\) and \\(H_1\\) for the claim that the proportion of left-handedness is greater among people with dyslexia than the general population.\nCompute \\(z = \\dfrac{\\hat p - p_0}{\\sqrt{\\hat p \\hat q / n}}\\).\n\n\n\n\n\n\n\n\n\nCompute the threshold at the \\(\\alpha = 0.01\\) level using the formula q = qnorm(1 - α)\n\n\n\n\n\n\n\n\n\nBecause are testing for a higher proportion are we comparing \\(z\\) to \\(q\\) or to \\(-q\\)?\nUsing the threshold, what is our conclusion about \\(H_0\\)?\nCompute the p-value using the formula \\(P(Z \\ge z) = 1 - \\mathtt{pnorm}(z)\\)\n\n\n\n\n\n\n\n\n\nBased on the p-value would we reach the same conclusion about \\(H_0\\) if instead \\(\\alpha = 0.001\\)? (I.e. if we wanted to be \\(99.9\\%\\) confident)\n\n\n\n10.2.1 Computing thresholds\nUsing the formula qnorm(1 - α) or with 1 - α/2 for a two-sided threshold, compute both the one-sided and two-sided thresholds for:\n\nExercise 10.6  \n\n\\(\\alpha = 0.05\\)\n\\(\\alpha = 0.01\\)\n\n\n\n\n\n\n\n\nNow, using your thresholds, test the following hypotheses. Do we reject or fail to reject \\(H_0\\)?\n\nExercise 10.7  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(\\alpha = 0.01\\) and test statistic \\(z = 2.5\\)\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(\\alpha = 0.01\\) and test statistic \\(z = 2.5\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05\\) and test statistic \\(z = -1.6\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05\\) and test statistic \\(z = -1.9\\)\n\n\n\n\n10.2.2 Computing p-values\n\nExercise 10.8  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) and test statistic \\(z = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu \\neq \\mu_0\\) and test statistic \\(z = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) and test statistic \\(z = -1.6\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) and test statistic \\(z = -1.9\\)",
+    "title": "7  Activity 7",
+    "section": "7.2 Hypothesis testing for proportions",
+    "text": "7.2 Hypothesis testing for proportions\nApproximately 10% of people are left-handed. This proportion is higher in certain populations. In a sample of \\(100\\) people with dyslexia, \\(20\\) are left-handed\n\nExercise 7.5  \n\nIdentify \\(p_0, \\hat p, \\hat q\\) and \\(n\\) from the given information.\nIdentify \\(H_0\\) and \\(H_1\\) for the claim that the proportion of left-handedness is greater among people with dyslexia than the general population.\nCompute \\(z = \\dfrac{\\hat p - p_0}{\\sqrt{\\hat p \\hat q / n}}\\).\n\n\n\n\n\n\n\n\n\nCompute the threshold at the \\(\\alpha = 0.01\\) level using the formula q = qnorm(1 - α)\n\n\n\n\n\n\n\n\n\nBecause are testing for a higher proportion are we comparing \\(z\\) to \\(q\\) or to \\(-q\\)?\nUsing the threshold, what is our conclusion about \\(H_0\\)?\nCompute the p-value using the formula \\(P(Z \\ge z) = 1 - \\mathtt{pnorm}(z)\\)\n\n\n\n\n\n\n\n\n\nBased on the p-value would we reach the same conclusion about \\(H_0\\) if instead \\(\\alpha = 0.001\\)? (I.e. if we wanted to be \\(99.9\\%\\) confident)\n\n\n\n7.2.1 Computing thresholds\nUsing the formula qnorm(1 - α) or with 1 - α/2 for a two-sided threshold, compute both the one-sided and two-sided thresholds for:\n\nExercise 7.6  \n\n\\(\\alpha = 0.05\\)\n\\(\\alpha = 0.01\\)\n\n\n\n\n\n\n\n\nNow, using your thresholds, test the following hypotheses. Do we reject or fail to reject \\(H_0\\)?\n\nExercise 7.7  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(\\alpha = 0.01\\) and test statistic \\(z = 2.5\\)\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(\\alpha = 0.01\\) and test statistic \\(z = 2.5\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05\\) and test statistic \\(z = -1.6\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05\\) and test statistic \\(z = -1.9\\)\n\n\n\n\n7.2.2 Computing p-values\n\nExercise 7.8  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) and test statistic \\(z = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu \\neq \\mu_0\\) and test statistic \\(z = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) and test statistic \\(z = -1.6\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) and test statistic \\(z = -1.9\\)",
     "crumbs": [
-      "Project 7",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Activity 7</span>"
+      "Hypothesis Testing",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 7</span>"
     ]
   },
   {
     "objectID": "project-7/hyptest.html#using-software-two-sample-hypotheses",
     "href": "project-7/hyptest.html#using-software-two-sample-hypotheses",
-    "title": "10  Activity 7",
-    "section": "10.3 Using software (two-sample hypotheses)",
-    "text": "10.3 Using software (two-sample hypotheses)\nSuppose we have some data about rates of seasonal depression in New York versus in California. Suppose \\(5\\%\\) of people (\\(x = 62, n = 1240\\)) report seasonal depression in New York versus \\(3\\%\\) (\\(x = 33, n = 1100\\)) in California. We wish to test the claim that the more northern state (New York) has a greater incidence of seasonal depression. We do this with the following R function.\n\n\n\n\n\n\n\nExercise 10.9  \n\nWrite the hypotheses \\(H_0\\) and \\(H_1\\) for our claim about \\(p_1\\) and \\(p_2\\).\nFrom the output, what is the p-value for the claim?\nAt the \\(\\alpha = 0.01\\), does the p-value suggest evidence for the claim that New Yorkers experience a greater incidence rate for seasonal depression? I.e. do we reject \\(H_0\\)?\n\n\n\nA study on the heart rate of (cisgender) men and women collects some data on the resting heart rate of each group of people. The statistician overseeing the project runs the following code to test the hypothesis that these two groups have a different resting heart rate.\n\n\n\n\n\n\n\nExercise 10.10  \n\nWrite the hypotheses \\(H_0\\) and \\(H_1\\) for our claim about \\(\\mu_1\\) and \\(\\mu_2\\).\nWhat is the mean heart rate for the men in the sample? For the women?\nFrom the output, what is the p-value for the claim?\nAt the \\(\\alpha = 0.01\\), does the p-value suggest evidence for the claim that the two groups have a different resting heart rate?",
+    "title": "7  Activity 7",
+    "section": "7.3 Using software (two-sample hypotheses)",
+    "text": "7.3 Using software (two-sample hypotheses)\nSuppose we have some data about rates of seasonal depression in New York versus in California. Suppose \\(5\\%\\) of people (\\(x = 62, n = 1240\\)) report seasonal depression in New York versus \\(3\\%\\) (\\(x = 33, n = 1100\\)) in California. We wish to test the claim that the more northern state (New York) has a greater incidence of seasonal depression. We do this with the following R function.\n\n\n\n\n\n\n\nExercise 7.9  \n\nWrite the hypotheses \\(H_0\\) and \\(H_1\\) for our claim about \\(p_1\\) and \\(p_2\\).\nFrom the output, what is the p-value for the claim?\nAt the \\(\\alpha = 0.01\\), does the p-value suggest evidence for the claim that New Yorkers experience a greater incidence rate for seasonal depression? I.e. do we reject \\(H_0\\)?\n\n\n\nA study on the heart rate of (cisgender) men and women collects some data on the resting heart rate of each group of people. The statistician overseeing the project runs the following code to test the hypothesis that these two groups have a different resting heart rate.\n\n\n\n\n\n\n\nExercise 7.10  \n\nWrite the hypotheses \\(H_0\\) and \\(H_1\\) for our claim about \\(\\mu_1\\) and \\(\\mu_2\\).\nWhat is the mean heart rate for the men in the sample? For the women?\nFrom the output, what is the p-value for the claim?\nAt the \\(\\alpha = 0.01\\), does the p-value suggest evidence for the claim that the two groups have a different resting heart rate?",
     "crumbs": [
-      "Project 7",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Activity 7</span>"
+      "Hypothesis Testing",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 7</span>"
     ]
   }
 ]
