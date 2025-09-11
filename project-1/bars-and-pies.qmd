@@ -1,9 +1,18 @@
+---
+webr:
+    packages:
+        - dplyr
+---
 # Activity 1
 
 ## Dice activity
 
-Take two dice and roll the pair of them 25 times, keeping track of the sum of
-their values. Fill those into the `dice_rolls` variable below.
+::: {#exr-dice-activity}
+1. Take two dice and roll the pair of them 25 times, **keeping track of the sum of
+their values**. Record this and following answers on a blank piece of paper.
+Fill those into the `dice_rolls` variable below.
+
+Your numbers should be between 2 and 12.
 
 ```{webr}
 dice_rolls = c()
@@ -11,13 +20,12 @@ sum_count = table(dice_rolls)
 sum_count
 ```
 
-::: {#exr-dice-activity}
-1. From the `sum_count` table, report how many times you rolled a 2, 3, 4, etc.
+2. From the `sum_count` table, report how many times you rolled a 2, 3, 4, etc.
    After you have done that, change the last line from `sum_count` to
 `barplot(sum_count)` and run that to get a barplot.
-2. Which sum (or sums) occurred the most number of times?
-3. Based on your data, are we more likely to roll a 2 or a 7?
-4. The function `mean()` returns the mean of a dataset. Run the next code box
+3. Which sum (or sums) occurred the most number of times?
+4. Based on your data, are we more likely to roll a 2 or a 7?
+5. The function `mean()` returns the mean of a dataset. Run the next code box
    and report the mean of the data.
 :::
 ::: {.callout-note}
@@ -32,54 +40,36 @@ mean(dice_rolls)
 ## Data activity
 
 R, and it's many packages, contain many different datasets for practicing its
-features. One of these is the `starwars` dataset in the `dplyr` package. To
-access this, we first load the package with `library("dplyr")` and then we can
-preview the dataset by simply writing `starwars`.
+features. One of these is the `starwars` dataset.
 
-::: {.callout-note}
-While not strictly, necessary, I added `suppressMessages()` to hide the messages that often come up when loading a package.
-:::
+You can see the [full dataset here](https://github.com/tidyverse/dplyr/blob/main/data-raw/starwars.csv){target="_blank"}.
 
-```{webr}
-suppressMessages(library("dplyr"))
-starwars
-```
-
-This is just a preview of the first 10 rows of data. Some of the columns aren't
-displayed either. You can see the
-[full dataset here](https://github.com/tidyverse/dplyr/blob/main/data-raw/starwars.csv).
-
-If we want information about the `starwars` dataset (or any R function), we can
-use the `?` operator.
-
-```{webr}
-?starwars
-```
 
 ::: {#exr-starwars-data}
-1. What types of variables are included in this dataset? Which variables are
-   *quantitative*?
-2. If we want to talk about a specific column, like `gender`, we can use the
-   `$` operator. Let's use this now to create a pie chart of character gender
-in Star Wars. Make a quick sketch of the resulting chart.
+1. What types of variables are included in this dataset? Give an example for
+   each type (quantitative discrete, quantitative continuous, qualitative)
+2. We can interact with this data set in R as `starwars`. Specifically we can
+   use the `$` operator to specify which column we wish to retrieve. Let's use
+this now to create a pie chart of character gender in Star Wars. Make a quick
+sketch of the resulting chart.
+
 ```{webr}
 data = starwars$gender
 count = table(data)
 pie(count)
 ```
-3. Try replacing `gender` by a different column like `height`, `sex`, or
-   `homeworld`. For which of these does it make sense to use a pie chart? For
-which of these does a pie chart make sense but it would be better to group
-smaller categories into "other"?
+
+3. Replace the word `gender` in line 1 by different variables.
+For which of these is a pie chart a reasonable way to represent the data
+and which of these is a pie chart hard to read meaningful information from?
+    * gender
+    * sex
+    * homeworld
+    * species
 :::
 
 ## Syntax and Functions
 
 * `mean(...)` the mean or average of a list of numbers
 * `$` takes a specific column from a dataset e.g. `starwars$height`
-* `?` put this before any function on built-in dataset to get more information
-about it
 * `pie(...)` creates a pie chart
-* `library(...)` used to add additional features to R (i.e. new functions and
-new datasets). `suppressMessages(...)` loads these in without printing any new
-messages.
