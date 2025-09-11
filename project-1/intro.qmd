@@ -1,4 +1,4 @@
-# Intro to R
+# Intro to R {.unnumbered}
 
 R is a programming language for statistical computation and data visualization.
 It is widely used by stacticians, data scientists, and researchers and has a

@@ -18,28 +18,28 @@ book:
         href: https://seragunn.github.io/
   chapters:
     - index.qmd
-    - part: "Project 1"
+    - part: "Introduction to Data"
       chapters:
         - project-1/intro.qmd
         - project-1/bars-and-pies.qmd
-    - part: "Project 2"
+    - part: "Summarizing Data"
       chapters:
         - project-2/calculating-statistics.qmd
         - project-2/box-hist.qmd
         - project-2/visualizing-shape.qmd
-    - part: "Project 3"
+    - part: "Introduction to Sampling"
       chapters:
         - project-3/intro-to-sampling.qmd
-    - part: "Project 4"
+    - part: "The Binomial Distrubution"
       chapters:
         - project-4/binomial.qmd
-    - part: "Project 5"
+    - part: "The Normal Distribution"
       chapters:
         - project-5/normal.qmd
-    - part: "Project 6"
+    - part: "Confidence Intervals"
       chapters:
         - project-6/ci.qmd
-    - part: "Project 7"
+    - part: "Hypothesis Testing"
       chapters:
         - project-7/hyptest.qmd
 

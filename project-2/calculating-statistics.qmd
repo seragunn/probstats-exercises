@@ -1,4 +1,4 @@
-# Calculating Mean, Median, etc. in R
+# Calculating Mean, Median, etc. in R {.unnumbered}
 
 We've seen the `mean()` function before in Activity 1. This calculates the mean
 of a set of data. For instance

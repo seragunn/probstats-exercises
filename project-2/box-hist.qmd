@@ -1,4 +1,4 @@
-# Boxplots and Histograms
+# Boxplots and Histograms {.unnumbered}
 
 To create a basic box and whisker plot, we use the `boxplot()` command. As per
 usual, we define our data in a variable and then use that variable in the
