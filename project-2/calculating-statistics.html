@@ -363,15 +363,15 @@ Tip
 <p>The short-hand for a consecutive list like <code>1, 2, 3, 4, 5, 6</code> is <code>1:6</code>. Try changing the <code>dice_values</code> variable to <code>1:20</code> and get the average dice value on a 20 sided die—common in tabletop games like Dungeons &amp; Dragons.</p>
 </div>
 </div>
-<div id="d0aa8256" class="cell" data-execution_count="1">
+<div id="ed72c18e" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <script>
-var ID = "B1A9dPjI"
+var ID = "hWaWTfZd"
 </script>
-<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="B1A9dPjI" data-controltype="" onsubmit="return false;">
+<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="hWaWTfZd" data-controltype="" onsubmit="return false;">
   <div class="form-group ">
     <div class="controls">
-      <div class="form" id="controls_B1A9dPjI" correct="-1" attempts="0">
+      <div class="form" id="controls_hWaWTfZd" correct="-1" attempts="0">
      What is the average roll on a 20 sided die? 
 
     
@@ -379,17 +379,17 @@ var ID = "B1A9dPjI"
     <div style="padding-top: 5px">
     <br>
 <div class="input-group" aria-label="Input form: Numeric answer">
-    <input id="B1A9dPjI" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
+    <input id="hWaWTfZd" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
 </div>
 
      </div>
     </div>
-    <div id="B1A9dPjI_message" class="qqmessage" style="padding-bottom: 15px">
+    <div id="hWaWTfZd_message" class="qqmessage" style="padding-bottom: 15px">
     </div>
 
 <script>
-document.getElementById('controls_B1A9dPjI').addEventListener("quizquestion_answer", (e) => {
-          var o = document.getElementById('controls_B1A9dPjI')
+document.getElementById('controls_hWaWTfZd').addEventListener("quizquestion_answer", (e) => {
+          var o = document.getElementById('controls_hWaWTfZd')
           var atts = Number(o.getAttribute("attempts"))
           o.setAttribute("correct",  e.detail.correct);
           o.setAttribute("attempts", atts + 1)
@@ -397,13 +397,13 @@ document.getElementById('controls_B1A9dPjI').addEventListener("quizquestion_answ
 </script>
 
 <script text="text/javascript">
-document.getElementById("B1A9dPjI").addEventListener("change", function() {
+document.getElementById("hWaWTfZd").addEventListener("change", function() {
   var correct = (Math.abs(this.value - 10.5) <= 0.001);
-  var msgBox = document.getElementById('B1A9dPjI_message');
+  var msgBox = document.getElementById('hWaWTfZd_message');
   
   if(correct) {
     msgBox.innerHTML = "<div class='pluto-output admonition note alert alert-success'> <span>✔&nbsp; Correct </span> </div>";
-    var explanation = document.getElementById("explanation_B1A9dPjI")
+    var explanation = document.getElementById("explanation_hWaWTfZd")
     if (explanation != null) {
        explanation.style.display = "none";
     }
@@ -414,7 +414,7 @@ document.getElementById("B1A9dPjI").addEventListener("change", function() {
 
   } else {
     msgBox.innerHTML = "<div class='pluto-output admonition alert alert-danger'> <span>Χ&nbsp; Incorrect </span> </div>";
-    var explanation = document.getElementById("explanation_B1A9dPjI")
+    var explanation = document.getElementById("explanation_hWaWTfZd")
     if (explanation != null) {
        explanation.style.display = "block";
     }
