@@ -9,10 +9,9 @@ mean(dice_values)
 ```
 
 ::: {.callout-tip}
-The short-hand for a consecutive list like `1, 2, 3, 4, 5,
-6` is `1:6`. Try changing the `dice_values` variable to `1:20` and get the
-average dice value on a 20 sided die—common in tabletop games like Dungeons &
-Dragons.
+The short-hand for a consecutive list like `c(1, 2, 3, 4, 5, 6)` is `1:6`. Try
+changing the first line to `dice_values = 1:20` and get the average dice value
+on a 20 sided die—common in tabletop games like Dungeons & Dragons.
 :::
 
 ```{julia}
@@ -21,7 +20,10 @@ using QuizQuestions
 numericq(10.5; label="What is the average roll on a 20 sided die?")
 ```
 
-Likewise, the `median()`, `sd()`, `var()`, and `range()` functions exists to calculate the median, (sample) standard deviation, (sample) variance, and range respectively. Remember that the sample s.d. or var formulas have a denominator of $n - 1$ rather than $n$.
+Likewise, the `median()`, `sd()`, `var()`, and `range()` functions exists to
+calculate the median, (sample) standard deviation, (sample) variance, and range
+(as an interval) respectively. Remember that the sample standard deviation or
+variance formulas have a denominator of $n - 1$ rather than $n$.
 
 ```{webr}
 data = c(4.9, 0.7, 1.8, 1.1, 0.6, 1.8)
@@ -34,9 +36,7 @@ range(data)
 
 ## Mode
 
-Mode is a less common calculation and the `mode()` function in R does **not**
-calculate the mode but does something much different having to do with
-programming internals.
+Mode is a less common calculation and R does not have a function to calculate it.
 
 Instead, we can calculate the mode as we did in Activity 1 by using the
 `table()` function and then reading the output to determine which data point
@@ -46,3 +46,25 @@ occurred the most.
 data = c(4.9, 0.7, 1.8, 1.1, 0.6, 1.8)
 table(data)
 ```
+
+```{julia}
+#| echo: false
+choices = [0.6, 0.7, 1.1, 1.8, 4.9]
+radioq(choices, 4; label="Which value appears the most times?", keep_order=true)
+```
+
+# Calculating summary statistics in Desmos
+
+In [Desmos](https://www.desmos.com/calculator/bhm2vncpzq){target="_blank"}, you can enter a list of numbers like
+$$
+a = [1, 2, 3, 4, 5, 6] \text{ or } a = [1...6].
+$$
+(Variables in Desmos are limited to a single letter.)
+
+|          Statistic          |     R     |      Desmos      |
+|:---------------------------:|:---------:|:----------------:|
+|             Mean            |  mean(a)  |     mean(a)      |
+|            Median           | median(a) |    median(a)     |
+|      (Sample) Variance      |   var(a)  |      var(a)      |
+| (Sample) Standard Deviation |   sd(a)   |     stdev(a)     |
+|    Range (as an interval)   |  range(a) | (min(a), max(a)) |
