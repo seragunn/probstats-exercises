@@ -91,7 +91,7 @@
     "href": "project-2/calculating-statistics.html#mode",
     "title": "Calculating Mean, Median, etc. in R",
     "section": "Mode",
-    "text": "Mode\nMode is a less common calculation and the mode() function in R does not calculate the mode but does something much different having to do with programming internals.\nInstead, we can calculate the mode as we did in Activity 1 by using the table() function and then reading the output to determine which data point occurred the most.",
+    "text": "Mode\nMode is a less common calculation and R does not have a function to calculate it.\nInstead, we can calculate the mode as we did in Activity 1 by using the table() function and then reading the output to determine which data point occurred the most.\n\n\n\n\n\n\n\n\n\n\n  \n    \n      \n     Which value appears the most times? \n\n    \n\n    \n    \nSelect an item\n\n    \n    \n    \n    \n        0.6\n    \n    \n\n\n    \n    \n    \n    \n        0.7\n    \n    \n\n\n    \n    \n    \n    \n        1.1\n    \n    \n\n\n    \n    \n    \n    \n        1.8\n    \n    \n\n\n    \n    \n    \n    \n        4.9",
     "crumbs": [
       "Summarizing Data",
       "Calculating Mean, Median, etc. in R"
@@ -103,6 +103,17 @@
     "title": "Boxplots and Histograms",
     "section": "",
     "text": "Histograms\nTo create a basic box and whisker plot, we use the boxplot() command. As per usual, we define our data in a variable and then use that variable in the boxplot function.\nRemember that the lines of the boxplot correspond to the quartiles (minimum, 25% mark, 50% mark, 75% mark, maximum). A related and quite useful function is summary() which will print out all of these values as numbers for us.\nCompare the output of this command to where the lines of boxplot are positioned.\nHistograms are created with the hist() function. For instance\nUnlike boxplots, we usually want to configure our histogram, i.e. set a number of bins and/or declare the beginning and end of each bin.\nWe can do this by adding breaks=... to the end of our histogram function. And the two most common types of breaks are to set a number of bins or to set where the boundaries of those bins are.\nThere is one more option we need to discuss which is the right=FALSE option. By default, bins will include their right endpoint, so a bin that goes from \\(10\\) to \\(20\\) will include every data point equal to \\(20\\). Adding right=FALSE moves all the \\(20\\) data points into the next bin over (bins will include the left point but not the right point). Compare:\nThere are \\(6\\) data points equal to \\(20\\). In the first histogram those \\(6\\) count for the middle bin, in the second histogram the count for the right bin.",
+    "crumbs": [
+      "Summarizing Data",
+      "Boxplots and Histograms"
+    ]
+  },
+  {
+    "objectID": "project-2/box-hist.html#summary",
+    "href": "project-2/box-hist.html#summary",
+    "title": "Boxplots and Histograms",
+    "section": "Summary",
+    "text": "Summary\n\nTypes of Data Visualization\n\n\n\n\n\n\n\nType of visualization\nR function\nUseful for\n\n\n\n\nBar graph\nbarplot()\nTo compare values between categories\n\n\nPie chart\npie()\nVisualizing proportions\n\n\nBox-and-whisker\nboxplot()\nVisualizing the middle of and spread of generally unimodal data\n\n\nHistogram\nhist()\nVisualizing the shape of the distribution",
     "crumbs": [
       "Summarizing Data",
       "Boxplots and Histograms"

@@ -316,6 +316,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#mode" id="toc-mode" class="nav-link active" data-scroll-target="#mode">Mode</a></li>
+  <li><a href="#calculating-summary-statistics-in-desmos" id="toc-calculating-summary-statistics-in-desmos" class="nav-link" data-scroll-target="#calculating-summary-statistics-in-desmos">Calculating summary statistics in Desmos</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/seragunn/probstats-exercises/edit/main/project-2/calculating-statistics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seragunn/probstats-exercises/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/seragunn/probstats-exercises/blob/main/project-2/calculating-statistics.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -360,18 +361,18 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The short-hand for a consecutive list like <code>1, 2, 3, 4, 5, 6</code> is <code>1:6</code>. Try changing the <code>dice_values</code> variable to <code>1:20</code> and get the average dice value on a 20 sided die—common in tabletop games like Dungeons &amp; Dragons.</p>
+<p>The short-hand for a consecutive list like <code>c(1, 2, 3, 4, 5, 6)</code> is <code>1:6</code>. Try changing the first line to <code>dice_values = 1:20</code> and get the average dice value on a 20 sided die—common in tabletop games like Dungeons &amp; Dragons.</p>
 </div>
 </div>
-<div id="9677dd58" class="cell" data-execution_count="1">
+<div id="4c56c92e" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <script>
-var ID = "D7G0rvbW"
+var ID = "fM1P0Lih"
 </script>
-<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="D7G0rvbW" data-controltype="" onsubmit="return false;">
+<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="fM1P0Lih" data-controltype="" onsubmit="return false;">
   <div class="form-group ">
     <div class="controls">
-      <div class="form" id="controls_D7G0rvbW" correct="-1" attempts="0">
+      <div class="form" id="controls_fM1P0Lih" correct="-1" attempts="0">
      What is the average roll on a 20 sided die? 
 
     
@@ -379,17 +380,17 @@ var ID = "D7G0rvbW"
     <div style="padding-top: 5px">
     <br>
 <div class="input-group" aria-label="Input form: Numeric answer">
-    <input id="D7G0rvbW" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
+    <input id="fM1P0Lih" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
 </div>
 
      </div>
     </div>
-    <div id="D7G0rvbW_message" class="qqmessage" style="padding-bottom: 15px">
+    <div id="fM1P0Lih_message" class="qqmessage" style="padding-bottom: 15px">
     </div>
 
 <script>
-document.getElementById('controls_D7G0rvbW').addEventListener("quizquestion_answer", (e) => {
-          var o = document.getElementById('controls_D7G0rvbW')
+document.getElementById('controls_fM1P0Lih').addEventListener("quizquestion_answer", (e) => {
+          var o = document.getElementById('controls_fM1P0Lih')
           var atts = Number(o.getAttribute("attempts"))
           o.setAttribute("correct",  e.detail.correct);
           o.setAttribute("attempts", atts + 1)
@@ -397,13 +398,13 @@ document.getElementById('controls_D7G0rvbW').addEventListener("quizquestion_answ
 </script>
 
 <script text="text/javascript">
-document.getElementById("D7G0rvbW").addEventListener("change", function() {
+document.getElementById("fM1P0Lih").addEventListener("change", function() {
   var correct = (Math.abs(this.value - 10.5) <= 0.001);
-  var msgBox = document.getElementById('D7G0rvbW_message');
+  var msgBox = document.getElementById('fM1P0Lih_message');
   
   if(correct) {
     msgBox.innerHTML = "<div class='pluto-output admonition note alert alert-success'> <span>✔&nbsp; Correct </span> </div>";
-    var explanation = document.getElementById("explanation_D7G0rvbW")
+    var explanation = document.getElementById("explanation_fM1P0Lih")
     if (explanation != null) {
        explanation.style.display = "none";
     }
@@ -414,7 +415,7 @@ document.getElementById("D7G0rvbW").addEventListener("change", function() {
 
   } else {
     msgBox.innerHTML = "<div class='pluto-output admonition alert alert-danger'> <span>Χ&nbsp; Incorrect </span> </div>";
-    var explanation = document.getElementById("explanation_D7G0rvbW")
+    var explanation = document.getElementById("explanation_fM1P0Lih")
     if (explanation != null) {
        explanation.style.display = "block";
     }
@@ -430,7 +431,7 @@ document.getElementById("D7G0rvbW").addEventListener("change", function() {
 </script>
 </div>
 </div></form>
-<p>Likewise, the <code>median()</code>, <code>sd()</code>, <code>var()</code>, and <code>range()</code> functions exists to calculate the median, (sample) standard deviation, (sample) variance, and range respectively. Remember that the sample s.d. or var formulas have a denominator of <span class="math inline">\(n - 1\)</span> rather than <span class="math inline">\(n\)</span>.</p>
+<p>Likewise, the <code>median()</code>, <code>sd()</code>, <code>var()</code>, and <code>range()</code> functions exists to calculate the median, (sample) standard deviation, (sample) variance, and range (as an interval) respectively. Remember that the sample standard deviation or variance formulas have a denominator of <span class="math inline">\(n - 1\)</span> rather than <span class="math inline">\(n\)</span>.</p>
 <div>
 <div id="webr-2" class="exercise-cell">
 
@@ -441,7 +442,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGF0YSA9IGMoNC45LCAwLjcs
 </div>
 <section id="mode" class="level2">
 <h2 class="anchored" data-anchor-id="mode">Mode</h2>
-<p>Mode is a less common calculation and the <code>mode()</code> function in R does <strong>not</strong> calculate the mode but does something much different having to do with programming internals.</p>
+<p>Mode is a less common calculation and R does not have a function to calculate it.</p>
 <p>Instead, we can calculate the mode as we did in Activity 1 by using the <code>table()</code> function and then reading the output to determine which data point occurred the most.</p>
 <div>
 <div id="webr-3" class="exercise-cell">
@@ -451,6 +452,160 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGF0YSA9IGMoNC45LCAwLjcs
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGF0YSA9IGMoNC45LCAwLjcsIDEuOCwgMS4xLCAwLjYsIDEuOClcbnRhYmxlKGRhdGEpIn0=
 </script>
 </div>
+<div id="6e376e57" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
+<script>
+var ID = "7DsSWqg8"
+</script>
+<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="7DsSWqg8" data-controltype="" onsubmit="return false;">
+  <div class="form-group ">
+    <div class="controls">
+      <div class="form" id="controls_7DsSWqg8" correct="-1" attempts="0">
+     Which value appears the most times? 
+
+    
+
+    <div style="padding-top: 5px">
+    <fieldset style="border:0px">
+<legend style="display: none" aria-label="Select an item">Select an item</legend>
+<div class="form-check">
+    <label class="form-check-label qqradio" for="radio_7DsSWqg8_1">
+    <input class="form-check-input" type="radio" name="radio_7DsSWqg8" id="radio_7DsSWqg8_1" value="1">
+    
+    <span class="label-body px-1">
+        0.6
+    </span>
+    </label>
+</div>
+<div class="form-check">
+    <label class="form-check-label qqradio" for="radio_7DsSWqg8_2">
+    <input class="form-check-input" type="radio" name="radio_7DsSWqg8" id="radio_7DsSWqg8_2" value="2">
+    
+    <span class="label-body px-1">
+        0.7
+    </span>
+    </label>
+</div>
+<div class="form-check">
+    <label class="form-check-label qqradio" for="radio_7DsSWqg8_3">
+    <input class="form-check-input" type="radio" name="radio_7DsSWqg8" id="radio_7DsSWqg8_3" value="3">
+    
+    <span class="label-body px-1">
+        1.1
+    </span>
+    </label>
+</div>
+<div class="form-check">
+    <label class="form-check-label qqradio" for="radio_7DsSWqg8_4">
+    <input class="form-check-input" type="radio" name="radio_7DsSWqg8" id="radio_7DsSWqg8_4" value="4">
+    
+    <span class="label-body px-1">
+        1.8
+    </span>
+    </label>
+</div>
+<div class="form-check">
+    <label class="form-check-label qqradio" for="radio_7DsSWqg8_5">
+    <input class="form-check-input" type="radio" name="radio_7DsSWqg8" id="radio_7DsSWqg8_5" value="5">
+    
+    <span class="label-body px-1">
+        4.9
+    </span>
+    </label>
+</div>
+</fieldset>
+
+     </div>
+    </div>
+    <div id="7DsSWqg8_message" class="qqmessage" style="padding-bottom: 15px">
+    </div>
+
+<script>
+document.getElementById('controls_7DsSWqg8').addEventListener("quizquestion_answer", (e) => {
+          var o = document.getElementById('controls_7DsSWqg8')
+          var atts = Number(o.getAttribute("attempts"))
+          o.setAttribute("correct",  e.detail.correct);
+          o.setAttribute("attempts", atts + 1)
+      }, true)
+</script>
+
+<script text="text/javascript">
+document.querySelectorAll('input[name="radio_7DsSWqg8"]').forEach(function(rb) {
+rb.addEventListener("change", function() {
+    var correct = rb.value == 4;
+    var msgBox = document.getElementById('7DsSWqg8_message');
+    
+  if(correct) {
+    msgBox.innerHTML = "<div class='pluto-output admonition note alert alert-success'> <span>✔&nbsp; Correct </span> </div>";
+    var explanation = document.getElementById("explanation_7DsSWqg8")
+    if (explanation != null) {
+       explanation.style.display = "none";
+    }
+      const correct_answer   = new CustomEvent("quizquestion_answer",
+          {bubbles:true, detail:{correct: 1}}
+  );
+  this.dispatchEvent(correct_answer);
+
+  } else {
+    msgBox.innerHTML = "<div class='pluto-output admonition alert alert-danger'> <span>Χ&nbsp; Incorrect </span> </div>";
+    var explanation = document.getElementById("explanation_7DsSWqg8")
+    if (explanation != null) {
+       explanation.style.display = "block";
+    }
+      const incorrect_answer = new CustomEvent("quizquestion_answer",
+           {bubbles:true, detail:{correct: 0}}
+  );
+  this.dispatchEvent(incorrect_answer);
+
+  }
+
+})});
+
+</script>
+</div>
+</div></form>
+</div></div></section>
+<section id="calculating-summary-statistics-in-desmos" class="level1">
+<h1>Calculating summary statistics in Desmos</h1>
+<p>In <a href="https://www.desmos.com/calculator/bhm2vncpzq" target="_blank">Desmos</a>, you can enter a list of numbers like <span class="math display">\[
+a = [1, 2, 3, 4, 5, 6] \text{ or } a = [1...6].
+\]</span> (Variables in Desmos are limited to a single letter.)</p>
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Statistic</th>
+<th style="text-align: center;">R</th>
+<th style="text-align: center;">Desmos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mean</td>
+<td style="text-align: center;">mean(a)</td>
+<td style="text-align: center;">mean(a)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Median</td>
+<td style="text-align: center;">median(a)</td>
+<td style="text-align: center;">median(a)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">(Sample) Variance</td>
+<td style="text-align: center;">var(a)</td>
+<td style="text-align: center;">var(a)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">(Sample) Standard Deviation</td>
+<td style="text-align: center;">sd(a)</td>
+<td style="text-align: center;">stdev(a)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Range (as an interval)</td>
+<td style="text-align: center;">range(a)</td>
+<td style="text-align: center;">(min(a), max(a))</td>
+</tr>
+</tbody>
+</table>
 
 
 <script type="webr-data">
