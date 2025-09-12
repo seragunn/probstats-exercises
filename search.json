@@ -113,7 +113,7 @@
     "href": "project-2/box-hist.html#summary",
     "title": "Boxplots and Histograms",
     "section": "Summary",
-    "text": "Summary\n\nTypes of Data Visualization\n\n\n\n\n\n\n\nType of visualization\nR function\nUseful for\n\n\n\n\nBar graph\nbarplot()\nTo compare values between categories\n\n\nPie chart\npie()\nVisualizing proportions\n\n\nBox-and-whisker\nboxplot()\nVisualizing the middle of and spread of generally unimodal data\n\n\nHistogram\nhist()\nVisualizing the shape of the distribution",
+    "text": "Summary\n\nTypes of Data Visualization\n\n\n\n\n\n\n\nType of visualization\nR function\nUseful for\n\n\n\n\nBar graph\nbarplot()\nComparing values between categories\n\n\nPie chart\npie()\nVisualizing proportions\n\n\nBox-and-whisker\nboxplot()\nVisualizing the middle of and spread of generally unimodal data\n\n\nHistogram\nhist()\nVisualizing the shape of the distribution",
     "crumbs": [
       "Summarizing Data",
       "Boxplots and Histograms"
