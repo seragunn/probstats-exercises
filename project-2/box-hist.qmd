@@ -52,3 +52,17 @@ hist(data, breaks=c(0, 10, 20, 30), right=FALSE)
 
 There are $6$ data points equal to $20$. In the first histogram those $6$ count
 for the middle bin, in the second histogram the count for the right bin.
+
+
+## Summary
+
+
+
+| Type of visualization | R function | Useful for                                                      |
+|-----------------------|------------|-----------------------------------------------------------------|
+| Bar graph             | barplot()  | Comparing values between categories                             |
+| Pie chart             | pie()      | Visualizing proportions                                         |
+| Box-and-whisker       | boxplot()  | Visualizing the middle of and spread of generally unimodal data |
+| Histogram             | hist()     | Visualizing the shape of the distribution                       |
+
+: Types of Data Visualization {.striped}
