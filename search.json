@@ -124,7 +124,18 @@
     "href": "project-2/visualizing-shape.html",
     "title": "2  Activity 2",
     "section": "",
-    "text": "2.1 Box plots\nThe nottem data set records the monthly average air temperatures at Nottingham Castle from 1920 to 1939.\nNext, we will use box and whisker plots to compare the median temperatures per month. If we just called boxplot(nottem) right now, it would do a single boxplot of the entire data set. So we have to prepare our data by converting it into a matrix first.",
+    "text": "2.1 The shape of data\nRecall from Activity 1 we made a bar graph of the results we get from rolling two 6 sided dice. As an example, simulating \\(1000\\) rolls, I generated the following bar graph.",
+    "crumbs": [
+      "Summarizing Data",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 2</span>"
+    ]
+  },
+  {
+    "objectID": "project-2/visualizing-shape.html#the-shape-of-data",
+    "href": "project-2/visualizing-shape.html#the-shape-of-data",
+    "title": "2  Activity 2",
+    "section": "",
+    "text": "Exercise 2.1  \n\nTake one or two 12-sided dice. Roll them and create a tally of the number of 1s, 2s, 3s, etc. you get. Do this until you have recorded 50 values. So if you have two dice that’s 25 rolls, recording two numbers each roll.\n\nReport your tallies on your lab submission. You do not need to report the bar graph.\n\n\n\n\n\n\n\n\n\nDoes your bar graph have a similar shape to the graph for two 6 sided dice?\nOne way to smooth out a bar graph is by grouping neighboring values into the same bin (i.e. a histogram). Take your tallies from part (1) and make a table of the number of 1s and 2s, 3s and 4s, 5s and 6s, etc.\nMake a bar plot (histogram) of this combined tally. No need to sketch this but would you describe the shape of this data to be reasonably uniform? (Note: it might not be with only 50 rolls!)\n\n\n\n2.1.1 Histograms\nThe faithful dataset contains data on the length of eruption times and waiting times in between eruptions for the Old Faithful geyser in Yellowstone National Park.\nWe’ll start by asking R to show us what’s in the variable:\n\n\n\n\n\n\n\n\nObserve that there are two columns: eruptions (time of each eruption in mins) and waiting (time to next eruption in mins). Let’s extract these variables and use a histogram to help us picture the data.\n\n\n\n\n\n\n\n\n\nExercise 2.2  \n\nNotice that the data doesn’t have just one hill but two hills to it. What is the name for this shape of data?\nUse the summary function and report the median and mean of each column.\n\n\n\n\n\n\n\n\n\n\nIs the amount of data near the respective means/medians high or low?\nGo back to the histograms and change hist to boxplot for both eruption time and waiting time. Do these box plots do a good job of conveying the shape of the data?\n\n\n\n\n2.1.2 Scatter Plots\nOne question you could ask when seeing the Faithful histograms is whether longer waiting times lead to longer eruption times. In order to visualize that question, we’re going to need to plot both variables at the same time. The tool for this is the scatter plot which puts a point at each \\((x, y)\\) coordinate where \\(x\\) is waiting time and \\(y\\) is an eruption time.\n\n\n\n\n\n\n\n\n\nExercise 2.3  \n\nPer the scatter plot, are points which have a lower waiting time (further to the left) associated with a higher or lower eruption time (up/down)?\nIf the waiting time to the latest eruption is 80 minutes, about how long does the trend line predict the eruption time will be? (roughly)\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe will discuss scatter plots in more detail later in the course.",
     "crumbs": [
       "Summarizing Data",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 2</span>"
@@ -134,30 +145,8 @@
     "objectID": "project-2/visualizing-shape.html#box-plots",
     "href": "project-2/visualizing-shape.html#box-plots",
     "title": "2  Activity 2",
-    "section": "",
-    "text": "Exercise 2.1  \n\nPer the output, what was the average temperature in March of 1926?\nUsing the min() function, find the lowest average temperature during this period of time. I.e. min(nottem). Do the same with max() to find the highest average temperature.\nWriting nottem == min(nottem) we check each entry of the data for whether it equals the minimum. The month that has the minimum will display as TRUE in the output. Which month and year did the lowest average temperature occur?\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you accidentally use only 1 equals sign you will overwrite the nottem dataset. You can reset it with rm(nottem)\n\n\n\nWhich month and year did the highest average temperatures occur?\n\n\n\n\n\n\n\n\n\n\nExercise 2.2  \n\nReading the plot, what are the top 5 months in order sorted by the median of their average temperatures? Note: the median is the line in the middle of the box.\nIt’s a bit hard to compare January and December at the moment, change the last line to read boxplot(temperatures[,c(\"Jan\", \"Dec\")]) and then state which of these two months has the higher median average temperature and which has the higher maximum average temperature.\n\nNow let’s look at the numbers.\n\n\n\n\n\n\n\nBetween January and December, which has the greater mean average temperature?\nFor this particular data, would you say the means are generally close to or far from the medians?",
-    "crumbs": [
-      "Summarizing Data",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 2</span>"
-    ]
-  },
-  {
-    "objectID": "project-2/visualizing-shape.html#histograms",
-    "href": "project-2/visualizing-shape.html#histograms",
-    "title": "2  Activity 2",
-    "section": "2.2 Histograms",
-    "text": "2.2 Histograms\nThe faithful dataset contains data on the length of eruption times and waiting times in between eruptions for the Old Faithful geyser in Yellowstone National Park.\nAs always, we’ll start by asking R to show us what’s in the variable:\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou’ll notice that R gives us a very long list. If we wanted to get just a sneak peak at the first 10 rows, we could have instead used the function: head(faithful, 10).\n\n\nNow that we know what the dataset looks like, we see that there are two columns: eruptions (time of each eruption in mins) and waiting (time to next eruption in mins). Let’s extract these variables and use a histogram to help us picture the data.\n\n\n\n\n\n\n\nExercise 2.3  \n\nNotice that the data doesn’t have just one hill but two hills to it. What is the name for this shape of data?\nUse the summary function to get the median and mean of each column. Per the histogram, is there a lot of data near the mean/median or does the data lie elsewhere in the picture?\n\n\n\n\n\n\n\n\nIn the code box before this, change hist to boxplot for both eruption time and waiting time. Do these box plots give an accurate picture of how the data looks and is distributed? (Remember: exactly 50% of the data will be positioned in the box and 25% on each whisker.)\nFor comparison, here are some histograms of the Nottingham Castle temperatures. These have one hill so they’re uni___?",
-    "crumbs": [
-      "Summarizing Data",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 2</span>"
-    ]
-  },
-  {
-    "objectID": "project-2/visualizing-shape.html#scatter-plots",
-    "href": "project-2/visualizing-shape.html#scatter-plots",
-    "title": "2  Activity 2",
-    "section": "2.3 Scatter Plots",
-    "text": "2.3 Scatter Plots\nOne question you could ask when seeing the Faithful histograms is whether longer waiting times lead to longer eruption times. In order to visualize that question, we’re going to need to plot both variables at the same time. The tool for this is the scatter plot which puts a point at each \\((x, y)\\) coordinate where \\(x\\) is waiting time and \\(y\\) is an eruption time.\n\n\n\n\n\n\n\nExercise 2.4  \n\nPer the scatter plot, are points which have a lower waiting time (further to the left) associated with a higher or lower eruption time (up/down)?\nIf the waiting time to the latest eruption is 80 minutes, about how long does the trend line predict the eruption time will be?\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe will discuss scatter plots in more detail later in the course.",
+    "section": "2.2 Box plots",
+    "text": "2.2 Box plots\nThe nottem data set records the monthly average air temperatures at Nottingham Castle from 1920 to 1939. Which for this exercise we will call just “the monthly temperature.”\n\n\n\n\n\n\n\n\nNext, we will use box and whisker plots to compare the median temperatures per month. If we just called boxplot(nottem) right now, it would do a single boxplot of the entire data set.\n(This is where LLMs can be helpful in telling us how what functions can help separate the data by month.)\n\n\n\n\n\n\n\n\n\nExercise 2.4  \n\nIn which month is the highest monthly temperature observed?\nReading the plot, what are the top 5 months in order sorted by the median of their monthly temperatures? Note: the median is the thick line in the middle of the box.\nIt’s a bit hard to compare January and December at the moment, change the last line to read boxplot(temperatures[,c(\"Jan\", \"Dec\")]) and then state\n\nwhich of these two months has the higher median monthly temperature and\nwhich has the lowest overall monthly temperature.\n\n\nNow let’s look at the numbers.\n\n\n\n\n\n\n\n\n\nBetween January and December, which has the greater mean monthly temperature?\nFor this particular data, would you say the means are generally close to or far from the medians?",
     "crumbs": [
       "Summarizing Data",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 2</span>"

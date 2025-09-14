@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.9.0">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-3c5333e56ad6d1bf138ab44a25129ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -312,9 +312,12 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#box-plots" id="toc-box-plots" class="nav-link active" data-scroll-target="#box-plots"><span class="header-section-number">2.1</span> Box plots</a></li>
-  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms"><span class="header-section-number">2.2</span> Histograms</a></li>
-  <li><a href="#scatter-plots" id="toc-scatter-plots" class="nav-link" data-scroll-target="#scatter-plots"><span class="header-section-number">2.3</span> Scatter Plots</a></li>
+  <li><a href="#the-shape-of-data" id="toc-the-shape-of-data" class="nav-link active" data-scroll-target="#the-shape-of-data"><span class="header-section-number">2.1</span> The shape of data</a>
+  <ul class="collapse">
+  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms"><span class="header-section-number">2.1.1</span> Histograms</a></li>
+  <li><a href="#scatter-plots" id="toc-scatter-plots" class="nav-link" data-scroll-target="#scatter-plots"><span class="header-section-number">2.1.2</span> Scatter Plots</a></li>
+  </ul></li>
+  <li><a href="#box-plots" id="toc-box-plots" class="nav-link" data-scroll-target="#box-plots"><span class="header-section-number">2.2</span> Box plots</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/seragunn/probstats-exercises/edit/main/project-2/visualizing-shape.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/seragunn/probstats-exercises/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/seragunn/probstats-exercises/blob/main/project-2/visualizing-shape.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -340,149 +343,105 @@ window.Quarto = {
 </header>
 
 
-<section id="box-plots" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="box-plots"><span class="header-section-number">2.1</span> Box plots</h2>
-<p>The <code>nottem</code> data set records the monthly average air temperatures at Nottingham Castle from 1920 to 1939.</p>
+<section id="the-shape-of-data" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-shape-of-data"><span class="header-section-number">2.1</span> The shape of data</h2>
+<p>Recall from Activity 1 we made a bar graph of the results we get from rolling two 6 sided dice. As an example, simulating <span class="math inline">\(1000\)</span> rolls, I generated the following bar graph.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualizing-shape_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="exr-dodecagons" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2.1</strong></span> &nbsp;</p>
+<ol type="1">
+<li>Take one or two 12-sided dice. Roll them and create a tally of the number of 1s, 2s, 3s, etc. you get. Do this until you have recorded 50 values. So if you have two dice that’s 25 rolls, recording two numbers each roll.</li>
+</ol>
+<p>Report your tallies on your lab submission. You do not need to report the bar graph.</p>
+<div class="cell">
 <div>
 <div id="webr-1" class="exercise-cell">
 
 </div>
 <script type="webr-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibm90dGVtIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBGaWxsIHRoaXMgd2l0aCB0aGUgbnVtYmVyIG9mIDFzLCAycywgM3MsIGV0Yy5cbiMgKk5vdCogdGhlIGluZGl2aWR1YWwgcm9sbHMsIG9ubHkgdGhlIGNvdW50XG4jIEUuZy4gaWYgeW91IGhhdmUgdGFsbGllZCB0aHJlZSAxcywgc3RhcnQgYnkgd3JpdGluZyAnMydcbnJvbGxfY291bnQgPSBjKClcbmJhcnBsb3Qocm9sbF9jb3VudCkifQ==
 </script>
 </div>
-<div id="exr-read-ts" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.1</strong></span> &nbsp;</p>
-<ol type="1">
-<li>Per the output, what was the average temperature in March of 1926?</li>
-<li>Using the <code>min()</code> function, find the lowest average temperature during this period of time. I.e. <code>min(nottem)</code>. Do the same with <code>max()</code> to find the highest average temperature.</li>
-<li>Writing <code>nottem == min(nottem)</code> we check each entry of the data for whether it equals the minimum. The month that has the minimum will display as <code>TRUE</code> in the output. Which month and year did the lowest average temperature occur?</li>
-</ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you accidentally use only 1 equals sign you will overwrite the <code>nottem</code> dataset. You can reset it with <code>rm(nottem)</code></p>
-</div>
-</div>
-<ol start="4" type="1">
-<li>Which month and year did the highest average temperatures occur?</li>
+<ol start="2" type="1">
+<li>Does your bar graph have a similar shape to the graph for two 6 sided dice?</li>
+<li>One way to smooth out a bar graph is by grouping neighboring values into the same bin (i.e.&nbsp;a histogram). Take your tallies from part (1) and make a table of the number of 1s and 2s, 3s and 4s, 5s and 6s, etc.</li>
+<li>Make a bar plot (histogram) of this combined tally. No need to sketch this but would you describe the shape of this data to be reasonably uniform? (Note: it might not be with only 50 rolls!)</li>
 </ol>
 </div>
-<p>Next, we will use box and whisker plots to compare the median temperatures per month. If we just called <code>boxplot(nottem)</code> right now, it would do a single boxplot of the entire data set. So we have to prepare our data by converting it into a matrix first.</p>
+<section id="histograms" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="histograms"><span class="header-section-number">2.1.1</span> Histograms</h3>
+<p>The <code>faithful</code> dataset contains data on the length of eruption times and waiting times in between eruptions for the Old Faithful geyser in Yellowstone National Park.</p>
+<p>We’ll start by asking R to show us what’s in the variable:</p>
+<div class="cell">
 <div>
 <div id="webr-2" class="exercise-cell">
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjgsImZpZy13aWR0aCI6OH0sImNvZGUiOiIjIHRoaXMgY29udmVydHMgdGhlIGRhdGEgaW50byBhIG1hdHJpeCB3aXRoIDEyIGNvbHVtbnNcbnRlbXBlcmF0dXJlcyA9IG1hdHJpeChub3R0ZW0sIG5jb2w9MTIsIGJ5cm93PVRSVUUpXG4jIHRoaXMgbGFiZWxzIHRoZSBjb2x1bW5zIHdpdGggdGhlIGFiYnJldmlhdGVkIG1vbnRoIG5hbWVcbmNvbG5hbWVzKHRlbXBlcmF0dXJlcykgPSBtb250aC5hYmJcblxuYm94cGxvdCh0ZW1wZXJhdHVyZXMpICAgICAgICAgICAgICAgICAgICAgIyBhZGQgYSAjIGluIGZyb250IGZvciBRMlxuIyBib3hwbG90KHRlbXBlcmF0dXJlc1ssYyhcIkphblwiLCBcIkRlY1wiKV0pICMgcmVtb3ZlIHRoZSAjIGluIGZyb250IGZvciBRMiJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBoZWFkKC4uLiwgMTApIHNob3dzIHRoZSBmaXJzdCAxMCByb3dzXG5oZWFkKGZhaXRoZnVsLCAxMCkifQ==
 </script>
 </div>
-<div id="exr-read-boxplot" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.2</strong></span> &nbsp;</p>
-<ol type="1">
-<li>Reading the plot, what are the top 5 months in order sorted by the <strong>median</strong> of their average temperatures? Note: the median is the line in the middle of the box.</li>
-<li>It’s a bit hard to compare January and December at the moment, change the last line to read <code>boxplot(temperatures[,c("Jan", "Dec")])</code> and then state which of these two months has the higher <strong>median</strong> average temperature and which has the higher <strong>maximum</strong> average temperature.</li>
-</ol>
-<p>Now let’s look at the numbers.</p>
+</div>
+<p>Observe that there are two columns: <code>eruptions</code> (time of each eruption in mins) and <code>waiting</code> (time to next eruption in mins). Let’s extract these variables and use a histogram to help us picture the data.</p>
+<div class="cell">
 <div>
 <div id="webr-3" class="exercise-cell">
 
 </div>
 <script type="webr-3-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3VtbWFyeSh0ZW1wZXJhdHVyZXMpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZXJ1cHRpb25fdGltZSA9IGZhaXRoZnVsJGVydXB0aW9uc1xud2FpdGluZ190aW1lICA9IGZhaXRoZnVsJHdhaXRpbmdcblxuaGlzdChlcnVwdGlvbl90aW1lKVxuaGlzdCh3YWl0aW5nX3RpbWUpIn0=
 </script>
 </div>
-<ol start="3" type="1">
-<li>Between January and December, which has the greater <strong>mean</strong> average temperature?</li>
-<li>For this particular data, would you say the means are generally close to or far from the medians?</li>
-</ol>
 </div>
-</section>
-<section id="histograms" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="histograms"><span class="header-section-number">2.2</span> Histograms</h2>
-<p>The <code>faithful</code> dataset contains data on the length of eruption times and waiting times in between eruptions for the Old Faithful geyser in Yellowstone National Park.</p>
-<p>As always, we’ll start by asking R to show us what’s in the variable:</p>
+<div id="exr-grade-data" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2.2</strong></span> &nbsp;</p>
+<ol type="1">
+<li>Notice that the data doesn’t have just one hill but two hills to it. What is the name for this shape of data?</li>
+<li>Use the <code>summary</code> function and report the median and mean of each column.</li>
+</ol>
+<div class="cell">
 <div>
 <div id="webr-4" class="exercise-cell">
 
 </div>
 <script type="webr-4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmFpdGhmdWwifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3VtbWFyeShmYWl0aGZ1bCkifQ==
 </script>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Tip
+<ol start="3" type="1">
+<li><p>Is the amount of data near the respective means/medians high or low?</p></li>
+<li><p>Go back to the histograms and change <code>hist</code> to <code>boxplot</code> for both eruption time and waiting time. Do these box plots do a good job of conveying the shape of the data?</p></li>
+</ol>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You’ll notice that R gives us a very long list. If we wanted to get just a sneak peak at the first 10 rows, we could have instead used the function: <code>head(faithful, 10)</code>.</p>
-</div>
-</div>
-<p>Now that we know what the dataset looks like, we see that there are two columns: <code>eruptions</code> (time of each eruption in mins) and <code>waiting</code> (time to next eruption in mins). Let’s extract these variables and use a histogram to help us picture the data.</p>
+</section>
+<section id="scatter-plots" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="scatter-plots"><span class="header-section-number">2.1.2</span> Scatter Plots</h3>
+<p>One question you could ask when seeing the Faithful histograms is whether longer waiting times lead to longer eruption times. In order to visualize <em>that</em> question, we’re going to need to plot both variables at the same time. The tool for this is the <strong>scatter plot</strong> which puts a point at each <span class="math inline">\((x, y)\)</span> coordinate where <span class="math inline">\(x\)</span> is waiting time and <span class="math inline">\(y\)</span> is an eruption time.</p>
+<div class="cell">
 <div>
 <div id="webr-5" class="exercise-cell">
 
 </div>
 <script type="webr-5-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZXJ1cHRpb25fdGltZSA9IGZhaXRoZnVsJGVydXB0aW9uc1xud2FpdGluZ190aW1lICA9IGZhaXRoZnVsJHdhaXRpbmdcblxuaGlzdChlcnVwdGlvbl90aW1lKVxuaGlzdCh3YWl0aW5nX3RpbWUpIn0=
-</script>
-</div>
-<div id="exr-grade-data" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.3</strong></span> &nbsp;</p>
-<ol type="1">
-<li>Notice that the data doesn’t have just one hill but two hills to it. What is the name for this shape of data?</li>
-<li>Use the <code>summary</code> function to get the median and mean of each column. Per the histogram, is there a lot of data near the mean/median or does the data lie elsewhere in the picture?</li>
-</ol>
-<div>
-<div id="webr-6" class="exercise-cell">
-
-</div>
-<script type="webr-6-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3VtbWFyeShmYWl0aGZ1bCkifQ==
-</script>
-</div>
-<ol start="3" type="1">
-<li><p>In the code box before this, change <code>hist</code> to <code>boxplot</code> for both eruption time and waiting time. Do these box plots give an accurate picture of how the data looks and is distributed? (Remember: exactly 50% of the data will be positioned in the box and 25% on each whisker.)</p></li>
-<li><p>For comparison, here are some histograms of the Nottingham Castle temperatures. These have one hill so they’re uni___?</p></li>
-</ol>
-<div>
-<div id="webr-7" class="exercise-cell">
-
-</div>
-<script type="webr-7-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGYgPSBkYXRhLmZyYW1lKHRlbXBlcmF0dXJlcylcbmhpc3QoZGYkSmFuKVxuaGlzdChkZiRKdWwpIn0=
-</script>
-</div>
-</div>
-</section>
-<section id="scatter-plots" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="scatter-plots"><span class="header-section-number">2.3</span> Scatter Plots</h2>
-<p>One question you could ask when seeing the Faithful histograms is whether longer waiting times lead to longer eruption times. In order to visualize <em>that</em> question, we’re going to need to plot both variables at the same time. The tool for this is the <strong>scatter plot</strong> which puts a point at each <span class="math inline">\((x, y)\)</span> coordinate where <span class="math inline">\(x\)</span> is waiting time and <span class="math inline">\(y\)</span> is an eruption time.</p>
-<div>
-<div id="webr-8" class="exercise-cell">
-
-</div>
-<script type="webr-8-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGxvdChlcnVwdGlvbnMgfiB3YWl0aW5nLCBkYXRhPWZhaXRoZnVsKVxuXG4jIEFkZHMgYSB0cmVuZGxpbmUgb3IgXCJsaW5lIG9mIGJlc3QgZml0XCJcbmFibGluZShsbShlcnVwdGlvbnMgfiB3YWl0aW5nLCBkYXRhPWZhaXRoZnVsKSkifQ==
 </script>
 </div>
+</div>
 <div id="exr-read-scatter" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.4</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Exercise 2.3</strong></span> &nbsp;</p>
 <ol type="1">
 <li>Per the scatter plot, are points which have a lower waiting time (further to the left) associated with a higher or lower eruption time (up/down)?</li>
-<li>If the waiting time to the latest eruption is 80 minutes, about how long does the trend line predict the eruption time will be?</li>
+<li>If the waiting time to the latest eruption is 80 minutes, about how long does the trend line predict the eruption time will be? (roughly)</li>
 </ol>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -497,6 +456,60 @@ Note
 <div class="callout-body-container callout-body">
 <p>We will discuss scatter plots in more detail later in the course.</p>
 </div>
+</div>
+</section>
+</section>
+<section id="box-plots" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="box-plots"><span class="header-section-number">2.2</span> Box plots</h2>
+<p>The <code>nottem</code> data set records the monthly average air temperatures at Nottingham Castle from 1920 to 1939. Which for this exercise we will call just “the monthly temperature.”</p>
+<div class="cell">
+<div>
+<div id="webr-6" class="exercise-cell">
+
+</div>
+<script type="webr-6-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibm90dGVtIn0=
+</script>
+</div>
+</div>
+<p>Next, we will use box and whisker plots to compare the median temperatures per month. If we just called <code>boxplot(nottem)</code> right now, it would do a single boxplot of the entire data set.</p>
+<p>(This is where LLMs can be helpful in telling us how what functions can help separate the data by month.)</p>
+<div class="cell">
+<div>
+<div id="webr-7" class="exercise-cell">
+
+</div>
+<script type="webr-7-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB0aGlzIGdyb3VwcyB0aGUgZGF0YSBpbnRvIGEgbW9udGggYnkgbW9udGggZ3JpZFxudGVtcGVyYXR1cmVzID0gbWF0cml4KG5vdHRlbSwgbmNvbD0xMiwgYnlyb3c9VFJVRSlcblxuIyB0aGlzIGxhYmVscyB0aGUgY29sdW1ucyB3aXRoIHRoZSBhYmJyZXZpYXRlZCBtb250aCBuYW1lXG5jb2xuYW1lcyh0ZW1wZXJhdHVyZXMpID0gbW9udGguYWJiXG5cbiMgbGFiZWwgYXhpcyBzdHlsZSA9IDIgKHNpZGV3YXlzKVxuYm94cGxvdCh0ZW1wZXJhdHVyZXMsIGxhcz0yKSJ9
+</script>
+</div>
+</div>
+<div id="exr-read-boxplot" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2.4</strong></span> &nbsp;</p>
+<ol type="1">
+<li>In which month is the highest monthly temperature observed?</li>
+<li>Reading the plot, what are the top 5 months in order sorted by the <strong>median</strong> of their monthly temperatures? Note: the median is the thick line in the middle of the box.</li>
+<li>It’s a bit hard to compare January and December at the moment, change the last line to read <code>boxplot(temperatures[,c("Jan", "Dec")])</code> and then state
+<ol type="a">
+<li>which of these two months has the higher <strong>median</strong> monthly temperature and</li>
+<li>which has the lowest <strong>overall</strong> monthly temperature.</li>
+</ol></li>
+</ol>
+<p>Now let’s look at the numbers.</p>
+<div class="cell">
+<div>
+<div id="webr-8" class="exercise-cell">
+
+</div>
+<script type="webr-8-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3VtbWFyeSh0ZW1wZXJhdHVyZXMpIn0=
+</script>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Between January and December, which has the greater <strong>mean</strong> monthly temperature?</li>
+<li>For this particular data, would you say the means are generally close to or far from the medians?</li>
+</ol>
 </div>
 
 
