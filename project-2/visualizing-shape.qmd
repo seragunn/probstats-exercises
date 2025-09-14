@@ -1,82 +1,58 @@
 # Activity 2
 
-## Box plots
+## The shape of data
 
-The `nottem` data set records the monthly average air temperatures at
-Nottingham Castle from 1920 to 1939.
+Recall from Activity 1 we made a bar graph of the results we get from rolling
+two 6 sided dice. As an example, simulating $1000$ rolls, I generated the
+following bar graph.
 
-```{webr}
-nottem
+```{r}
+#| echo: false
+rolls = sample(1:6, 1000, TRUE) + sample(1:6, 1000, TRUE)
+barplot(table(rolls), main="1000 simulated rolls of two 6 sided dice")
 ```
 
-::: {#exr-read-ts}
-1. Per the output, what was the average temperature in March of 1926?
-2. Using the `min()` function, find the lowest average temperature during this
-   period of time. I.e. `min(nottem)`. Do the same with `max()` to find the
-highest average temperature.
-3. Writing `nottem == min(nottem)` we check each entry of the data for whether
-   it equals the minimum. The month that has the minimum will display as `TRUE`
-in the output. Which month and year did the lowest average temperature occur?
+::: {#exr-dodecagons}
+1. Take one or two 12-sided dice. Roll them and create a tally of the number of
+   1s, 2s, 3s, etc. you get. Do this until you have recorded 50 values. So if
+you have two dice that's 25 rolls, recording two numbers each roll.
 
-:::: {.callout-warning}
-If you accidentally use only 1 equals sign you will overwrite the `nottem`
-dataset. You can reset it with `rm(nottem)`
-::::
+Report your tallies on your lab submission. You do not need to report the bar
+graph.
 
-4. Which month and year did the highest average temperatures occur?
+```{webr}
+# Fill this with the number of 1s, 2s, 3s, etc.
+# *Not* the individual rolls, only the count
+# E.g. if you have tallied three 1s, start by writing '3'
+roll_count = c()
+barplot(roll_count)
+```
+
+2. Does your bar graph have a similar shape to the graph for two 6 sided dice?
+3. One way to smooth out a bar graph is by grouping neighboring values into the
+   same bin (i.e. a histogram). Take your tallies from part (1) and make a
+table of the number of 1s and 2s, 3s and 4s, 5s and 6s, etc.
+4. Make a bar plot (histogram) of this combined tally. No need to sketch this
+   but would you describe the shape of this data to be reasonably uniform?
+(Note: it might not be with only 50 rolls!)
 :::
 
-Next, we will use box and whisker plots to compare the median temperatures per
-month. If we just called `boxplot(nottem)` right now, it would do a single
-boxplot of the entire data set. So we have to prepare our data by converting it
-into a matrix first.
-
-```{webr}
-#| fig-width: 8
-#| fig-height: 8
-# this converts the data into a matrix with 12 columns
-temperatures = matrix(nottem, ncol=12, byrow=TRUE)
-# this labels the columns with the abbreviated month name
-colnames(temperatures) = month.abb
-
-boxplot(temperatures)                     # add a # in front for Q2
-# boxplot(temperatures[,c("Jan", "Dec")]) # remove the # in front for Q2
-```
-
-::: {#exr-read-boxplot}
-1. Reading the plot, what are the top 5 months in order sorted by the
-   **median** of their average temperatures? Note: the median is the line in
-the middle of the box.
-2. It's a bit hard to compare January and December at the moment, change the
-   last line to read `boxplot(temperatures[,c("Jan", "Dec")])` and then state which of these two months has the higher **median** average temperature and which has the higher **maximum** average temperature.
-
-Now let's look at the numbers.
-
-```{webr}
-summary(temperatures)
-```
-
-3. Between January and December, which has the greater **mean** average temperature?
-4. For this particular data, would you say the means are generally close to or far from the medians?
-:::
-
-## Histograms
+### Histograms
 
 The `faithful` dataset contains data on the length of eruption times and
 waiting times in between eruptions for the Old Faithful geyser in Yellowstone
 National Park.
 
-As always, we'll start by asking R to show us what's in the variable:
+We'll start by asking R to show us what's in the variable:
 
 ```{webr}
-faithful
+# head(..., 10) shows the first 10 rows
+head(faithful, 10)
 ```
 
-::: {.callout-tip}
-You'll notice that R gives us a very long list. If we wanted to get just a sneak peak at the first 10 rows, we could have instead used the function: `head(faithful, 10)`.
-:::
-
-Now that we know what the dataset looks like, we see that there are two columns: `eruptions` (time of each eruption in mins) and `waiting` (time to next eruption in mins). Let's extract these variables and use a histogram to help us picture the data.
+Observe that there are two columns: `eruptions` (time of each eruption in mins)
+and `waiting` (time to next eruption in mins). Let's extract these variables
+and use a histogram to help us picture the data.
 
 ```{webr}
 eruption_time = faithful$eruptions
@@ -89,24 +65,18 @@ hist(waiting_time)
 ::: {#exr-grade-data}
 1. Notice that the data doesn't have just one hill but two hills to it. What is
    the name for this shape of data?
-2. Use the `summary` function to get the median and mean of each column. Per the histogram, is there a lot of data near the mean/median or does the data lie elsewhere in the picture?
-
+2. Use the `summary` function and report the median and mean of each column.
 ```{webr}
 summary(faithful)
 ```
+3. Is the amount of data near the respective means/medians high or low?
 
-3. In the code box before this, change `hist` to `boxplot` for both eruption time and waiting time. Do these box plots give an accurate picture of how the data looks and is distributed? (Remember: exactly 50% of the data will be positioned in the box and 25% on each whisker.)
-
-4. For comparison, here are some histograms of the Nottingham Castle temperatures. These have one hill so they're uni\_\_\_?
-
-```{webr}
-df = data.frame(temperatures)
-hist(df$Jan)
-hist(df$Jul)
-```
+4. Go back to the histograms and change `hist` to `boxplot` for both eruption
+   time and waiting time. Do these box plots do a good job of conveying the
+shape of the data?
 :::
 
-## Scatter Plots
+### Scatter Plots
 
 One question you could ask when seeing the Faithful histograms is whether
 longer waiting times lead to longer eruption times. In order to visualize
@@ -125,9 +95,59 @@ abline(lm(eruptions ~ waiting, data=faithful))
 1. Per the scatter plot, are points which have a lower waiting time (further to
    the left) associated with a higher or lower eruption time (up/down)?
 2. If the waiting time to the latest eruption is 80 minutes, about how long
-   does the trend line predict the eruption time will be?
+   does the trend line predict the eruption time will be? (roughly)
 :::
 
 ::: {.callout-note}
 We will discuss scatter plots in more detail later in the course.
+:::
+
+## Box plots
+
+The `nottem` data set records the monthly average air temperatures at
+Nottingham Castle from 1920 to 1939. Which for this exercise we will call just
+"the monthly temperature."
+
+```{webr}
+nottem
+```
+
+Next, we will use box and whisker plots to compare the median temperatures per
+month. If we just called `boxplot(nottem)` right now, it would do a single
+boxplot of the entire data set.
+
+(This is where LLMs can be helpful in telling us how what functions can help
+separate the data by month.)
+
+```{webr}
+#| fig-width: 8
+#| fig-height: 8
+# this groups the data into a month by month grid
+temperatures = matrix(nottem, ncol=12, byrow=TRUE)
+
+# this labels the columns with the abbreviated month name
+colnames(temperatures) = month.abb
+
+# label axis style = 2 (sideways)
+boxplot(temperatures, las=2)
+```
+
+::: {#exr-read-boxplot}
+1. In which month is the highest monthly temperature observed?
+2. Reading the plot, what are the top 5 months in order sorted by the
+   **median** of their monthly temperatures? Note: the median is the thick line
+in the middle of the box.
+3. It's a bit hard to compare January and December at the moment, change the
+   last line to read `boxplot(temperatures[,c("Jan", "Dec")])` and then state
+    a) which of these two months has the higher **median** monthly temperature and
+    b) which has the lowest **overall** monthly temperature.
+
+Now let's look at the numbers.
+
+```{webr}
+summary(temperatures)
+```
+
+3. Between January and December, which has the greater **mean** monthly temperature?
+4. For this particular data, would you say the means are generally close to or far from the medians?
 :::
