@@ -9,9 +9,11 @@ hand.
 ::: {#exr-dice-activity}
 1. Draw a 6 by 6 grid and label the rows and columns with the numbers 1 to 6.
    There should be enough room in each cell to maintain a tally.
-2. Roll a pair of dice 30 times. Decide which of the two dice will represent the row and which will represent the column. Tally the rolls in the table. For example, if you roll a 3 and a 5, make a tally in row 3, column 5.
+2. Roll a pair of dice 30 times. Decide which of the two dice will represent
+   the row and which will represent the column. Tally the rolls in the table.
+For example, if you roll a 3 and a 5, make a tally in row 3, column 5.
 3. Draw a border around the part of the table representing the event: both dice
-   are 4, 5 or 6.
+   have high values (4, 5 or 6).
 **Give your answers as percentages with one place after the decimal:**
     a) What is the relative frequency for this event (number of occurrences out
 of number of trials)?
@@ -21,11 +23,12 @@ of total number of cells)?
    one die was a 6. What is the relative frequency for this event?
     a) What is the relative frequency for this event?
     b) What is the theoretical probability for this event?
-5. Let $A$ be the event "both dice are 4s, 5s or 6s" and let $B$ be the event
-   "at least one die is a 6."
-    a) Find the theoretical probability of $P(A \text{ and } B)$ i.e. both dice
-are 4, 5, 6 and at least one is a 6.
-    b) Do we have $P(A \text{ and } B) \overset{?}= P(A)P(B)$ (using the theoretical probabilities computed in 3. and 4.)?
+5. Let $A$ be the event "both dice are high values (4, 5 or 6)" and let $B$ be
+   the event "at least one die is a 6."
+    a) Find the theoretical probability of $P(A \text{ and } B)$ i.e. count the
+cells common to both sets you drew borders around. 
+    b) Do we have $P(A \text{ and } B) \overset{?}= P(A)P(B)$ (using the
+theoretical probabilities computed in 3. and 4.)?
     c) Does this mean $A$ and $B$ are independent or dependent events?
 :::
 
@@ -39,7 +42,8 @@ sample(1:6, 6)
 ```
 
 ::: {#exr-sampling}
-Run this a few times until you can confidently answer: is this sampling *with* or *without* replacement.
+Run this a few times until you can confidently answer: is this sampling *with*
+or *without* replacement.
 :::
 
 ::: {.callout-tip}
@@ -92,7 +96,8 @@ One way to do this is to:
 
 1. generate random numbers between 1 and 36
 2. tally them with the `table` function
-    * Note: we also use the `factor(..., 1:36)` function to ensure that our table also reports any events that occurred 0 times.
+    * Note: we also use the `factor(..., 1:36)` function to ensure that our
+    table also reports any events that occurred 0 times.
 3. turn that table into a 6 by 6 grid using the `matrix` function
 
 ```{webr}
@@ -124,16 +129,18 @@ and since $10000/36 \approx 277.8$, we expect the numbers to be around 278.
    of each of the events from @exr-dice-activity:
     a) the event where both dice are 4s, 5s or 6s
     b) the event where at least one die is a 6
-4. Are your `n = 10000` relative frequencies closer to the theoretical probabilities compared to the by-hand frequencies?
+4. Are your `n = 10000` relative frequencies closer to the theoretical
+   probabilities compared to the by-hand frequencies?
 :::
 
 ## Discussion (mutually exclusive/independent)
 
 Recall:
 
-1. Events are **mutually exclusive** if they cannot happen at the same time. I.e. $P(A \text{ and } B) = 0$.
-2. Events are **independent** if the first event does not affect the second (e.g.
-   Separate dice rolls). I.e. $P(A \text{ and } B) = P(A) P(B)$.
+1. Events are **mutually exclusive** if they cannot happen at the same time.
+   I.e. $P(A \text{ and } B) = 0$.
+2. Events are **independent** if the first event does not affect the second
+   (e.g. Separate dice rolls). I.e. $P(A \text{ and } B) = P(A) P(B)$.
 
 Let's have a look at a sample experiment:
 
@@ -150,14 +157,20 @@ matrix(tally, 6, 6)
 ::: {#exr-discussion}
 1. Let $A$ be the event "the row is 1" and let $B$ be the event "the column is
    1."
-    a) Compute $P(A), P(B), P(A \text{ and } B$ as *relative frequencies* (note: the denominator is $n = 30$ here.
-    b) Are these events *empirically independent*? Meaning do the relative frequencies satisfy the law $P(A \text{ and } B) = P(A)P(B)$?
+    a) Compute $P(A), P(B), P(A \text{ and } B$ as *relative frequencies*
+(note: the denominator is $n = 30$ here.
+    b) Are these events *empirically independent*? Meaning do the relative
+frequencies satisfy the law $P(A \text{ and } B) = P(A)P(B)$?
     c) Are these events *theoretically independent*? Meaning whether the first
 die is a 1, does that have any influence on whether the second die is a 1?
 2. If events $A$ and $B$ are both mutually exclusive and independent, explain
-why either $P(A) = 0$ or $P(B) = 0$ (or both). Hint: look at what these say about $P(A \text{ and } B)$.
+why either $P(A) = 0$ or $P(B) = 0$ (or both). Hint: look at what these say
+about $P(A \text{ and } B)$.
 :::
 
 ::: {.callout-tip}
-The takeaway from the last exercise is that the terms "mutually exclusive" and "independent" are generally *mutually exclusive* themselves. Meaning generally if $A$ and $B$ are mutually exclusive then they are not independent and vice versa. The only way they can be both is if either $P(A) = 0$ or $P(B) = 0$.
+The takeaway from the last exercise is that the terms "mutually exclusive" and
+"independent" are generally *mutually exclusive* themselves. Meaning generally
+if $A$ and $B$ are mutually exclusive then they are not independent and vice
+versa. The only way they can be both is if either $P(A) = 0$ or $P(B) = 0$.
 :::
