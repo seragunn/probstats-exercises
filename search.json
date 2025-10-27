@@ -230,179 +230,212 @@
     ]
   },
   {
-    "objectID": "project-4/binomial.html",
-    "href": "project-4/binomial.html",
-    "title": "4  Activity 4",
+    "objectID": "project-4/distributions.html",
+    "href": "project-4/distributions.html",
+    "title": "4  Distributions in R and Desmos",
     "section": "",
-    "text": "4.1 Cumulative probabilities\nThe Binomial Distribution is a model of doing something random several times. For example, rolling multiple dice or flipping multiple coins.\nIf \\(X\\) represents the number of successes in \\(n\\) random experiments with a probability of success of \\(p\\) and probability of failure \\(q = 1 - p\\) then \\[\nP(X = k) = nCk \\cdot p^k q^{n - k}, \\quad \\text{Where } nCk = \\frac{n!}{k!(n - k)!}.\n\\tag{4.1}\\]\nFor example, if \\(X\\) is the number of \\(6\\)s rolled among \\(10\\) dice then \\(p =\n\\frac16\\) is the probability of getting a \\(6\\) and \\(q = 1 - \\frac16 = \\frac56\\) is the probability of not getting a \\(6\\). So \\[\nP(X = k) = P(\\text{rolling } k \\text{ sixes}) = 10Ck \\cdot \\left( \\frac16 \\right)^k \\left( \\frac56 \\right)^{10-k}.\n\\]\nIn R, we calculate these probabilities with the dbinom function. E.g. for \\(n = 10, p = \\frac16, k = 3\\):\nIf we change dbinom to pbinom, we get not the probability of \\(k\\) successes but the probability of \\(\\le k\\) successes.\nE.g. the probability of rolling \\(0, 1\\) or \\(2\\) ones among \\(5\\) dice rolls is\nIn math notation: \\[\nP(X \\le 2) = P(X = 0, 1 \\text{ or } 2) = P(X = 0) + P(X = 1) + P(X = 2)\n\\]",
+    "text": "4.1 Desmos\nThe general operations we want to perform with distributions are\nThe main distributions we will use are the binomial and normal distribution.\nTo define a binomial distribution in Desmos, we can either use the + menu &gt; inference &gt; probability distribution. Or we can type out “binomialdist(n, p)” with our values for \\(n\\) and \\(p\\).",
     "crumbs": [
       "The Binomial Distrubution",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Activity 4</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Distributions in R and Desmos</span>"
+    ]
+  },
+  {
+    "objectID": "project-4/distributions.html#desmos",
+    "href": "project-4/distributions.html#desmos",
+    "title": "4  Distributions in R and Desmos",
+    "section": "",
+    "text": "The Plus Menu in Desmos\n\n\n\n\n\n\n\n\nTip\n\n\n\nTo make it possible to refer to the distribution later, I like to write “d = binomialdist(n, p)”. Then we can write things like “mean(d)” for the mean/expected value of the distribution.\n\n\n\n4.1.1 Specific values in Desmos\nWe have two options.\n\nWe can use the \\(d.\\operatorname{pdf}(x)\\) function.\nWe can use the Cumulative Probability menu to compute \\(P(x \\le X \\le x)\\).\n\nE.g. for \\(x = 3\\):\n\n\n\nComputing \\(P(X = 3)\\) in Desmos\n\n\n\n\n4.1.2 Interval probabilities in Desmos\nWe can use the Cumulative Probability menu to compute various probabilities:\n\n\\(P(a \\le X \\le b)\\): Inner\n\\(P(X \\le a)\\) or \\(P(X \\ge b)\\): Outer\n\\(P(X \\le a)\\): Left\n\\(P(X \\ge b)\\): Right\n\n\n\n4.1.3 Random numbers in Desmos\nHaving defined “d = binomialdist(n, p)” we can generate random numbers with this distribution using “random(d)” or if we want multiple, we can add a number like “random(d, 5).”\n\n\n\nRandom numbers in Desmos\n\n\n\n\n4.1.4 Practice\n\nUse Desmos to compute the probability of getting \\(5\\) questions right in a quiz with \\(7\\) questions and a probability of success \\(p = 0.85\\).\n\n\n\n\n\n  \n    \n      \n\n    \n    \n\n    \n\n\n         \n    \n    \n    \n\n\n\n\n\n\n\nWith \\(X \\sim \\operatorname{Bin}(10, 0.7)\\) compute The probability of getting between \\(2\\) and \\(8\\) successes: \\(P(2 \\le X \\le 8)\\)\n\n\n\n\n\n  \n    \n      \n\n    \n    \n\n    \n\n\n         \n    \n    \n    \n\n\n\n\n\n\n\nThe probability of getting at least \\(5\\) successes: \\(P(X \\ge 5)\\).\n\n\n\n\n\n  \n    \n      \n\n    \n    \n\n    \n\n\n         \n    \n    \n    \n\n\n\n\n\n\n\nThe probability of getting less than \\(5\\) successes: \\(P(X &lt; 5)\\).\n\n\n\n\n\n  \n    \n      \n\n    \n    \n\n    \n     🎁",
+    "crumbs": [
+      "The Binomial Distrubution",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Distributions in R and Desmos</span>"
+    ]
+  },
+  {
+    "objectID": "project-4/distributions.html#r",
+    "href": "project-4/distributions.html#r",
+    "title": "4  Distributions in R and Desmos",
+    "section": "4.2 R",
+    "text": "4.2 R\nIn R the functions are:\n\ndbinom(x, n, p) for \\(P(X = x \\mid n, p)\\)\npbinom(x, n, p) for \\(P(X \\le x \\mid n, p)\\)\nrbinom(k, n, p) to generate \\(k\\) random numbers\n\n\n4.2.1 Specific values\nE.g. to compute the probability of getting exactly \\(5\\) questions right out of \\(7\\) with \\(p = 0.85\\):\n\n\n\n\n\n\n\n\n4.2.2 Intervals in R\nIn R the function for a left interval is pbinom(x, n, p) for \\(P(X \\le x \\mid n, p)\\). For other intervals, we might need to do some arithmetic. Such as:\n\\[\nP(a \\le X \\le B) = P(X \\le b \\text{ and } X \\not &lt; a) = P(X \\le b) - P(X \\le a - 1)\n\\] The \\(a - 1\\) is because \\(X &lt; a\\) is the same as \\(X \\le a - 1\\).\nE.g. if \\(X \\sim \\operatorname{Bin}(10, 0.7)\\) then\n\n\\(P(2 \\le X \\le 8) = P(X \\le 8) - P(X \\le 1)\\):\n\n\n\n\n\n\n\n\n\\(P(x \\ge 5) = 1 - P(X \\le 4)\\):\n\n\n\n\n\n\n\n\n\\(P(X &lt; 5) = P(X \\le 4)\\):\n\n\n\n\n\n\n\n\n\n4.2.3 Random numbers in R\nE.g. if we want to simulate taking a 10 question multiple choice test (with \\(p = 0.7\\)), 100 times, we can use rbinom(100, 10, 0.7):",
+    "crumbs": [
+      "The Binomial Distrubution",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Distributions in R and Desmos</span>"
+    ]
+  },
+  {
+    "objectID": "project-4/binomial.html",
+    "href": "project-4/binomial.html",
+    "title": "5  Activity 4",
+    "section": "",
+    "text": "5.1 Cumulative probabilities\nThe Binomial Distribution is a model of doing something random several times. For example, rolling multiple dice or flipping multiple coins.\nIf \\(X\\) represents the number of successes in \\(n\\) random experiments with a probability of success of \\(p\\) and probability of failure \\(q = 1 - p\\) then \\[\nP(X = k) = nCk \\cdot p^k q^{n - k}, \\quad \\text{Where } nCk = \\frac{n!}{k!(n - k)!}.\n\\tag{5.1}\\]\nFor example, if \\(X\\) is the number of \\(6\\)s rolled among \\(10\\) dice then \\(p =\n\\frac16\\) is the probability of getting a \\(6\\) and \\(q = 1 - \\frac16 = \\frac56\\) is the probability of not getting a \\(6\\). So \\[\nP(X = k) = P(\\text{rolling } k \\text{ sixes}) = 10Ck \\cdot \\left( \\frac16 \\right)^k \\left( \\frac56 \\right)^{10-k}.\n\\]\nIn R, we calculate these probabilities with the dbinom function. E.g. for \\(n = 10, p = \\frac16, k = 3\\):\nIf we change dbinom to pbinom, we get not the probability of \\(k\\) successes but the probability of \\(\\le k\\) successes.\nE.g. the probability of rolling \\(0, 1\\) or \\(2\\) ones among \\(5\\) dice rolls is\nIn math notation: \\[\nP(X \\le 2) = P(X = 0, 1 \\text{ or } 2) = P(X = 0) + P(X = 1) + P(X = 2)\n\\]",
+    "crumbs": [
+      "The Binomial Distrubution",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 4</span>"
     ]
   },
   {
     "objectID": "project-4/binomial.html#cumulative-probabilities",
     "href": "project-4/binomial.html#cumulative-probabilities",
-    "title": "4  Activity 4",
+    "title": "5  Activity 4",
     "section": "",
-    "text": "Exercise 4.2  \n\nGo back to Exercise 4.1 and now instead of calculating the probability of making exactly \\(3\\) free throws to the probability of making \\(\\le 3\\) free throws (change dbinom to pbinom).\nTo get the probability of making \\(&gt; k\\) free throws rather than \\(\\le k\\) we can add lower.tail=FALSE to the function (lower tail referring to \\(\\le\\)). Compute the probability of making \\(&gt; 4\\) free throws this way.\n\n\n\n\n\n\n\n\nTip\n\n\n\nAlternatively, if you have, say, a \\(35\\%\\) chance of making \\(\\le k\\) throws, then you must have a \\(65\\%\\) chance of making \\(&gt; k\\) throws. These are complementary events. \\[\nP(X &gt; k) = 1 - P(X \\le k).\n\\] In R: that means that 1 - pbinom(k, n, p) is equivalent to pbinom(k, n, p, lower.tail=FALSE).",
+    "text": "Exercise 5.2  \n\nGo back to Exercise 5.1 and now instead of calculating the probability of making exactly \\(3\\) free throws to the probability of making \\(\\le 3\\) free throws (change dbinom to pbinom).\nTo get the probability of making \\(&gt; k\\) free throws rather than \\(\\le k\\) we can add lower.tail=FALSE to the function (lower tail referring to \\(\\le\\)). Compute the probability of making \\(&gt; 4\\) free throws this way.\n\n\n\n\n\n\n\n\nTip\n\n\n\nAlternatively, if you have, say, a \\(35\\%\\) chance of making \\(\\le k\\) throws, then you must have a \\(65\\%\\) chance of making \\(&gt; k\\) throws. These are complementary events. \\[\nP(X &gt; k) = 1 - P(X \\le k).\n\\] In R: that means that 1 - pbinom(k, n, p) is equivalent to pbinom(k, n, p, lower.tail=FALSE).",
     "crumbs": [
       "The Binomial Distrubution",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Activity 4</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 4</span>"
     ]
   },
   {
     "objectID": "project-4/binomial.html#random-number-generation",
     "href": "project-4/binomial.html#random-number-generation",
-    "title": "4  Activity 4",
-    "section": "4.2 Random number generation",
-    "text": "4.2 Random number generation\nWe’ve seen how to calculate probabilities. We can also make simulations. For instance, to simulate this experiment of throwing 5 free throws 100 times, we can use the rbinom function. The output is a list of \\(k\\)’s. E.g. if the output starts 5 4 2 1 ... that means the first simulation had 5 successes, the second 4, the third 2, the fourth 1, etc.\n\n\n\n\n\n\n\nExercise 4.3  \n\nRun this cell and write down the first 10 numbers.\nIn those first 10 experiments, what percent of the time did you land exactly \\(3\\) free throws? Is this relative frequency greater than or smaller than the probability you calculated in Exercise 4.1 Q2?\nNow change the line to table(rbinom(...)) to make the summary table we looked at in Lab 1. Write down that table.\nHow many times out of 100 was the number of successes \\(0, 1, 2\\) or \\(3\\)? Is this relative frequency bigger or smaller than the true probability you calculated in Exercise 4.2 Q1?",
+    "title": "5  Activity 4",
+    "section": "5.2 Random number generation",
+    "text": "5.2 Random number generation\nWe’ve seen how to calculate probabilities. We can also make simulations. For instance, to simulate this experiment of throwing 5 free throws 100 times, we can use the rbinom function. The output is a list of \\(k\\)’s. E.g. if the output starts 5 4 2 1 ... that means the first simulation had 5 successes, the second 4, the third 2, the fourth 1, etc.\n\n\n\n\n\n\n\nExercise 5.3  \n\nRun this cell and write down the first 10 numbers.\nIn those first 10 experiments, what percent of the time did you land exactly \\(3\\) free throws? Is this relative frequency greater than or smaller than the probability you calculated in Exercise 5.1 Q2?\nNow change the line to table(rbinom(...)) to make the summary table we looked at in Lab 1. Write down that table.\nHow many times out of 100 was the number of successes \\(0, 1, 2\\) or \\(3\\)? Is this relative frequency bigger or smaller than the true probability you calculated in Exercise 5.2 Q1?",
     "crumbs": [
       "The Binomial Distrubution",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Activity 4</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 4</span>"
     ]
   },
   {
     "objectID": "project-4/binomial.html#summary",
     "href": "project-4/binomial.html#summary",
-    "title": "4  Activity 4",
-    "section": "4.3 Summary",
-    "text": "4.3 Summary\nFor \\(X\\) representing the number of successes in \\(n\\) experiments with a probability \\(p\\) of success:\n\n\\(P(X = k)\\) is dbinom(k, size=n, prob=p)\n\\(P(X \\le k)\\) is pbinom(k, size=n, prob=p)\n\\(P(X &gt; k)\\) is pbinom(k, size=n, prob=p, lower.tail=FALSE)\nGenerating \\(100\\) sample values for \\(X\\) is rbinom(100, size=n, prob=p)",
+    "title": "5  Activity 4",
+    "section": "5.3 Summary",
+    "text": "5.3 Summary\nFor \\(X\\) representing the number of successes in \\(n\\) experiments with a probability \\(p\\) of success:\n\n\\(P(X = k)\\) is dbinom(k, size=n, prob=p)\n\\(P(X \\le k)\\) is pbinom(k, size=n, prob=p)\n\\(P(X &gt; k)\\) is pbinom(k, size=n, prob=p, lower.tail=FALSE)\nGenerating \\(100\\) sample values for \\(X\\) is rbinom(100, size=n, prob=p)",
     "crumbs": [
       "The Binomial Distrubution",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Activity 4</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 4</span>"
     ]
   },
   {
     "objectID": "project-5/normal.html",
     "href": "project-5/normal.html",
-    "title": "5  Activity 5",
+    "title": "6  Activity 5",
     "section": "",
-    "text": "5.1 Inverse normal calculations\nThe first calculation we’ll do is \\(P(X &lt; x)\\) where \\(X\\) follows a normal distribution. The code for this is pnorm(x, mean=μ, sd=σ) or just pnorm(x, μ, σ) for short.\nLet us also do a couple calculations where we change \\(\\mu\\) and \\(\\sigma\\). Remember: pnorm if it’s the probability of “below \\(x\\)” and 1 - pnorm if “above \\(x\\).”\nAs we just saw, pnorm answers the question “what is the probability of being above or below this threshold?” The inverse of this is “what threshold corresponds to a given probability?” This is what qnorm(p, μ, σ) function does.",
+    "text": "6.1 Inverse normal calculations\nThe first calculation we’ll do is \\(P(X &lt; x)\\) where \\(X\\) follows a normal distribution. The code for this is pnorm(x, mean=μ, sd=σ) or just pnorm(x, μ, σ) for short.\nLet us also do a couple calculations where we change \\(\\mu\\) and \\(\\sigma\\). Remember: pnorm if it’s the probability of “below \\(x\\)” and 1 - pnorm if “above \\(x\\).”\nAs we just saw, pnorm answers the question “what is the probability of being above or below this threshold?” The inverse of this is “what threshold corresponds to a given probability?” This is what qnorm(p, μ, σ) function does.",
     "crumbs": [
       "The Normal Distribution",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 5</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 5</span>"
     ]
   },
   {
     "objectID": "project-5/normal.html#inverse-normal-calculations",
     "href": "project-5/normal.html#inverse-normal-calculations",
-    "title": "5  Activity 5",
+    "title": "6  Activity 5",
     "section": "",
-    "text": "Tip\n\n\n\n\\(p\\) is always the proportion which are below the threshold. If you want the threshold for “this percent above”, first compute \\(1 - p\\) to get the proportion which is below. Alternatively, one can use the lower.tail=FALSE parameter.\n\n\n\n\n\n\n\n\n\nExercise 5.3  \n\nFor the IQ test with \\(\\mu = 100, \\sigma = 15\\), what is the IQ score for which \\(98\\%\\) of people are below? This is qnorm(0.98, 100, 15).\nWhat is the IQ score for which \\(90\\%\\) of people are above? (First: if \\(90\\%\\) are above, what percent are below?)\nFor an exam with a mean of \\(71\\) and standard deviation of \\(6.5\\). What is the approximate \\(25\\)-th and \\(75\\)-th percentile for that exam? I.e. what exam score has \\(25\\%\\) of people below it and which has \\(75\\%\\) below it?\nFor the group of patients with a systolic pressure mean of \\(127\\) and standard deviation of \\(4.6\\), what is the threshold for which only \\(5\\%\\) are below and what is the threshold for which only \\(5\\%\\) are above? (Again, \\(5\\%\\) above means \\(??\\%\\) below?)",
+    "text": "Tip\n\n\n\n\\(p\\) is always the proportion which are below the threshold. If you want the threshold for “this percent above”, first compute \\(1 - p\\) to get the proportion which is below. Alternatively, one can use the lower.tail=FALSE parameter.\n\n\n\n\n\n\n\n\n\nExercise 6.3  \n\nFor the IQ test with \\(\\mu = 100, \\sigma = 15\\), what is the IQ score for which \\(98\\%\\) of people are below? This is qnorm(0.98, 100, 15).\nWhat is the IQ score for which \\(90\\%\\) of people are above? (First: if \\(90\\%\\) are above, what percent are below?)\nFor an exam with a mean of \\(71\\) and standard deviation of \\(6.5\\). What is the approximate \\(25\\)-th and \\(75\\)-th percentile for that exam? I.e. what exam score has \\(25\\%\\) of people below it and which has \\(75\\%\\) below it?\nFor the group of patients with a systolic pressure mean of \\(127\\) and standard deviation of \\(4.6\\), what is the threshold for which only \\(5\\%\\) are below and what is the threshold for which only \\(5\\%\\) are above? (Again, \\(5\\%\\) above means \\(??\\%\\) below?)",
     "crumbs": [
       "The Normal Distribution",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 5</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 5</span>"
     ]
   },
   {
     "objectID": "project-5/normal.html#binomial-distributions",
     "href": "project-5/normal.html#binomial-distributions",
-    "title": "5  Activity 5",
-    "section": "5.2 Binomial distributions",
-    "text": "5.2 Binomial distributions\nRecall the mean and standard deviation of a binomial distribution \\(X \\sim \\operatorname{Bin}(n, p)\\) are\n\\[\n\\mu = np, \\quad \\sigma = \\sqrt{npq} = \\sqrt{np(1 - p)}.\n\\]\n\nExercise 5.4 Suppose you flip \\(100\\) coins. What is the probability of getting between \\(40\\) and \\(60\\) heads?\n\nUsing a normal distribution approximation, we first compute \\(\\mu, \\sigma\\). Then we use the formula \\(P(40 &lt; X &lt; 60) = P(X &lt; 60) - P(X &lt; 40)\\). Run the following cell and report the result.\n\n\n\n\n\n\n\n\nNow suppose we flip \\(10000\\) coins and ask for \\(P(4950 &lt; X &lt; 5050)\\). In the previous code cell, change \\(n\\) to \\(10000\\) and change the \\(60\\) and \\(40\\) to \\(5050, 4950\\) and report the result.\nWe can also use the pbinom function directly. To how many decimal places does this agree with your answer to Q1?\n\n\n\n\n\n\n\n\nAgain, change the \\(100\\)’s to \\(10000\\)’s and change \\(60\\) to \\(5050\\) and \\(40\\) to \\(4950\\). To how many decimal places does this agree with Q2?\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn general, expect the normal approximation to be more accurate the larger \\(n\\) is.\n\n\n\nExercise 5.5 A multiple choice test has \\(n = 100\\) questions. Between the questions you know and random guessing, you have a \\(p = 0.8\\) chance of answering a question correctly.\n\nCompute \\(\\mu = np\\) and \\(\\sigma = \\sqrt{np(1-p)}\\).\nUse those values of \\(\\mu\\) and \\(\\sigma\\) and a normal approximation, to compute the probability that you score \\(85\\) or above.\n\n\n\n\n\n\n\n\nTo compute that with pbinom note that “\\(85\\) and above” is opposite of “\\(84\\) and below.” So you would use 1 - pbinom(84, n, p). Run the following and compare with the previous value.\n\n\n\n\n\n\n\n\nLastly, we’ll look at using the qnorm function and qbinom functions.\n\nExercise 5.6 With the same setup: \\(n = 100, p = 0.8\\) and your values for \\(\\mu\\) and \\(\\sigma\\) from before.\n\nUse qnorm to compute the threshold for the maximum score you can expect to receive \\(95\\%\\) of the time. I.e. the threshold \\(x\\) such that your score is \\(&lt; x\\) \\(95\\%\\) of the time.\n\n\n\n\n\n\n\n\nDo the same for qbinom and note that qbinom takes \\(n=100\\) and \\(p=0.8\\) directly rather than the values you’ve computed for \\(\\mu\\) and \\(\\sigma\\).",
+    "title": "6  Activity 5",
+    "section": "6.2 Binomial distributions",
+    "text": "6.2 Binomial distributions\nRecall the mean and standard deviation of a binomial distribution \\(X \\sim \\operatorname{Bin}(n, p)\\) are\n\\[\n\\mu = np, \\quad \\sigma = \\sqrt{npq} = \\sqrt{np(1 - p)}.\n\\]\n\nExercise 6.4 Suppose you flip \\(100\\) coins. What is the probability of getting between \\(40\\) and \\(60\\) heads?\n\nUsing a normal distribution approximation, we first compute \\(\\mu, \\sigma\\). Then we use the formula \\(P(40 &lt; X &lt; 60) = P(X &lt; 60) - P(X &lt; 40)\\). Run the following cell and report the result.\n\n\n\n\n\n\n\n\nNow suppose we flip \\(10000\\) coins and ask for \\(P(4950 &lt; X &lt; 5050)\\). In the previous code cell, change \\(n\\) to \\(10000\\) and change the \\(60\\) and \\(40\\) to \\(5050, 4950\\) and report the result.\nWe can also use the pbinom function directly. To how many decimal places does this agree with your answer to Q1?\n\n\n\n\n\n\n\n\nAgain, change the \\(100\\)’s to \\(10000\\)’s and change \\(60\\) to \\(5050\\) and \\(40\\) to \\(4950\\). To how many decimal places does this agree with Q2?\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn general, expect the normal approximation to be more accurate the larger \\(n\\) is.\n\n\n\nExercise 6.5 A multiple choice test has \\(n = 100\\) questions. Between the questions you know and random guessing, you have a \\(p = 0.8\\) chance of answering a question correctly.\n\nCompute \\(\\mu = np\\) and \\(\\sigma = \\sqrt{np(1-p)}\\).\nUse those values of \\(\\mu\\) and \\(\\sigma\\) and a normal approximation, to compute the probability that you score \\(85\\) or above.\n\n\n\n\n\n\n\n\nTo compute that with pbinom note that “\\(85\\) and above” is opposite of “\\(84\\) and below.” So you would use 1 - pbinom(84, n, p). Run the following and compare with the previous value.\n\n\n\n\n\n\n\n\nLastly, we’ll look at using the qnorm function and qbinom functions.\n\nExercise 6.6 With the same setup: \\(n = 100, p = 0.8\\) and your values for \\(\\mu\\) and \\(\\sigma\\) from before.\n\nUse qnorm to compute the threshold for the maximum score you can expect to receive \\(95\\%\\) of the time. I.e. the threshold \\(x\\) such that your score is \\(&lt; x\\) \\(95\\%\\) of the time.\n\n\n\n\n\n\n\n\nDo the same for qbinom and note that qbinom takes \\(n=100\\) and \\(p=0.8\\) directly rather than the values you’ve computed for \\(\\mu\\) and \\(\\sigma\\).",
     "crumbs": [
       "The Normal Distribution",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 5</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 5</span>"
     ]
   },
   {
     "objectID": "project-6/ci.html",
     "href": "project-6/ci.html",
-    "title": "6  Activity 6",
+    "title": "7  Activity 6",
     "section": "",
-    "text": "6.1 Using the likelihood function to estimate \\(p\\)\nA bag contains \\(10\\) balls, some black and some white. You experiment to find the number of black and white balls by sampling from the bag with replacement. The following function outputs a 0 if the ball was white and 1 if the ball was black. We do this 10 times.\nOpen this Desmos graph in a new tab (right-click → open in new tab).",
+    "text": "7.1 Using the likelihood function to estimate \\(p\\)\nA bag contains \\(10\\) balls, some black and some white. You experiment to find the number of black and white balls by sampling from the bag with replacement. The following function outputs a 0 if the ball was white and 1 if the ball was black. We do this 10 times.\nOpen this Desmos graph in a new tab (right-click → open in new tab).",
     "crumbs": [
       "Confidence Intervals",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 6</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 6</span>"
     ]
   },
   {
     "objectID": "project-6/ci.html#using-the-likelihood-function-to-estimate-p",
     "href": "project-6/ci.html#using-the-likelihood-function-to-estimate-p",
-    "title": "6  Activity 6",
+    "title": "7  Activity 6",
     "section": "",
-    "text": "Note\n\n\n\nA likelihood function is just a probability calculation as a function of some parameter. E.g. the probability of drawing \\(5\\) black balls out of \\(10\\) is higher (more likely) when \\(p = 0.5\\) than it is when \\(p = 0.05\\).\n\n\n\n\nExercise 6.2 Complete the following steps than write down your numbers for \\(u\\) and \\(v\\):\n\nAt the top, let \\(b =\\) the number of 1s you observed in the previous experiment.\nStarting with \\(u = 0\\) and \\(v = 1\\), slowly drag \\(u\\) to the right until \\(A\\), which represents the area under the curve, is as close to 0.975 (97.5%) as you can make it. \nNow move \\(v\\) to the left until \\(A\\) is as close to 0.95 (95%) as you can make it. \nReport \\(u\\) and \\(v\\).\n\n\n\n\n\n\n\n\nNote\n\n\n\nContext: moving \\(u\\) until \\(A\\) was \\(\\approx 97.5\\%\\) means there was a \\(2.5\\%\\) chance of being less than \\(u\\) and likewise a \\(2.5\\%\\) change of being bigger than \\(v\\). So overall there is a \\(5\\%\\) chance of not being between \\(u\\) and \\(v\\) and a \\(95\\%\\) chance of being between \\(u\\) and \\(v\\).\n\n\n\nExercise 6.3 The qbeta function performs what we just did in Desmos. Specifically, we run\n\n\n\n\n\n\nto find \\(u\\) and \\(v\\) respectively. (The \\(+1\\) is due to some \\(-1\\)s that appear in the beta distribution behind the scenes.)\n\nChange the \\(8\\) and \\(2\\) to your number of 1s (black balls) and 0s (white balls) respectively. Then report the exact values of \\(u\\) and \\(v\\).\nRewrite this with your values of \\(u\\) and \\(v\\): “a 95% CI for p is \\((u, v)\\).”\nYou will notice that this confidence interval is quite wide because with only \\(10\\) samples it’s hard to pinpoint the true proportion of black balls. Let’s change \\(n\\) to \\(1000\\) and try again:\n\n\n\n\n\n\n\nTake these numbers back to the qbeta box to compute a new \\(u\\) and \\(v\\) and report a new confidence interval (as in 2.).\n\n\n\n\n\n\n\nNote\n\n\n\nTechnically these qbeta-intervals are “credible intervals” not “confidence intervals” but they function the same.",
+    "text": "Note\n\n\n\nA likelihood function is just a probability calculation as a function of some parameter. E.g. the probability of drawing \\(5\\) black balls out of \\(10\\) is higher (more likely) when \\(p = 0.5\\) than it is when \\(p = 0.05\\).\n\n\n\n\nExercise 7.2 Complete the following steps than write down your numbers for \\(u\\) and \\(v\\):\n\nAt the top, let \\(b =\\) the number of 1s you observed in the previous experiment.\nStarting with \\(u = 0\\) and \\(v = 1\\), slowly drag \\(u\\) to the right until \\(A\\), which represents the area under the curve, is as close to 0.975 (97.5%) as you can make it. \nNow move \\(v\\) to the left until \\(A\\) is as close to 0.95 (95%) as you can make it. \nReport \\(u\\) and \\(v\\).\n\n\n\n\n\n\n\n\nNote\n\n\n\nContext: moving \\(u\\) until \\(A\\) was \\(\\approx 97.5\\%\\) means there was a \\(2.5\\%\\) chance of being less than \\(u\\) and likewise a \\(2.5\\%\\) change of being bigger than \\(v\\). So overall there is a \\(5\\%\\) chance of not being between \\(u\\) and \\(v\\) and a \\(95\\%\\) chance of being between \\(u\\) and \\(v\\).\n\n\n\nExercise 7.3 The qbeta function performs what we just did in Desmos. Specifically, we run\n\n\n\n\n\n\nto find \\(u\\) and \\(v\\) respectively. (The \\(+1\\) is due to some \\(-1\\)s that appear in the beta distribution behind the scenes.)\n\nChange the \\(8\\) and \\(2\\) to your number of 1s (black balls) and 0s (white balls) respectively. Then report the exact values of \\(u\\) and \\(v\\).\nRewrite this with your values of \\(u\\) and \\(v\\): “a 95% CI for p is \\((u, v)\\).”\nYou will notice that this confidence interval is quite wide because with only \\(10\\) samples it’s hard to pinpoint the true proportion of black balls. Let’s change \\(n\\) to \\(1000\\) and try again:\n\n\n\n\n\n\n\nTake these numbers back to the qbeta box to compute a new \\(u\\) and \\(v\\) and report a new confidence interval (as in 2.).\n\n\n\n\n\n\n\nNote\n\n\n\nTechnically these qbeta-intervals are “credible intervals” not “confidence intervals” but they function the same.",
     "crumbs": [
       "Confidence Intervals",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 6</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 6</span>"
     ]
   },
   {
     "objectID": "project-6/ci.html#using-the-normal-approximation",
     "href": "project-6/ci.html#using-the-normal-approximation",
-    "title": "6  Activity 6",
-    "section": "6.2 Using the Normal approximation",
-    "text": "6.2 Using the Normal approximation\nRecall our formula for the normal approximation confidence interval is \\[\n\\hat p \\pm 1.96 \\sqrt{\\frac{\\hat p \\hat q}{n}}\n\\] or more generally, use qnorm(1 - alpha / 2) instead of 1.96.\n\nExercise 6.4  \n\nWith the numbers for \\(n = 1000\\) what are \\(\\hat p\\) and \\(\\hat q\\)? Hint: if we saw \\(413\\) black balls, then \\(\\hat p = 413/1000 = 0.413\\) (move the decimal place over). \\(\\hat q\\) is the same but for the white balls.\nCompute \\(E = 1.96 \\sqrt{\\hat p \\hat q / n}\\):\n\n\n\n\n\n\n\n(modify the \\(.413\\) and \\(.587\\) as necessary). 3. Compute \\(\\hat p - E\\) and \\(\\hat p + E\\):\n\n\n\n\n\n\n\nAre these numbers similar to your \\(u\\) and \\(v\\) from the previous exercise?\n\n\n\nExercise 6.5 Now run through the steps of the previous exercise but with the numbers for \\(n = 10\\) from Exercise 6.1. (Remember to change the /1000 to /10 in part 2.) Are these numbers similar to the first set of \\(u\\) and \\(v\\) we found?",
+    "title": "7  Activity 6",
+    "section": "7.2 Using the Normal approximation",
+    "text": "7.2 Using the Normal approximation\nRecall our formula for the normal approximation confidence interval is \\[\n\\hat p \\pm 1.96 \\sqrt{\\frac{\\hat p \\hat q}{n}}\n\\] or more generally, use qnorm(1 - alpha / 2) instead of 1.96.\n\nExercise 7.4  \n\nWith the numbers for \\(n = 1000\\) what are \\(\\hat p\\) and \\(\\hat q\\)? Hint: if we saw \\(413\\) black balls, then \\(\\hat p = 413/1000 = 0.413\\) (move the decimal place over). \\(\\hat q\\) is the same but for the white balls.\nCompute \\(E = 1.96 \\sqrt{\\hat p \\hat q / n}\\):\n\n\n\n\n\n\n\n(modify the \\(.413\\) and \\(.587\\) as necessary). 3. Compute \\(\\hat p - E\\) and \\(\\hat p + E\\):\n\n\n\n\n\n\n\nAre these numbers similar to your \\(u\\) and \\(v\\) from the previous exercise?\n\n\n\nExercise 7.5 Now run through the steps of the previous exercise but with the numbers for \\(n = 10\\) from Exercise 7.1. (Remember to change the /1000 to /10 in part 2.) Are these numbers similar to the first set of \\(u\\) and \\(v\\) we found?",
     "crumbs": [
       "Confidence Intervals",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 6</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 6</span>"
     ]
   },
   {
     "objectID": "project-6/ci.html#miscellanea",
     "href": "project-6/ci.html#miscellanea",
-    "title": "6  Activity 6",
-    "section": "6.3 Miscellanea",
-    "text": "6.3 Miscellanea\nUsing the formula \\(n = \\frac{1.96^2 \\cdot 0.25}{E^2}\\) (which we use if \\(\\hat p\\) is unknown) we can estimate how many samples we need to achieve a desired error.\n\nExercise 6.6  \n\nSuppose we want to be really really sure of \\(p\\) and we want the error to be no more than \\(0.001\\) (e.g. our confidence interval would be \\(0.399\\) to \\(0.401\\)). Compute this \\(n\\) (either by typing in the formula or using your own calculator)\n\n\n\n\n\n\n\n\nNow let’s use this for a qbeta confidence interval:\n\n\n\n\n\n\n\n\nThis has all assumed we wanted to be 95% confident. Suppose instead we want to be 99% confident.\n\nWhat is \\(\\alpha = 1 - 0.99\\)?\nWhat is \\(\\alpha / 2\\)?\nWhat is \\(1 - \\alpha / 2\\)?\n\nTake your value of \\(1 - \\alpha / 2\\) and compute qnorm(1 - alpha / 2)\n\n\n\n\n\n\n\n\nReplace the \\(1.96\\) with this value when we were computing the normal approximation confidence interval:\n\n\n\n\n\n\n\n\nCompared to the confidence interval from Exercise 6.4, is this 99% confidence interval wider or narrower* than the 95% confidence interval?",
+    "title": "7  Activity 6",
+    "section": "7.3 Miscellanea",
+    "text": "7.3 Miscellanea\nUsing the formula \\(n = \\frac{1.96^2 \\cdot 0.25}{E^2}\\) (which we use if \\(\\hat p\\) is unknown) we can estimate how many samples we need to achieve a desired error.\n\nExercise 7.6  \n\nSuppose we want to be really really sure of \\(p\\) and we want the error to be no more than \\(0.001\\) (e.g. our confidence interval would be \\(0.399\\) to \\(0.401\\)). Compute this \\(n\\) (either by typing in the formula or using your own calculator)\n\n\n\n\n\n\n\n\nNow let’s use this for a qbeta confidence interval:\n\n\n\n\n\n\n\n\nThis has all assumed we wanted to be 95% confident. Suppose instead we want to be 99% confident.\n\nWhat is \\(\\alpha = 1 - 0.99\\)?\nWhat is \\(\\alpha / 2\\)?\nWhat is \\(1 - \\alpha / 2\\)?\n\nTake your value of \\(1 - \\alpha / 2\\) and compute qnorm(1 - alpha / 2)\n\n\n\n\n\n\n\n\nReplace the \\(1.96\\) with this value when we were computing the normal approximation confidence interval:\n\n\n\n\n\n\n\n\nCompared to the confidence interval from Exercise 7.4, is this 99% confidence interval wider or narrower* than the 95% confidence interval?",
     "crumbs": [
       "Confidence Intervals",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 6</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 6</span>"
     ]
   },
   {
     "objectID": "project-6/ci.html#t-distribution",
     "href": "project-6/ci.html#t-distribution",
-    "title": "6  Activity 6",
-    "section": "6.4 t-distribution",
-    "text": "6.4 t-distribution\nFor the following scenarios, compute\n\n\\(1 - \\alpha/2\\)\nqt(1 - \\alpha / 2, df = n - 1) (as an analogue of the 1.96 threshold)\n\\(E = \\text{quantile-for-t} \\cdot \\frac{s}{\\sqrt n}\\).\n\n\n\n\n\n\n\nTip\n\n\n\nReminder: quantiles are percentiles but for a decimal rather than a percent and the “t distribution” is like the normal distribution but with slightly larger percentiles due to the extra uncertainty in using \\(s\\) rather than \\(\\sigma\\).\n\n\nReport something like \\(95\\%\\text{-CI for } \\mu = \\bar x \\pm E = 41 \\pm 3\\)\n\nExample 6.1 Suppose scores for an exam have a mean of \\(75\\) and sample standard deviation of \\(6\\) with \\(n = 30\\). For a 95% confidence interval for \\(\\mu\\) (\\(\\alpha = 0.05\\)):\n\n\\(1 - 0.05 / 2 = 0.975\\)\nqt(0.975, df=29) = 2.04523\n\\(E = 2.04523 \\cdot 6 / \\sqrt{30} = 2.240437\\)\n\nA 95% CI for \\(\\mu\\) is \\(75 \\pm 2.24\\) or \\((72.76, 77.24)\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 6.7  \n\n\\(\\bar x = 70, s = 10, n = 49\\) and we want a \\(99\\%\\) confidence interval (\\(\\alpha = 0.01\\))\n\\(\\bar x = 125, s = 12, n = 217\\) and we want a \\(90\\%\\) confidence interval (\\(\\alpha = 0.1\\))\n\\(\\bar x = 60, s = 8, n = 5103\\) and we want a \\(96\\%\\) confidence interval (\\(\\alpha = 0.04\\))",
+    "title": "7  Activity 6",
+    "section": "7.4 t-distribution",
+    "text": "7.4 t-distribution\nFor the following scenarios, compute\n\n\\(1 - \\alpha/2\\)\nqt(1 - \\alpha / 2, df = n - 1) (as an analogue of the 1.96 threshold)\n\\(E = \\text{quantile-for-t} \\cdot \\frac{s}{\\sqrt n}\\).\n\n\n\n\n\n\n\nTip\n\n\n\nReminder: quantiles are percentiles but for a decimal rather than a percent and the “t distribution” is like the normal distribution but with slightly larger percentiles due to the extra uncertainty in using \\(s\\) rather than \\(\\sigma\\).\n\n\nReport something like \\(95\\%\\text{-CI for } \\mu = \\bar x \\pm E = 41 \\pm 3\\)\n\nExample 7.1 Suppose scores for an exam have a mean of \\(75\\) and sample standard deviation of \\(6\\) with \\(n = 30\\). For a 95% confidence interval for \\(\\mu\\) (\\(\\alpha = 0.05\\)):\n\n\\(1 - 0.05 / 2 = 0.975\\)\nqt(0.975, df=29) = 2.04523\n\\(E = 2.04523 \\cdot 6 / \\sqrt{30} = 2.240437\\)\n\nA 95% CI for \\(\\mu\\) is \\(75 \\pm 2.24\\) or \\((72.76, 77.24)\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 7.7  \n\n\\(\\bar x = 70, s = 10, n = 49\\) and we want a \\(99\\%\\) confidence interval (\\(\\alpha = 0.01\\))\n\\(\\bar x = 125, s = 12, n = 217\\) and we want a \\(90\\%\\) confidence interval (\\(\\alpha = 0.1\\))\n\\(\\bar x = 60, s = 8, n = 5103\\) and we want a \\(96\\%\\) confidence interval (\\(\\alpha = 0.04\\))",
     "crumbs": [
       "Confidence Intervals",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Activity 6</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 6</span>"
     ]
   },
   {
     "objectID": "project-7/hyptest.html",
     "href": "project-7/hyptest.html",
-    "title": "7  Activity 7",
+    "title": "8  Activity 7",
     "section": "",
-    "text": "7.1 Testing means\nWe will first work with hypothesis testing by manual calculation before switching to the built-in functions.\nYou are researching the effects of exercise on heart rate. In the general population, the mean bpm is 80. Among your sample of 36 people you find a mean of 75 bpm with a standard deviation of 10.",
+    "text": "8.1 Testing means\nWe will first work with hypothesis testing by manual calculation before switching to the built-in functions.\nYou are researching the effects of exercise on heart rate. In the general population, the mean bpm is 80. Among your sample of 36 people you find a mean of 75 bpm with a standard deviation of 10.",
     "crumbs": [
       "Hypothesis Testing",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 7</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Activity 7</span>"
     ]
   },
   {
     "objectID": "project-7/hyptest.html#testing-means",
     "href": "project-7/hyptest.html#testing-means",
-    "title": "7  Activity 7",
+    "title": "8  Activity 7",
     "section": "",
-    "text": "Exercise 7.1  \n\nIdentify \\(\\mu_0, \\bar x, n\\) and \\(s\\) from the given information.\nIdentify \\(H_0\\) and \\(H_1\\) for the claim that people who exercise regularly have a lower heart rate than the general population.\nCompute \\(t = \\dfrac{\\bar x - \\mu}{s / \\sqrt n}\\).\n\n\n\n\n\n\n\n\n\nCompute the threshold at the \\(\\alpha = 0.01\\) level using the formula q = qt(1 - α, df=n-1)\n\n\n\n\n\n\n\n\n\nBecause are testing for a lower bpm are we comparing \\(t\\) to \\(q\\) or to \\(-q\\)?\nUsing the threshold, what is our conclusion about \\(H_0\\)?\nCompute the p-value using the formula pt(t, df=n-1)\n\n\n\n\n\n\n\n\n\nBased on the p-value would we reach the same conclusion about \\(H_0\\) if instead \\(\\alpha = 0.001\\)? (I.e. if we wanted to be \\(99.9\\%\\) confident)\n\n\n\n7.1.1 Computing thresholds\nUsing the formula qt(1 - α, n - 1) or with 1 - α/2 for a two-sided threshold, compute both the one-sided and two-sided thresholds for:\n\nExercise 7.2  \n\n\\(\\alpha = 0.05, n = 25\\)\n\\(\\alpha = 0.01, n = 50\\)\n\n\n\n\n\n\n\n\nNow, using your thresholds, test the following hypotheses. Do we reject or fail to reject \\(H_0\\)?\n\nExercise 7.3  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(\\alpha = 0.01, n = 50\\) and test statistic \\(t = 2.5\\)\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(\\alpha = 0.01, n = 50\\) and test statistic \\(t = 2.5\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05, n = 25\\) and test statistic \\(t = -1.6\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05, n = 25\\) and test statistic \\(t = -1.9\\)\n\n\n\n\n\n\n\n\nTip\n\n\n\nRecall: values that do not exceed the threshold are “usual” and we should not reject \\(H_0\\). Values that exceed the threshold are “unusual” and we reject \\(H_0\\).\n\n\n\n\n7.1.2 Computing p-values\n\nFor \\(P(T \\le t)\\) we use pt(tscore, df)\nFor \\(P(T \\ge t)\\) we use 1 - pt(tscore, df)\nFor a two-sided test, we double this value and the easiest way to compute it is to take the negative value of the tscore and use 2*pt(tscore, df)\n\nFor the following situations, compute the p-value.\n\nExercise 7.4  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(n = 50\\) and test statistic \\(t = \\dfrac{\\bar x - \\mu}{s / \\sqrt n} = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(n = 50\\) and test statistic \\(t = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(n = 25\\) and test statistic \\(t = -1.6\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(n = 25\\) and test statistic \\(t = -1.9\\)",
+    "text": "Exercise 8.1  \n\nIdentify \\(\\mu_0, \\bar x, n\\) and \\(s\\) from the given information.\nIdentify \\(H_0\\) and \\(H_1\\) for the claim that people who exercise regularly have a lower heart rate than the general population.\nCompute \\(t = \\dfrac{\\bar x - \\mu}{s / \\sqrt n}\\).\n\n\n\n\n\n\n\n\n\nCompute the threshold at the \\(\\alpha = 0.01\\) level using the formula q = qt(1 - α, df=n-1)\n\n\n\n\n\n\n\n\n\nBecause are testing for a lower bpm are we comparing \\(t\\) to \\(q\\) or to \\(-q\\)?\nUsing the threshold, what is our conclusion about \\(H_0\\)?\nCompute the p-value using the formula pt(t, df=n-1)\n\n\n\n\n\n\n\n\n\nBased on the p-value would we reach the same conclusion about \\(H_0\\) if instead \\(\\alpha = 0.001\\)? (I.e. if we wanted to be \\(99.9\\%\\) confident)\n\n\n\n8.1.1 Computing thresholds\nUsing the formula qt(1 - α, n - 1) or with 1 - α/2 for a two-sided threshold, compute both the one-sided and two-sided thresholds for:\n\nExercise 8.2  \n\n\\(\\alpha = 0.05, n = 25\\)\n\\(\\alpha = 0.01, n = 50\\)\n\n\n\n\n\n\n\n\nNow, using your thresholds, test the following hypotheses. Do we reject or fail to reject \\(H_0\\)?\n\nExercise 8.3  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(\\alpha = 0.01, n = 50\\) and test statistic \\(t = 2.5\\)\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(\\alpha = 0.01, n = 50\\) and test statistic \\(t = 2.5\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05, n = 25\\) and test statistic \\(t = -1.6\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05, n = 25\\) and test statistic \\(t = -1.9\\)\n\n\n\n\n\n\n\n\nTip\n\n\n\nRecall: values that do not exceed the threshold are “usual” and we should not reject \\(H_0\\). Values that exceed the threshold are “unusual” and we reject \\(H_0\\).\n\n\n\n\n8.1.2 Computing p-values\n\nFor \\(P(T \\le t)\\) we use pt(tscore, df)\nFor \\(P(T \\ge t)\\) we use 1 - pt(tscore, df)\nFor a two-sided test, we double this value and the easiest way to compute it is to take the negative value of the tscore and use 2*pt(tscore, df)\n\nFor the following situations, compute the p-value.\n\nExercise 8.4  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(n = 50\\) and test statistic \\(t = \\dfrac{\\bar x - \\mu}{s / \\sqrt n} = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(n = 50\\) and test statistic \\(t = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(n = 25\\) and test statistic \\(t = -1.6\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(n = 25\\) and test statistic \\(t = -1.9\\)",
     "crumbs": [
       "Hypothesis Testing",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 7</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Activity 7</span>"
     ]
   },
   {
     "objectID": "project-7/hyptest.html#hypothesis-testing-for-proportions",
     "href": "project-7/hyptest.html#hypothesis-testing-for-proportions",
-    "title": "7  Activity 7",
-    "section": "7.2 Hypothesis testing for proportions",
-    "text": "7.2 Hypothesis testing for proportions\nApproximately 10% of people are left-handed. This proportion is higher in certain populations. In a sample of \\(100\\) people with dyslexia, \\(20\\) are left-handed\n\nExercise 7.5  \n\nIdentify \\(p_0, \\hat p, \\hat q\\) and \\(n\\) from the given information.\nIdentify \\(H_0\\) and \\(H_1\\) for the claim that the proportion of left-handedness is greater among people with dyslexia than the general population.\nCompute \\(z = \\dfrac{\\hat p - p_0}{\\sqrt{\\hat p \\hat q / n}}\\).\n\n\n\n\n\n\n\n\n\nCompute the threshold at the \\(\\alpha = 0.01\\) level using the formula q = qnorm(1 - α)\n\n\n\n\n\n\n\n\n\nBecause are testing for a higher proportion are we comparing \\(z\\) to \\(q\\) or to \\(-q\\)?\nUsing the threshold, what is our conclusion about \\(H_0\\)?\nCompute the p-value using the formula \\(P(Z \\ge z) = 1 - \\mathtt{pnorm}(z)\\)\n\n\n\n\n\n\n\n\n\nBased on the p-value would we reach the same conclusion about \\(H_0\\) if instead \\(\\alpha = 0.001\\)? (I.e. if we wanted to be \\(99.9\\%\\) confident)\n\n\n\n7.2.1 Computing thresholds\nUsing the formula qnorm(1 - α) or with 1 - α/2 for a two-sided threshold, compute both the one-sided and two-sided thresholds for:\n\nExercise 7.6  \n\n\\(\\alpha = 0.05\\)\n\\(\\alpha = 0.01\\)\n\n\n\n\n\n\n\n\nNow, using your thresholds, test the following hypotheses. Do we reject or fail to reject \\(H_0\\)?\n\nExercise 7.7  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(\\alpha = 0.01\\) and test statistic \\(z = 2.5\\)\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(\\alpha = 0.01\\) and test statistic \\(z = 2.5\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05\\) and test statistic \\(z = -1.6\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05\\) and test statistic \\(z = -1.9\\)\n\n\n\n\n7.2.2 Computing p-values\n\nExercise 7.8  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) and test statistic \\(z = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu \\neq \\mu_0\\) and test statistic \\(z = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) and test statistic \\(z = -1.6\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) and test statistic \\(z = -1.9\\)",
+    "title": "8  Activity 7",
+    "section": "8.2 Hypothesis testing for proportions",
+    "text": "8.2 Hypothesis testing for proportions\nApproximately 10% of people are left-handed. This proportion is higher in certain populations. In a sample of \\(100\\) people with dyslexia, \\(20\\) are left-handed\n\nExercise 8.5  \n\nIdentify \\(p_0, \\hat p, \\hat q\\) and \\(n\\) from the given information.\nIdentify \\(H_0\\) and \\(H_1\\) for the claim that the proportion of left-handedness is greater among people with dyslexia than the general population.\nCompute \\(z = \\dfrac{\\hat p - p_0}{\\sqrt{\\hat p \\hat q / n}}\\).\n\n\n\n\n\n\n\n\n\nCompute the threshold at the \\(\\alpha = 0.01\\) level using the formula q = qnorm(1 - α)\n\n\n\n\n\n\n\n\n\nBecause are testing for a higher proportion are we comparing \\(z\\) to \\(q\\) or to \\(-q\\)?\nUsing the threshold, what is our conclusion about \\(H_0\\)?\nCompute the p-value using the formula \\(P(Z \\ge z) = 1 - \\mathtt{pnorm}(z)\\)\n\n\n\n\n\n\n\n\n\nBased on the p-value would we reach the same conclusion about \\(H_0\\) if instead \\(\\alpha = 0.001\\)? (I.e. if we wanted to be \\(99.9\\%\\) confident)\n\n\n\n8.2.1 Computing thresholds\nUsing the formula qnorm(1 - α) or with 1 - α/2 for a two-sided threshold, compute both the one-sided and two-sided thresholds for:\n\nExercise 8.6  \n\n\\(\\alpha = 0.05\\)\n\\(\\alpha = 0.01\\)\n\n\n\n\n\n\n\n\nNow, using your thresholds, test the following hypotheses. Do we reject or fail to reject \\(H_0\\)?\n\nExercise 8.7  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) with \\(\\alpha = 0.01\\) and test statistic \\(z = 2.5\\)\n\\(H_1 : \\mu \\neq \\mu_0\\) with \\(\\alpha = 0.01\\) and test statistic \\(z = 2.5\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05\\) and test statistic \\(z = -1.6\\)\n\\(H_1 : \\mu &lt; \\mu_0\\) with \\(\\alpha = 0.05\\) and test statistic \\(z = -1.9\\)\n\n\n\n\n8.2.2 Computing p-values\n\nExercise 8.8  \n\n\\(H_1 : \\mu &gt; \\mu_0\\) and test statistic \\(z = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu \\neq \\mu_0\\) and test statistic \\(z = 2.5\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) and test statistic \\(z = -1.6\\)\n\n\n\n\n\n\n\n\n\n\\(H_1 : \\mu &lt; \\mu_0\\) and test statistic \\(z = -1.9\\)",
     "crumbs": [
       "Hypothesis Testing",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 7</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Activity 7</span>"
     ]
   },
   {
     "objectID": "project-7/hyptest.html#using-software-two-sample-hypotheses",
     "href": "project-7/hyptest.html#using-software-two-sample-hypotheses",
-    "title": "7  Activity 7",
-    "section": "7.3 Using software (two-sample hypotheses)",
-    "text": "7.3 Using software (two-sample hypotheses)\nSuppose we have some data about rates of seasonal depression in New York versus in California. Suppose \\(5\\%\\) of people (\\(x = 62, n = 1240\\)) report seasonal depression in New York versus \\(3\\%\\) (\\(x = 33, n = 1100\\)) in California. We wish to test the claim that the more northern state (New York) has a greater incidence of seasonal depression. We do this with the following R function.\n\n\n\n\n\n\n\nExercise 7.9  \n\nWrite the hypotheses \\(H_0\\) and \\(H_1\\) for our claim about \\(p_1\\) and \\(p_2\\).\nFrom the output, what is the p-value for the claim?\nAt the \\(\\alpha = 0.01\\), does the p-value suggest evidence for the claim that New Yorkers experience a greater incidence rate for seasonal depression? I.e. do we reject \\(H_0\\)?\n\n\n\nA study on the heart rate of (cisgender) men and women collects some data on the resting heart rate of each group of people. The statistician overseeing the project runs the following code to test the hypothesis that these two groups have a different resting heart rate.\n\n\n\n\n\n\n\nExercise 7.10  \n\nWrite the hypotheses \\(H_0\\) and \\(H_1\\) for our claim about \\(\\mu_1\\) and \\(\\mu_2\\).\nWhat is the mean heart rate for the men in the sample? For the women?\nFrom the output, what is the p-value for the claim?\nAt the \\(\\alpha = 0.01\\), does the p-value suggest evidence for the claim that the two groups have a different resting heart rate?",
+    "title": "8  Activity 7",
+    "section": "8.3 Using software (two-sample hypotheses)",
+    "text": "8.3 Using software (two-sample hypotheses)\nSuppose we have some data about rates of seasonal depression in New York versus in California. Suppose \\(5\\%\\) of people (\\(x = 62, n = 1240\\)) report seasonal depression in New York versus \\(3\\%\\) (\\(x = 33, n = 1100\\)) in California. We wish to test the claim that the more northern state (New York) has a greater incidence of seasonal depression. We do this with the following R function.\n\n\n\n\n\n\n\nExercise 8.9  \n\nWrite the hypotheses \\(H_0\\) and \\(H_1\\) for our claim about \\(p_1\\) and \\(p_2\\).\nFrom the output, what is the p-value for the claim?\nAt the \\(\\alpha = 0.01\\), does the p-value suggest evidence for the claim that New Yorkers experience a greater incidence rate for seasonal depression? I.e. do we reject \\(H_0\\)?\n\n\n\nA study on the heart rate of (cisgender) men and women collects some data on the resting heart rate of each group of people. The statistician overseeing the project runs the following code to test the hypothesis that these two groups have a different resting heart rate.\n\n\n\n\n\n\n\nExercise 8.10  \n\nWrite the hypotheses \\(H_0\\) and \\(H_1\\) for our claim about \\(\\mu_1\\) and \\(\\mu_2\\).\nWhat is the mean heart rate for the men in the sample? For the women?\nFrom the output, what is the p-value for the claim?\nAt the \\(\\alpha = 0.01\\), does the p-value suggest evidence for the claim that the two groups have a different resting heart rate?",
     "crumbs": [
       "Hypothesis Testing",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Activity 7</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Activity 7</span>"
     ]
   }
 ]

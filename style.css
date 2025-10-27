@@ -4,10 +4,6 @@
     }
 }
 
-.cell-output:has(input) {
-    margin-bottom: -1em;
-}
-
 [type="number"] {
     margin-top: -2em;
     border: 1px solid #ddd;
