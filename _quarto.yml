@@ -32,6 +32,7 @@ book:
         - project-3/intro-to-sampling.qmd
     - part: "The Binomial Distrubution"
       chapters:
+        - project-4/distributions.qmd
         - project-4/binomial.qmd
     - part: "The Normal Distribution"
       chapters:
