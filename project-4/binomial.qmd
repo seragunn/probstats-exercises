@@ -6,17 +6,18 @@ For example, rolling multiple dice or flipping multiple coins.
 If $X$ represents the number of successes in $n$ random experiments with a
 probability of success of $p$ and probability of failure $q = 1 - p$ then
 $$
-P(X = k) = nCk \cdot p^k q^{n - k}, \quad \text{Where } nCk = \frac{n!}{k!(n - k)!}.
+P(X = x) = nCx \cdot p^x q^{n - x}, \quad \text{Where } nCx = \frac{n!}{x!(n - x)!}.
 $$ {#eq-binom-pmf}
 
+::: {#exm-dice-binom}
 For example, if $X$ is the number of $6$s rolled among $10$ dice then $p =
 \frac16$ is the probability of getting a $6$ and $q = 1 - \frac16 = \frac56$
 is the probability of not getting a $6$. So
 $$
-P(X = k) = P(\text{rolling } k \text{ sixes}) = 10Ck \cdot \left( \frac16 \right)^k \left( \frac56 \right)^{10-k}.
+P(X = x) = P(\text{rolling } x \text{ sixes}) = 10Cx \cdot \left( \frac16 \right)^x \left( \frac56 \right)^{10-x}.
 $$
 
-In R, we calculate these probabilities with the `dbinom` function. E.g. for $n = 10, p = \frac16, k = 3$:
+In R, we calculate these probabilities with the `dbinom` function. E.g. let's say $x = 3$:
 
 ```{webr}
 dbinom(3, size=10, prob=1/6)
@@ -25,11 +26,12 @@ dbinom(3, size=10, prob=1/6)
 
 choose(10, 3) * (1/6)^3 * (5/6)^7
 ```
+:::
 
 ::: {.callout-note}
 This can also be written `dbinom(3, 10, 1/6)` without writing `size=` or
-`prob=` but I find it helps to write those explicitly to help know which number
-is $k, n$ or $p$.
+`prob=` but it can help to write those explicitly to help know which number
+is $x, n$ or $p$.
 :::
 
 ::: {#exr-dbinom}
@@ -38,20 +40,22 @@ the time or $p = 0.7$.
 
 1. What is the probability that you miss: $q = 1 - p$?
 2. If you shoot $5$ times, write down the formula (i.e. write @eq-binom-pmf
-   with the given $p, q, n, k$) for the probability that you land $3$ out of
+   with the given $p, q, n, x$) for the probability that you land $3$ out of
 $5$ free throws.
-3. Using `dbinom(k, size=n, prob=p)` compute this probability (fill in your
-   values for $p, n, k$)
+3. Using `dbinom(x, size=n, prob=p)` compute this probability (fill in your
+   values for $p, n, x$)
 :::
 
 ```{webr}
-dbinom(k, size=n, prob=p)
+dbinom(x, size=n, prob=p)
+
+# or just dbinom(x, n, p)
 ```
 
 ## Cumulative probabilities
 
-If we change `dbinom` to `pbinom`, we get not the probability of $k$ successes
-but the probability of $\le k$ successes.
+If we change `dbinom` to `pbinom`, we get not the probability of $x$ successes
+but the probability of $\le x$ successes.
 
 E.g. the probability of rolling $0, 1$ or $2$ ones among $5$ dice rolls is
 ```{webr}
@@ -73,33 +77,25 @@ $$
 1. Go back to @exr-dbinom and now instead of calculating the probability of
    making exactly $3$ free throws to the probability of making $\le 3$ free
 throws (change `dbinom` to `pbinom`).
-2. To get the probability of making $> k$ free throws rather than $\le k$ we
-   can add `lower.tail=FALSE` to the function (lower tail referring to $\le$).
-   Compute the probability of making $> 4$ free throws this way.
+2. To get the probability of making $> 3$ free throws rather than $\le 3$ we
+   can compute $P(X > 3) = 1 - P(X \le 3)$. Do this above.
+3. Are you more likely to make $\le 3$ free throws or $> 3$?
 :::
 
 ::: {.callout-tip}
-Alternatively, if you have, say, a $35\%$ chance of making $\le k$ throws, then
-you must have a $65\%$ chance of making $> k$ throws. These are *complementary
+If you have, say, a $35\%$ chance of making $\le x$ throws, then
+you must have a $65\%$ chance of making $> x$ throws. These are *complementary
 events*.
 $$
-P(X > k) = 1 - P(X \le k).
+P(X > x) = 1 - P(X \le x).
 $$
-In R: that means that `1 - pbinom(k, n, p)` is equivalent to `pbinom(k, n, p, lower.tail=FALSE)`.
 :::
-
-```{webr}
-pbinom(k, size=n, prob=p, lower.tail=FALSE)
-
-# equivalent to
-# 1 - pbinom(k, size=n, prob=p)
-```
 
 ## Random number generation
 
 We've seen how to calculate probabilities. We can also make simulations. For
 instance, to simulate this experiment of throwing 5 free throws 100 times, we
-can use the `rbinom` function. The output is a list of $k$'s. E.g. if the
+can use the `rbinom` function. The output is a list of $x$'s. E.g. if the
 output starts `5 4 2 1 ...` that means the first simulation had 5 successes,
 the second 4, the third 2, the fourth 1, etc.
 
@@ -119,11 +115,39 @@ the probability you calculated in @exr-dbinom Q2?
 calculated in @exr-pbinom Q1?
 :::
 
-## Summary
+## Interval conversions
+
+We looked at the relation $P(X > x) = 1 - P(X \le x)$ already.
+
+Another one is that
+$$P(2 \le X \le 8) = P(X \le 8) - P(X < 2) = P(X \le 8 - P(X \le 1).$$
+
+::: {#exr-interval-changes}
+Suppose we flip a coin 1000 times ($n = 1000, p = 1/2$)
+
+1. What is the probability of getting $< 480$ heads? Also give the R-function that calculates it.
+2. What is the probability of getting $470 \le X \le 530$ heads? Also give the R-function(s) that calculate it.
+3. Using any LLM, ask it how to do this calculation in Excel and write down its answer. You should notice that the answer it gives is very similar to your answer with R. E.g.
+
+> How do I calculate the probability of 470 <= X <= 530 in Excel if X follows a
+> binomial distribution with n = 1000 and p = 1/2?
+
+(And make sure it isn't using a normal approximation!)
+:::
+
+```{webr}
+
+```
+
+::: {.callout-note}
+The point: these kinds of calculations in R are transferable skills to other pieces of software.
+:::
+
+## Summary (No questions to answer)
 
 For $X$ representing the number of successes in $n$ experiments with a probability $p$ of success:
 
-1. $P(X = k)$ is `dbinom(k, size=n, prob=p)`
-2. $P(X \le k)$ is `pbinom(k, size=n, prob=p)`
-3. $P(X > k)$ is `pbinom(k, size=n, prob=p, lower.tail=FALSE)`
-4. Generating $100$ sample values for $X$ is `rbinom(100, size=n, prob=p)`
+1. $P(X = x)$ is `dbinom(x, n, p)`
+2. $P(X \le x)$ is `pbinom(x, n, p)`
+3. $P(X > x)$ is `1 - pbinom(x, n, p)`
+5. Generating $100$ sample values for $X$ is `rbinom(100, n, p)`
