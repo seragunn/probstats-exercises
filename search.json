@@ -267,7 +267,7 @@
     "href": "project-4/binomial.html",
     "title": "5  Activity 4",
     "section": "",
-    "text": "5.1 Cumulative probabilities\nThe Binomial Distribution is a model of doing something random several times. For example, rolling multiple dice or flipping multiple coins.\nIf \\(X\\) represents the number of successes in \\(n\\) random experiments with a probability of success of \\(p\\) and probability of failure \\(q = 1 - p\\) then \\[\nP(X = k) = nCk \\cdot p^k q^{n - k}, \\quad \\text{Where } nCk = \\frac{n!}{k!(n - k)!}.\n\\tag{5.1}\\]\nFor example, if \\(X\\) is the number of \\(6\\)s rolled among \\(10\\) dice then \\(p =\n\\frac16\\) is the probability of getting a \\(6\\) and \\(q = 1 - \\frac16 = \\frac56\\) is the probability of not getting a \\(6\\). So \\[\nP(X = k) = P(\\text{rolling } k \\text{ sixes}) = 10Ck \\cdot \\left( \\frac16 \\right)^k \\left( \\frac56 \\right)^{10-k}.\n\\]\nIn R, we calculate these probabilities with the dbinom function. E.g. for \\(n = 10, p = \\frac16, k = 3\\):\nIf we change dbinom to pbinom, we get not the probability of \\(k\\) successes but the probability of \\(\\le k\\) successes.\nE.g. the probability of rolling \\(0, 1\\) or \\(2\\) ones among \\(5\\) dice rolls is\nIn math notation: \\[\nP(X \\le 2) = P(X = 0, 1 \\text{ or } 2) = P(X = 0) + P(X = 1) + P(X = 2)\n\\]",
+    "text": "5.1 Cumulative probabilities\nThe Binomial Distribution is a model of doing something random several times. For example, rolling multiple dice or flipping multiple coins.\nIf \\(X\\) represents the number of successes in \\(n\\) random experiments with a probability of success of \\(p\\) and probability of failure \\(q = 1 - p\\) then \\[\nP(X = x) = nCx \\cdot p^x q^{n - x}, \\quad \\text{Where } nCx = \\frac{n!}{x!(n - x)!}.\n\\tag{5.1}\\]\nIf we change dbinom to pbinom, we get not the probability of \\(x\\) successes but the probability of \\(\\le x\\) successes.\nE.g. the probability of rolling \\(0, 1\\) or \\(2\\) ones among \\(5\\) dice rolls is\nIn math notation: \\[\nP(X \\le 2) = P(X = 0, 1 \\text{ or } 2) = P(X = 0) + P(X = 1) + P(X = 2)\n\\]",
     "crumbs": [
       "The Binomial Distrubution",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 4</span>"
@@ -278,7 +278,7 @@
     "href": "project-4/binomial.html#cumulative-probabilities",
     "title": "5  Activity 4",
     "section": "",
-    "text": "Exercise 5.2  \n\nGo back to Exercise 5.1 and now instead of calculating the probability of making exactly \\(3\\) free throws to the probability of making \\(\\le 3\\) free throws (change dbinom to pbinom).\nTo get the probability of making \\(&gt; k\\) free throws rather than \\(\\le k\\) we can add lower.tail=FALSE to the function (lower tail referring to \\(\\le\\)). Compute the probability of making \\(&gt; 4\\) free throws this way.\n\n\n\n\n\n\n\n\nTip\n\n\n\nAlternatively, if you have, say, a \\(35\\%\\) chance of making \\(\\le k\\) throws, then you must have a \\(65\\%\\) chance of making \\(&gt; k\\) throws. These are complementary events. \\[\nP(X &gt; k) = 1 - P(X \\le k).\n\\] In R: that means that 1 - pbinom(k, n, p) is equivalent to pbinom(k, n, p, lower.tail=FALSE).",
+    "text": "Exercise 5.2  \n\nGo back to Exercise 5.1 and now instead of calculating the probability of making exactly \\(3\\) free throws to the probability of making \\(\\le 3\\) free throws (change dbinom to pbinom).\nTo get the probability of making \\(&gt; 3\\) free throws rather than \\(\\le 3\\) we can compute \\(P(X &gt; 3) = 1 - P(X \\le 3)\\). Do this above.\nAre you more likely to make \\(\\le 3\\) free throws or \\(&gt; 3\\)?\n\n\n\n\n\n\n\n\nTip\n\n\n\nIf you have, say, a \\(35\\%\\) chance of making \\(\\le x\\) throws, then you must have a \\(65\\%\\) chance of making \\(&gt; x\\) throws. These are complementary events. \\[\nP(X &gt; x) = 1 - P(X \\le x).\n\\]",
     "crumbs": [
       "The Binomial Distrubution",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 4</span>"
@@ -289,18 +289,29 @@
     "href": "project-4/binomial.html#random-number-generation",
     "title": "5  Activity 4",
     "section": "5.2 Random number generation",
-    "text": "5.2 Random number generation\nWe’ve seen how to calculate probabilities. We can also make simulations. For instance, to simulate this experiment of throwing 5 free throws 100 times, we can use the rbinom function. The output is a list of \\(k\\)’s. E.g. if the output starts 5 4 2 1 ... that means the first simulation had 5 successes, the second 4, the third 2, the fourth 1, etc.\n\n\n\n\n\n\n\nExercise 5.3  \n\nRun this cell and write down the first 10 numbers.\nIn those first 10 experiments, what percent of the time did you land exactly \\(3\\) free throws? Is this relative frequency greater than or smaller than the probability you calculated in Exercise 5.1 Q2?\nNow change the line to table(rbinom(...)) to make the summary table we looked at in Lab 1. Write down that table.\nHow many times out of 100 was the number of successes \\(0, 1, 2\\) or \\(3\\)? Is this relative frequency bigger or smaller than the true probability you calculated in Exercise 5.2 Q1?",
+    "text": "5.2 Random number generation\nWe’ve seen how to calculate probabilities. We can also make simulations. For instance, to simulate this experiment of throwing 5 free throws 100 times, we can use the rbinom function. The output is a list of \\(x\\)’s. E.g. if the output starts 5 4 2 1 ... that means the first simulation had 5 successes, the second 4, the third 2, the fourth 1, etc.\n\n\n\n\n\n\n\nExercise 5.3  \n\nRun this cell and write down the first 10 numbers.\nIn those first 10 experiments, what percent of the time did you land exactly \\(3\\) free throws? Is this relative frequency greater than or smaller than the probability you calculated in Exercise 5.1 Q2?\nNow change the line to table(rbinom(...)) to make the summary table we looked at in Lab 1. Write down that table.\nHow many times out of 100 was the number of successes \\(0, 1, 2\\) or \\(3\\)? Is this relative frequency bigger or smaller than the true probability you calculated in Exercise 5.2 Q1?",
     "crumbs": [
       "The Binomial Distrubution",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 4</span>"
     ]
   },
   {
-    "objectID": "project-4/binomial.html#summary",
-    "href": "project-4/binomial.html#summary",
+    "objectID": "project-4/binomial.html#interval-conversions",
+    "href": "project-4/binomial.html#interval-conversions",
     "title": "5  Activity 4",
-    "section": "5.3 Summary",
-    "text": "5.3 Summary\nFor \\(X\\) representing the number of successes in \\(n\\) experiments with a probability \\(p\\) of success:\n\n\\(P(X = k)\\) is dbinom(k, size=n, prob=p)\n\\(P(X \\le k)\\) is pbinom(k, size=n, prob=p)\n\\(P(X &gt; k)\\) is pbinom(k, size=n, prob=p, lower.tail=FALSE)\nGenerating \\(100\\) sample values for \\(X\\) is rbinom(100, size=n, prob=p)",
+    "section": "5.3 Interval conversions",
+    "text": "5.3 Interval conversions\nWe looked at the relation \\(P(X &gt; x) = 1 - P(X \\le x)\\) already.\nAnother one is that \\[P(2 \\le X \\le 8) = P(X \\le 8) - P(X &lt; 2) = P(X \\le 8 - P(X \\le 1).\\]\n\nExercise 5.4 Suppose we flip a coin 1000 times (\\(n = 1000, p = 1/2\\))\n\nWhat is the probability of getting \\(&lt; 480\\) heads? Also give the R-function that calculates it.\nWhat is the probability of getting \\(470 \\le X \\le 530\\) heads? Also give the R-function(s) that calculate it.\nUsing any LLM, ask it how to do this calculation in Excel and write down its answer. You should notice that the answer it gives is very similar to your answer with R. E.g.\n\n\nHow do I calculate the probability of 470 &lt;= X &lt;= 530 in Excel if X follows a binomial distribution with n = 1000 and p = 1/2?\n\n(And make sure it isn’t using a normal approximation!)\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe point: these kinds of calculations in R are transferable skills to other pieces of software.",
+    "crumbs": [
+      "The Binomial Distrubution",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 4</span>"
+    ]
+  },
+  {
+    "objectID": "project-4/binomial.html#summary-no-questions-to-answer",
+    "href": "project-4/binomial.html#summary-no-questions-to-answer",
+    "title": "5  Activity 4",
+    "section": "5.4 Summary (No questions to answer)",
+    "text": "5.4 Summary (No questions to answer)\nFor \\(X\\) representing the number of successes in \\(n\\) experiments with a probability \\(p\\) of success:\n\n\\(P(X = x)\\) is dbinom(x, n, p)\n\\(P(X \\le x)\\) is pbinom(x, n, p)\n\\(P(X &gt; x)\\) is 1 - pbinom(x, n, p)\nGenerating \\(100\\) sample values for \\(X\\) is rbinom(100, n, p)",
     "crumbs": [
       "The Binomial Distrubution",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Activity 4</span>"
