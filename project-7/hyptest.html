@@ -356,7 +356,7 @@ window.Quarto = {
 <ol type="1">
 <li>Identify <span class="math inline">\(\mu_0, \bar x, n\)</span> and <span class="math inline">\(s\)</span> from the given information.</li>
 <li>Identify <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span> for the claim that people who exercise regularly have a <em>lower</em> heart rate than the general population.</li>
-<li>Compute <span class="math inline">\(t = \dfrac{\bar x - \mu}{s / \sqrt n}\)</span>.</li>
+<li>Compute <span class="math inline">\(t = \dfrac{\bar x - \mu}{s / \sqrt n}\)</span> (replace the variables with the corresponding numbers):</li>
 </ol>
 <div>
 <div id="webr-1" class="exercise-cell">
@@ -370,7 +370,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMV90c2NvcmUifSwi
 eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzFfdHNjb3JlIn0sImNvZGUiOiJpZiAoLnJlc3VsdCA9PSAtMykge1xuICBsaXN0KGNvcnJlY3QgPSBUUlVFLCBtZXNzYWdlID0gXCJOaWNlIHdvcmshXCIpXG59IGVsc2Uge1xuICBsaXN0KGNvcnJlY3QgPSBGQUxTRSwgbWVzc2FnZSA9IFwiQ2hlY2sgdGhhdCB5b3UndmUgcmVwbGFjZWQgdGhlIHZhcmlhYmxlcyBjb3JyZWN0bHlcIilcbn0ifQ==
 </script>
 <ol start="4" type="1">
-<li>Compute the threshold at the <span class="math inline">\(\alpha = 0.01\)</span> level using the formula <code>q = qt(1 - α, df=n-1)</code></li>
+<li>Compute the threshold at the <span class="math inline">\(\alpha = 0.01\)</span> level using the formula <code>q = qt(α, df=n-1)</code></li>
 </ol>
 <div>
 <div id="webr-3" class="exercise-cell">
@@ -381,10 +381,10 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMV90aHJlc2hvbGQi
 </script>
 </div>
 <script type="exercise-check-ex_1_threshold-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzFfdGhyZXNob2xkIn0sImNvZGUiOiJpZiAoaXNUUlVFKGFsbC5lcXVhbCgucmVzdWx0LCBxdCgwLjk5LCAzNSkpKSkge1xuICBsaXN0KGNvcnJlY3QgPSBUUlVFLCBtZXNzYWdlID0gXCJOaWNlIHdvcmshXCIpXG59IGVsc2Uge1xuICBsaXN0KGNvcnJlY3QgPSBGQUxTRSwgbWVzc2FnZSA9IFwiVHJ5IGFnYWluXCIpXG59In0=
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzFfdGhyZXNob2xkIn0sImNvZGUiOiJpZiAoLnJlc3VsdCA9PSBxdCgwLjAxLCAzNSkpIHtcbiAgbGlzdChjb3JyZWN0ID0gVFJVRSwgbWVzc2FnZSA9IFwiTmljZSB3b3JrIVwiKVxufSBlbHNlIHtcbiAgbGlzdChjb3JyZWN0ID0gRkFMU0UsIG1lc3NhZ2UgPSBcIlRyeSBhZ2FpblwiKVxufSJ9
 </script>
 <ol start="5" type="1">
-<li>Because are testing for a <em>lower</em> bpm are we comparing <span class="math inline">\(t\)</span> to <span class="math inline">\(q\)</span> or to <span class="math inline">\(-q\)</span>?</li>
+<li>Because are testing for a <em>lower</em> bpm are we comparing <span class="math inline">\(t\)</span> to the positive or negative threshold?</li>
 <li>Using the threshold, what is our conclusion about <span class="math inline">\(H_0\)</span>?</li>
 <li>Compute the p-value using the formula <code>pt(t, df=n-1)</code></li>
 </ol>
@@ -397,7 +397,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMV9wdmFsdWUifSwi
 </script>
 </div>
 <script type="exercise-check-ex_1_pvalue-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzFfcHZhbHVlIn0sImNvZGUiOiJpZiAoaXNUUlVFKGFsbC5lcXVhbCgucmVzdWx0LCBwdCgtMywgMzUpKSkpIHtcbiAgbGlzdChjb3JyZWN0ID0gVFJVRSwgbWVzc2FnZSA9IFwiTmljZSB3b3JrIVwiKVxufSBlbHNlIHtcbiAgbGlzdChjb3JyZWN0ID0gRkFMU0UsIG1lc3NhZ2UgPSBcIlRyeSBhZ2FpblwiKVxufSJ9
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzFfcHZhbHVlIn0sImNvZGUiOiJpZiAoLnJlc3VsdCA9PSBwdCgtMywgMzUpKSB7XG4gIGxpc3QoY29ycmVjdCA9IFRSVUUsIG1lc3NhZ2UgPSBcIk5pY2Ugd29yayFcIilcbn0gZWxzZSB7XG4gIGxpc3QoY29ycmVjdCA9IEZBTFNFLCBtZXNzYWdlID0gXCJUcnkgYWdhaW5cIilcbn0ifQ==
 </script>
 <ol start="8" type="1">
 <li>Based on the p-value would we reach the same conclusion about <span class="math inline">\(H_0\)</span> if instead <span class="math inline">\(\alpha = 0.001\)</span>? (I.e. if we wanted to be <span class="math inline">\(99.9\%\)</span> confident)</li>
@@ -405,7 +405,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4
 </div>
 <section id="computing-thresholds" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="computing-thresholds"><span class="header-section-number">7.1.1</span> Computing thresholds</h3>
-<p>Using the formula <code>qt(1 - α, n - 1)</code> or with <code>1 - α/2</code> for a two-sided threshold, compute both the one-sided and two-sided thresholds for:</p>
+<p>Using the formula <code>qt(α, n - 1)</code> or with <code>α/2</code> for a two-sided threshold, compute both the one-sided and two-sided thresholds for:</p>
 <div id="exr-qt" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7.2</strong></span> &nbsp;</p>
 <ol type="1">
@@ -448,8 +448,8 @@ Tip
 <section id="computing-p-values" class="level3" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="computing-p-values"><span class="header-section-number">7.1.2</span> Computing p-values</h3>
 <ul>
-<li>For <span class="math inline">\(P(T \le t)\)</span> we use <code>pt(tscore, df)</code></li>
-<li>For <span class="math inline">\(P(T \ge t)\)</span> we use <code>1 - pt(tscore, df)</code></li>
+<li>For <span class="math inline">\(P(T \le t)\)</span> we use <code>pt(tscore, df)</code> (the t-score should be negative)</li>
+<li>For <span class="math inline">\(P(T \ge t)\)</span> we use <code>pt(-tscore, df)</code> (the t-score should be positive and we make it negative for the function)</li>
 <li>For a two-sided test, we double this value and the easiest way to compute it is to take the <strong>negative</strong> value of the tscore and use <code>2*pt(tscore, df)</code></li>
 </ul>
 <p>For the following situations, compute the p-value.</p>
@@ -467,7 +467,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMl8xIn0sImNvZGUi
 </script>
 </div>
 <script type="exercise-check-ex_2_1-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzJfMSJ9LCJjb2RlIjoiaWYgKGlzVFJVRShhbGwuZXF1YWwoLnJlc3VsdCwgMS1wdCgyLjUsIDQ5KSkpKSB7XG4gIGxpc3QoY29ycmVjdCA9IFRSVUUsIG1lc3NhZ2UgPSBcIk5pY2Ugd29yayFcIilcbn0gZWxzZSB7XG4gIGxpc3QoY29ycmVjdCA9IEZBTFNFLCBtZXNzYWdlID0gXCJUcnkgYWdhaW5cIilcbn0ifQ==
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzJfMSJ9LCJjb2RlIjoiaWYgKC5yZXN1bHQgPT0gcHQoLTIuNSwgNDkpKSB7XG4gIGxpc3QoY29ycmVjdCA9IFRSVUUsIG1lc3NhZ2UgPSBcIk5pY2Ugd29yayFcIilcbn0gZWxzZSB7XG4gIGxpc3QoY29ycmVjdCA9IEZBTFNFLCBtZXNzYWdlID0gXCJUcnkgYWdhaW5cIilcbn0ifQ==
 </script>
 <ol start="2" type="1">
 <li><span class="math inline">\(H_1 : \mu \neq \mu_0\)</span> with <span class="math inline">\(n = 50\)</span> and test statistic <span class="math inline">\(t = 2.5\)</span></li>
@@ -481,7 +481,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMl8yIn0sImNvZGUi
 </script>
 </div>
 <script type="exercise-check-ex_2_2-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzJfMiJ9LCJjb2RlIjoiaWYgKGlzVFJVRShhbGwuZXF1YWwoLnJlc3VsdCwgMipwdCgtMi41LCA0OSkpKSkge1xuICBsaXN0KGNvcnJlY3QgPSBUUlVFLCBtZXNzYWdlID0gXCJOaWNlIHdvcmshXCIpXG59IGVsc2Uge1xuICBsaXN0KGNvcnJlY3QgPSBGQUxTRSwgbWVzc2FnZSA9IFwiVHJ5IGFnYWluXCIpXG59In0=
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzJfMiJ9LCJjb2RlIjoiaWYgKC5yZXN1bHQgPT0gMipwdCgtMi41LCA0OSkpIHtcbiAgbGlzdChjb3JyZWN0ID0gVFJVRSwgbWVzc2FnZSA9IFwiTmljZSB3b3JrIVwiKVxufSBlbHNlIHtcbiAgbGlzdChjb3JyZWN0ID0gRkFMU0UsIG1lc3NhZ2UgPSBcIlRyeSBhZ2FpblwiKVxufSJ9
 </script>
 <ol start="3" type="1">
 <li><span class="math inline">\(H_1 : \mu &lt; \mu_0\)</span> with <span class="math inline">\(n = 25\)</span> and test statistic <span class="math inline">\(t = -1.6\)</span></li>
@@ -495,7 +495,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMl8zIn0sImNvZGUi
 </script>
 </div>
 <script type="exercise-check-ex_2_3-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzJfMyJ9LCJjb2RlIjoiaWYgKGlzVFJVRShhbGwuZXF1YWwoLnJlc3VsdCwgcHQoLTEuNiwgMjQpKSkpIHtcbiAgbGlzdChjb3JyZWN0ID0gVFJVRSwgbWVzc2FnZSA9IFwiTmljZSB3b3JrIVwiKVxufSBlbHNlIHtcbiAgbGlzdChjb3JyZWN0ID0gRkFMU0UsIG1lc3NhZ2UgPSBcIlRyeSBhZ2FpblwiKVxufSJ9
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzJfMyJ9LCJjb2RlIjoiaWYgKC5yZXN1bHQgPT0gcHQoLTEuNiwgMjQpKSB7XG4gIGxpc3QoY29ycmVjdCA9IFRSVUUsIG1lc3NhZ2UgPSBcIk5pY2Ugd29yayFcIilcbn0gZWxzZSB7XG4gIGxpc3QoY29ycmVjdCA9IEZBTFNFLCBtZXNzYWdlID0gXCJUcnkgYWdhaW5cIilcbn0ifQ==
 </script>
 <ol start="4" type="1">
 <li><span class="math inline">\(H_1 : \mu &lt; \mu_0\)</span> with <span class="math inline">\(n = 25\)</span> and test statistic <span class="math inline">\(t = -1.9\)</span></li>
@@ -509,7 +509,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMl80In0sImNvZGUi
 </script>
 </div>
 <script type="exercise-check-ex_2_4-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzJfNCJ9LCJjb2RlIjoiaWYgKGlzVFJVRShhbGwuZXF1YWwoLnJlc3VsdCwgcHQoLTEuOSwgMjQpKSkpIHtcbiAgbGlzdChjb3JyZWN0ID0gVFJVRSwgbWVzc2FnZSA9IFwiTmljZSB3b3JrIVwiKVxufSBlbHNlIHtcbiAgbGlzdChjb3JyZWN0ID0gRkFMU0UsIG1lc3NhZ2UgPSBcIlRyeSBhZ2FpblwiKVxufSJ9
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzJfNCJ9LCJjb2RlIjoiaWYgKC5yZXN1bHQgPT0gcHQoLTEuOSwgMjQpKSB7XG4gIGxpc3QoY29ycmVjdCA9IFRSVUUsIG1lc3NhZ2UgPSBcIk5pY2Ugd29yayFcIilcbn0gZWxzZSB7XG4gIGxpc3QoY29ycmVjdCA9IEZBTFNFLCBtZXNzYWdlID0gXCJUcnkgYWdhaW5cIilcbn0ifQ==
 </script>
 </div>
 </section>
@@ -520,9 +520,9 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4
 <div id="exr-left-handed" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7.5</strong></span> &nbsp;</p>
 <ol type="1">
-<li>Identify <span class="math inline">\(p_0, \hat p, \hat q\)</span> and <span class="math inline">\(n\)</span> from the given information.</li>
+<li>Identify <span class="math inline">\(p, \hat p, \hat q\)</span> and <span class="math inline">\(n\)</span> from the given information.</li>
 <li>Identify <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span> for the claim that the proportion of left-handedness is <em>greater</em> among people with dyslexia than the general population.</li>
-<li>Compute <span class="math inline">\(z = \dfrac{\hat p - p_0}{\sqrt{\hat p \hat q / n}}\)</span>.</li>
+<li>Compute <span class="math inline">\(z = \dfrac{\hat p - p}{\sqrt{p q / n}}\)</span>.</li>
 </ol>
 <div>
 <div id="webr-16" class="exercise-cell">
@@ -533,10 +533,10 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfM196c2NvcmUifSwi
 </script>
 </div>
 <script type="exercise-check-ex_3_zscore-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzNfenNjb3JlIn0sImNvZGUiOiJpZiAoaXNUUlVFKGFsbC5lcXVhbCgucmVzdWx0LCAoMC4yIC0gMC4xKS9zcXJ0KDAuMiowLjgvMTAwKSkpKSB7XG4gIGxpc3QoY29ycmVjdCA9IFRSVUUsIG1lc3NhZ2UgPSBcIk5pY2Ugd29yayFcIilcbn0gZWxzZSB7XG4gIGxpc3QoY29ycmVjdCA9IEZBTFNFLCBtZXNzYWdlID0gXCJUcnkgYWdhaW5cIilcbn0ifQ==
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzNfenNjb3JlIn0sImNvZGUiOiJpZiAoLnJlc3VsdCA9PSAoMC4yIC0gMC4xKS9zcXJ0KDAuMSowLjkvMTAwKSkge1xuICBsaXN0KGNvcnJlY3QgPSBUUlVFLCBtZXNzYWdlID0gXCJOaWNlIHdvcmshXCIpXG59IGVsc2Uge1xuICBsaXN0KGNvcnJlY3QgPSBGQUxTRSwgbWVzc2FnZSA9IFwiVHJ5IGFnYWluXCIpXG59In0=
 </script>
 <ol start="4" type="1">
-<li>Compute the threshold at the <span class="math inline">\(\alpha = 0.01\)</span> level using the formula <code>q = qnorm(1 - α)</code></li>
+<li>Compute the threshold at the <span class="math inline">\(\alpha = 0.01\)</span> level using the formula <code>q = qnorm(α)</code></li>
 </ol>
 <div>
 <div id="webr-18" class="exercise-cell">
@@ -547,12 +547,12 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfM190aHJlc2hvbGQi
 </script>
 </div>
 <script type="exercise-check-ex_3_threshold-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzNfdGhyZXNob2xkIn0sImNvZGUiOiJpZiAoaXNUUlVFKGFsbC5lcXVhbCgucmVzdWx0LCBxbm9ybSgwLjk5KSkpKSB7XG4gIGxpc3QoY29ycmVjdCA9IFRSVUUsIG1lc3NhZ2UgPSBcIk5pY2Ugd29yayFcIilcbn0gZWxzZSB7XG4gIGxpc3QoY29ycmVjdCA9IEZBTFNFLCBtZXNzYWdlID0gXCJUcnkgYWdhaW5cIilcbn0ifQ==
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzNfdGhyZXNob2xkIn0sImNvZGUiOiJpZiAoLnJlc3VsdCA9PSBxbm9ybSgwLjAxKSkge1xuICBsaXN0KGNvcnJlY3QgPSBUUlVFLCBtZXNzYWdlID0gXCJOaWNlIHdvcmshXCIpXG59IGVsc2Uge1xuICBsaXN0KGNvcnJlY3QgPSBGQUxTRSwgbWVzc2FnZSA9IFwiVHJ5IGFnYWluXCIpXG59In0=
 </script>
 <ol start="5" type="1">
-<li>Because are testing for a <em>higher</em> proportion are we comparing <span class="math inline">\(z\)</span> to <span class="math inline">\(q\)</span> or to <span class="math inline">\(-q\)</span>?</li>
+<li>Because are testing for a <em>higher</em> proportion are we comparing <span class="math inline">\(z\)</span> to the positive or negative threshold?</li>
 <li>Using the threshold, what is our conclusion about <span class="math inline">\(H_0\)</span>?</li>
-<li>Compute the p-value using the formula <span class="math inline">\(P(Z \ge z) = 1 - \mathtt{pnorm}(z)\)</span></li>
+<li>Compute the p-value using the formula <span class="math inline">\(P(Z \ge z) = \mathtt{pnorm}(-z)\)</span></li>
 </ol>
 <div>
 <div id="webr-20" class="exercise-cell">
@@ -563,7 +563,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfM19wdmFsdWUifSwi
 </script>
 </div>
 <script type="exercise-check-ex_3_pvalue-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzNfcHZhbHVlIn0sImNvZGUiOiJ6c2NvcmUgPSAoMC4yIC0gMC4xKS9zcXJ0KDAuMiowLjgvMTAwKVxuaWYgKGlzVFJVRShhbGwuZXF1YWwoLnJlc3VsdCwgMSAtIHBub3JtKHpzY29yZSkpKSkge1xuICBsaXN0KGNvcnJlY3QgPSBUUlVFLCBtZXNzYWdlID0gXCJOaWNlIHdvcmshXCIpXG59IGVsc2Uge1xuICBsaXN0KGNvcnJlY3QgPSBGQUxTRSwgbWVzc2FnZSA9IFwiVHJ5IGFnYWluXCIpXG59In0=
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzNfcHZhbHVlIn0sImNvZGUiOiJ6c2NvcmUgPSAoMC4yIC0gMC4xKS9zcXJ0KDAuMSowLjkvMTAwKVxuaWYgKGFicygucmVzdWx0IC0gcG5vcm0oLXpzY29yZSkpIDwgMTBeLTUpIHtcbiAgbGlzdChjb3JyZWN0ID0gVFJVRSwgbWVzc2FnZSA9IFwiTmljZSB3b3JrIVwiKVxufSBlbHNlIHtcbiAgbGlzdChjb3JyZWN0ID0gRkFMU0UsIG1lc3NhZ2UgPSBcIlRyeSB1c2luZyBtb3JlIGRpZ2l0c1wiKVxufSJ9
 </script>
 <ol start="8" type="1">
 <li>Based on the p-value would we reach the same conclusion about <span class="math inline">\(H_0\)</span> if instead <span class="math inline">\(\alpha = 0.001\)</span>? (I.e. if we wanted to be <span class="math inline">\(99.9\%\)</span> confident)</li>
@@ -571,7 +571,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4
 </div>
 <section id="computing-thresholds-1" class="level3" data-number="7.2.1">
 <h3 data-number="7.2.1" class="anchored" data-anchor-id="computing-thresholds-1"><span class="header-section-number">7.2.1</span> Computing thresholds</h3>
-<p>Using the formula <code>qnorm(1 - α)</code> or with <code>1 - α/2</code> for a two-sided threshold, compute both the one-sided and two-sided thresholds for:</p>
+<p>Using the formula <code>qnorm(α)</code> or with <code>α/2</code> for a two-sided threshold, compute both the one-sided and two-sided thresholds for:</p>
 <div id="exr-qt" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7.6</strong></span> &nbsp;</p>
 <ol type="1">
@@ -614,7 +614,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfNF8xIn0sImNvZGUi
 </script>
 </div>
 <script type="exercise-check-ex_4_1-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzRfMSJ9LCJjb2RlIjoiaWYgKGlzVFJVRShhbGwuZXF1YWwoLnJlc3VsdCwgMSAtIHBub3JtKDIuNSkpKSkge1xuICBsaXN0KGNvcnJlY3QgPSBUUlVFLCBtZXNzYWdlID0gXCJOaWNlIHdvcmshXCIpXG59IGVsc2Uge1xuICBsaXN0KGNvcnJlY3QgPSBGQUxTRSwgbWVzc2FnZSA9IFwiVHJ5IGFnYWluXCIpXG59In0=
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzRfMSJ9LCJjb2RlIjoiaWYgKC5yZXN1bHQgPT0gcG5vcm0oLTIuNSkpIHtcbiAgbGlzdChjb3JyZWN0ID0gVFJVRSwgbWVzc2FnZSA9IFwiTmljZSB3b3JrIVwiKVxufSBlbHNlIHtcbiAgbGlzdChjb3JyZWN0ID0gRkFMU0UsIG1lc3NhZ2UgPSBcIlRyeSBhZ2FpblwiKVxufSJ9
 </script>
 <ol start="2" type="1">
 <li><span class="math inline">\(H_1 : \mu \neq \mu_0\)</span> and test statistic <span class="math inline">\(z = 2.5\)</span></li>
@@ -628,7 +628,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfNF8yIn0sImNvZGUi
 </script>
 </div>
 <script type="exercise-check-ex_4_2-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzRfMiJ9LCJjb2RlIjoiaWYgKGlzVFJVRShhbGwuZXF1YWwoLnJlc3VsdCwgMipwbm9ybSgtMi41KSkpKSB7XG4gIGxpc3QoY29ycmVjdCA9IFRSVUUsIG1lc3NhZ2UgPSBcIk5pY2Ugd29yayFcIilcbn0gZWxzZSB7XG4gIGxpc3QoY29ycmVjdCA9IEZBTFNFLCBtZXNzYWdlID0gXCJUcnkgYWdhaW5cIilcbn0ifQ==
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzRfMiJ9LCJjb2RlIjoiaWYgKC5yZXN1bHQgPT0gMipwbm9ybSgtMi41KSkge1xuICBsaXN0KGNvcnJlY3QgPSBUUlVFLCBtZXNzYWdlID0gXCJOaWNlIHdvcmshXCIpXG59IGVsc2Uge1xuICBsaXN0KGNvcnJlY3QgPSBGQUxTRSwgbWVzc2FnZSA9IFwiVHJ5IGFnYWluXCIpXG59In0=
 </script>
 <ol start="3" type="1">
 <li><span class="math inline">\(H_1 : \mu &lt; \mu_0\)</span> and test statistic <span class="math inline">\(z = -1.6\)</span></li>
@@ -642,7 +642,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfNF8zIn0sImNvZGUi
 </script>
 </div>
 <script type="exercise-check-ex_4_3-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzRfMyJ9LCJjb2RlIjoiaWYgKGlzVFJVRShhbGwuZXF1YWwoLnJlc3VsdCwgcG5vcm0oLTEuNikpKSkge1xuICBsaXN0KGNvcnJlY3QgPSBUUlVFLCBtZXNzYWdlID0gXCJOaWNlIHdvcmshXCIpXG59IGVsc2Uge1xuICBsaXN0KGNvcnJlY3QgPSBGQUxTRSwgbWVzc2FnZSA9IFwiVHJ5IGFnYWluXCIpXG59In0=
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzRfMyJ9LCJjb2RlIjoiaWYgKC5yZXN1bHQgPT0gcG5vcm0oLTEuNikpIHtcbiAgbGlzdChjb3JyZWN0ID0gVFJVRSwgbWVzc2FnZSA9IFwiTmljZSB3b3JrIVwiKVxufSBlbHNlIHtcbiAgbGlzdChjb3JyZWN0ID0gRkFMU0UsIG1lc3NhZ2UgPSBcIlRyeSBhZ2FpblwiKVxufSJ9
 </script>
 <ol start="4" type="1">
 <li><span class="math inline">\(H_1 : \mu &lt; \mu_0\)</span> and test statistic <span class="math inline">\(z = -1.9\)</span></li>
@@ -656,7 +656,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfNF80In0sImNvZGUi
 </script>
 </div>
 <script type="exercise-check-ex_4_4-contents">
-eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzRfNCJ9LCJjb2RlIjoiaWYgKGlzVFJVRShhbGwuZXF1YWwoLnJlc3VsdCwgcG5vcm0oLTEuOSkpKSkge1xuICBsaXN0KGNvcnJlY3QgPSBUUlVFLCBtZXNzYWdlID0gXCJOaWNlIHdvcmshXCIpXG59IGVsc2Uge1xuICBsaXN0KGNvcnJlY3QgPSBGQUxTRSwgbWVzc2FnZSA9IFwiVHJ5IGFnYWluXCIpXG59In0=
+eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4XzRfNCJ9LCJjb2RlIjoiaWYgKC5yZXN1bHQgPT0gcG5vcm0oLTEuOSkpIHtcbiAgbGlzdChjb3JyZWN0ID0gVFJVRSwgbWVzc2FnZSA9IFwiTmljZSB3b3JrIVwiKVxufSBlbHNlIHtcbiAgbGlzdChjb3JyZWN0ID0gRkFMU0UsIG1lc3NhZ2UgPSBcIlRyeSBhZ2FpblwiKVxufSJ9
 </script>
 </div>
 </section>
