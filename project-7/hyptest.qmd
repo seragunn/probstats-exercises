@@ -10,7 +10,7 @@ You are researching the effects of exercise on heart rate. In the general popula
 ::: {#exr-bpm}
 1. Identify $\mu_0, \bar x, n$ and $s$ from the given information.
 2. Identify $H_0$ and $H_1$ for the claim that people who exercise regularly have a *lower* heart rate than the general population.
-3. Compute $t = \dfrac{\bar x - \mu}{s / \sqrt n}$.
+3. Compute $t = \dfrac{\bar x - \mu}{s / \sqrt n}$ (replace the variables with the corresponding numbers):
 ```{webr}
 #| exercise: ex_1_tscore
 (xbar - mu) / (s / sqrt(n))
@@ -24,7 +24,7 @@ if (.result == -3) {
   list(correct = FALSE, message = "Check that you've replaced the variables correctly")
 }
 ```
-4. Compute the threshold at the $\alpha = 0.01$ level using the formula `q = qt(1 - α, df=n-1)`
+4. Compute the threshold at the $\alpha = 0.01$ level using the formula `q = qt(α, df=n-1)`
 ```{webr}
 #| exercise: ex_1_threshold
 qt(______, df=______)
@@ -32,13 +32,13 @@ qt(______, df=______)
 ```{webr}
 #| exercise: ex_1_threshold
 #| check: true
-if (isTRUE(all.equal(.result, qt(0.99, 35)))) {
+if (.result == qt(0.01, 35)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
 }
 ```
-5. Because are testing for a *lower* bpm are we comparing $t$ to $q$ or to $-q$?
+5. Because are testing for a *lower* bpm are we comparing $t$ to the positive or negative threshold?
 6. Using the threshold, what is our conclusion about $H_0$?
 7. Compute the p-value using the formula `pt(t, df=n-1)`
 ```{webr}
@@ -48,7 +48,7 @@ pt(______, df=_______)
 ```{webr}
 #| exercise: ex_1_pvalue
 #| check: true
-if (isTRUE(all.equal(.result, pt(-3, 35)))) {
+if (.result == pt(-3, 35)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
@@ -59,7 +59,7 @@ if (isTRUE(all.equal(.result, pt(-3, 35)))) {
 
 ### Computing thresholds
 
-Using the formula `qt(1 - α, n - 1)` or with `1 - α/2` for a two-sided threshold, compute both the one-sided and two-sided thresholds for:
+Using the formula `qt(α, n - 1)` or with `α/2` for a two-sided threshold, compute both the one-sided and two-sided thresholds for:
 
 ::: {#exr-qt}
 1. $\alpha = 0.05, n = 25$ 
@@ -85,8 +85,8 @@ Recall: values that do not exceed the threshold are "usual" and we should not re
 
 ### Computing p-values
 
-* For $P(T \le t)$ we use `pt(tscore, df)`
-* For $P(T \ge t)$ we use `1 - pt(tscore, df)`
+* For $P(T \le t)$ we use `pt(tscore, df)` (the t-score should be negative)
+* For $P(T \ge t)$ we use `pt(-tscore, df)` (the t-score should be positive and we make it negative for the function)
 * For a two-sided test, we double this value and the easiest way to compute it is to take the **negative** value of the tscore and use `2*pt(tscore, df)`
 
 For the following situations, compute the p-value.
@@ -99,7 +99,7 @@ For the following situations, compute the p-value.
 ```{webr}
 #| exercise: ex_2_1
 #| check: true
-if (isTRUE(all.equal(.result, 1-pt(2.5, 49)))) {
+if (.result == pt(-2.5, 49)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
@@ -112,7 +112,7 @@ if (isTRUE(all.equal(.result, 1-pt(2.5, 49)))) {
 ```{webr}
 #| exercise: ex_2_2
 #| check: true
-if (isTRUE(all.equal(.result, 2*pt(-2.5, 49)))) {
+if (.result == 2*pt(-2.5, 49)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
@@ -125,7 +125,7 @@ if (isTRUE(all.equal(.result, 2*pt(-2.5, 49)))) {
 ```{webr}
 #| exercise: ex_2_3
 #| check: true
-if (isTRUE(all.equal(.result, pt(-1.6, 24)))) {
+if (.result == pt(-1.6, 24)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
@@ -138,7 +138,7 @@ if (isTRUE(all.equal(.result, pt(-1.6, 24)))) {
 ```{webr}
 #| exercise: ex_2_4
 #| check: true
-if (isTRUE(all.equal(.result, pt(-1.9, 24)))) {
+if (.result == pt(-1.9, 24)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
@@ -152,9 +152,9 @@ Approximately 10\% of people are left-handed. This proportion is higher in
 certain populations. In a sample of $100$ people with dyslexia, $20$ are left-handed
 
 ::: {#exr-left-handed}
-1. Identify $p_0, \hat p, \hat q$ and $n$ from the given information.
+1. Identify $p, \hat p, \hat q$ and $n$ from the given information.
 2. Identify $H_0$ and $H_1$ for the claim that the proportion of left-handedness is *greater* among people with dyslexia than the general population.
-3. Compute $z = \dfrac{\hat p - p_0}{\sqrt{\hat p \hat q / n}}$.
+3. Compute $z = \dfrac{\hat p - p}{\sqrt{p q / n}}$.
 ```{webr}
 #| exercise: ex_3_zscore
 
@@ -162,13 +162,13 @@ certain populations. In a sample of $100$ people with dyslexia, $20$ are left-ha
 ```{webr}
 #| exercise: ex_3_zscore
 #| check: true
-if (isTRUE(all.equal(.result, (0.2 - 0.1)/sqrt(0.2*0.8/100)))) {
+if (.result == (0.2 - 0.1)/sqrt(0.1*0.9/100)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
 }
 ```
-4. Compute the threshold at the $\alpha = 0.01$ level using the formula `q = qnorm(1 - α)`
+4. Compute the threshold at the $\alpha = 0.01$ level using the formula `q = qnorm(α)`
 ```{webr}
 #| exercise: ex_3_threshold
 qnorm()
@@ -176,15 +176,15 @@ qnorm()
 ```{webr}
 #| exercise: ex_3_threshold
 #| check: true
-if (isTRUE(all.equal(.result, qnorm(0.99)))) {
+if (.result == qnorm(0.01)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
 }
 ```
-5. Because are testing for a *higher* proportion are we comparing $z$ to $q$ or to $-q$?
+5. Because are testing for a *higher* proportion are we comparing $z$ to the positive or negative threshold?
 6. Using the threshold, what is our conclusion about $H_0$?
-7. Compute the p-value using the formula $P(Z \ge z) = 1 - \mathtt{pnorm}(z)$
+7. Compute the p-value using the formula $P(Z \ge z) = \mathtt{pnorm}(-z)$
 ```{webr}
 #| exercise: ex_3_pvalue
 pnorm()
@@ -192,11 +192,11 @@ pnorm()
 ```{webr}
 #| exercise: ex_3_pvalue
 #| check: true
-zscore = (0.2 - 0.1)/sqrt(0.2*0.8/100)
-if (isTRUE(all.equal(.result, 1 - pnorm(zscore)))) {
+zscore = (0.2 - 0.1)/sqrt(0.1*0.9/100)
+if (abs(.result - pnorm(-zscore)) < 10^-5) {
   list(correct = TRUE, message = "Nice work!")
 } else {
-  list(correct = FALSE, message = "Try again")
+  list(correct = FALSE, message = "Try using more digits")
 }
 ```
 8. Based on the p-value would we reach the same conclusion about $H_0$ if instead $\alpha = 0.001$? (I.e. if we wanted to be $99.9\%$ confident)
@@ -204,7 +204,7 @@ if (isTRUE(all.equal(.result, 1 - pnorm(zscore)))) {
 
 ### Computing thresholds
 
-Using the formula `qnorm(1 - α)` or with `1 - α/2` for a two-sided threshold, compute both the one-sided and two-sided thresholds for:
+Using the formula `qnorm(α)` or with `α/2` for a two-sided threshold, compute both the one-sided and two-sided thresholds for:
 
 
 ::: {#exr-qt}
@@ -235,7 +235,7 @@ Now, using your thresholds, test the following hypotheses. Do we *reject* or *fa
 ```{webr}
 #| exercise: ex_4_1
 #| check: true
-if (isTRUE(all.equal(.result, 1 - pnorm(2.5)))) {
+if (.result == pnorm(-2.5)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
@@ -248,7 +248,7 @@ if (isTRUE(all.equal(.result, 1 - pnorm(2.5)))) {
 ```{webr}
 #| exercise: ex_4_2
 #| check: true
-if (isTRUE(all.equal(.result, 2*pnorm(-2.5)))) {
+if (.result == 2*pnorm(-2.5)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
@@ -261,7 +261,7 @@ if (isTRUE(all.equal(.result, 2*pnorm(-2.5)))) {
 ```{webr}
 #| exercise: ex_4_3
 #| check: true
-if (isTRUE(all.equal(.result, pnorm(-1.6)))) {
+if (.result == pnorm(-1.6)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
@@ -274,7 +274,7 @@ if (isTRUE(all.equal(.result, pnorm(-1.6)))) {
 ```{webr}
 #| exercise: ex_4_4
 #| check: true
-if (isTRUE(all.equal(.result, pnorm(-1.9)))) {
+if (.result == pnorm(-1.9)) {
   list(correct = TRUE, message = "Nice work!")
 } else {
   list(correct = FALSE, message = "Try again")
