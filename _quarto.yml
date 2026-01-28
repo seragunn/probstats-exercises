@@ -1,6 +1,8 @@
 project:
   type: book
-  resources: datasets
+  resources:
+    - datasets
+    - project-1/intro/index_files/
 
 book:
   title: "Probability and Statistics Exercises"
@@ -20,6 +22,7 @@ book:
     - index.qmd
     - part: "Introduction to Data"
       chapters:
+        - project-1/slides.qmd
         - project-1/intro.qmd
         - project-1/bars-and-pies.qmd
     - part: "Summarizing Data"

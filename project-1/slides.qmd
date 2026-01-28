@@ -1,0 +1,23 @@
+---
+slide-format: revealjs
+---
+
+# Introduction to Statistics {.unnumbered}
+
+<style>
+.slide-deck {
+    border: 3px solid #dee2e6;
+    width: 100%;
+    height: 475px;
+}
+</style>
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="intro/"></iframe>
+```
+
+</div>
+
+Open this in a [new window](intro/){target="_blank"}
