@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.12">
+<meta name="generator" content="quarto-1.9.17">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Intro to R – Probability and Statistics Exercises</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -66,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../project-1/bars-and-pies.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../project-1/slides.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -74,10 +77,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-cdaacfc258cb6f151192107f105ac881.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ce4278342a015d016477ed09bce942c5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3c5333e56ad6d1bf138ab44a25129ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4af47d3b37c543d314c5752801dfbda0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -114,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -179,7 +182,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project-1/intro.html">Introduction to Data</a></li><li class="breadcrumb-item"><a href="../project-1/intro.html">Intro to R</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project-1/slides.html">Introduction to Data</a></li><li class="breadcrumb-item"><a href="../project-1/intro.html">Intro to R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -206,6 +209,12 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project-1/slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Statistics</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project-1/intro.html" class="sidebar-item-text sidebar-link active">
@@ -357,7 +366,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project-1/intro.html">Introduction to Data</a></li><li class="breadcrumb-item"><a href="../project-1/intro.html">Intro to R</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project-1/slides.html">Introduction to Data</a></li><li class="breadcrumb-item"><a href="../project-1/intro.html">Intro to R</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Intro to R</h1>
 </div>
@@ -387,15 +396,15 @@ window.Quarto = {
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBBIGRpZSBpcyByb2xsZWQgMjAgdGltZXMsIHdlIG9ic2VydmUgdGhlIGZvbGxvd2luZyByb2xsc1xuIyBhbmQgc3RvcmUgdGhlbSBpbiBhIHZhcmlhYmxlIGNhbGxlZCBcImRpY2Vfcm9sbHNcIlxuZGljZV9yb2xscyA9IGMoMiw0LDYsNSw0LDUsMSwyLDQsMSw0LDIsMiwzLDYsNiwyLDMsMSwzKVxuXG4jIFRoZSB0YWJsZSgpIGZ1bmN0aW9uIGNyZWF0ZXMgYSB0YWJsZSBjb3VudGluZ1xuIyB0aGUgbnVtYmVyIG9mIDFzLCAycywgM3MsIGV0Yy5cbnJvbGxfY291bnQgPSB0YWJsZShkaWNlX3JvbGxzKVxuXG4jIFdyaXRpbmcganVzdCB0aGUgdmFyaWFibGUgbmFtZSBwcmludHMgaXQgb3V0XG5yb2xsX2NvdW50In0=
 </script>
 </div>
-<div id="23aac371" class="cell" data-execution_count="1">
+<div id="d4a8ae0c" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <script>
-var ID = "xoahk4oG"
+var ID = "Zhgv8ocI"
 </script>
-<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="xoahk4oG" data-controltype="" onsubmit="return false;">
+<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="Zhgv8ocI" data-controltype="" onsubmit="return false;">
   <div class="form-group ">
     <div class="controls">
-      <div class="form" id="controls_xoahk4oG" correct="-1" attempts="0">
+      <div class="form" id="controls_Zhgv8ocI" correct="-1" attempts="0">
      How many times was a 2 rolled? 
 
     
@@ -403,17 +412,17 @@ var ID = "xoahk4oG"
     <div style="padding-top: 5px">
     <br>
 <div class="input-group" aria-label="Input form: Numeric answer">
-    <input id="xoahk4oG" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
+    <input id="Zhgv8ocI" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
 </div>
 
      </div>
     </div>
-    <div id="xoahk4oG_message" class="qqmessage" style="padding-bottom: 15px">
+    <div id="Zhgv8ocI_message" class="qqmessage" style="padding-bottom: 15px">
     </div>
 
 <script>
-document.getElementById('controls_xoahk4oG').addEventListener("quizquestion_answer", (e) => {
-          var o = document.getElementById('controls_xoahk4oG')
+document.getElementById('controls_Zhgv8ocI').addEventListener("quizquestion_answer", (e) => {
+          var o = document.getElementById('controls_Zhgv8ocI')
           var atts = Number(o.getAttribute("attempts"))
           o.setAttribute("correct",  e.detail.correct);
           o.setAttribute("attempts", atts + 1)
@@ -421,13 +430,13 @@ document.getElementById('controls_xoahk4oG').addEventListener("quizquestion_answ
 </script>
 
 <script text="text/javascript">
-document.getElementById("xoahk4oG").addEventListener("change", function() {
+document.getElementById("Zhgv8ocI").addEventListener("change", function() {
   var correct = (Math.abs(this.value - 5) <= 0);
-  var msgBox = document.getElementById('xoahk4oG_message');
+  var msgBox = document.getElementById('Zhgv8ocI_message');
   
   if(correct) {
     msgBox.innerHTML = "<div class='pluto-output admonition note alert alert-success'> <span>✔&nbsp; Correct </span> </div>";
-    var explanation = document.getElementById("explanation_xoahk4oG")
+    var explanation = document.getElementById("explanation_Zhgv8ocI")
     if (explanation != null) {
        explanation.style.display = "none";
     }
@@ -438,7 +447,7 @@ document.getElementById("xoahk4oG").addEventListener("change", function() {
 
   } else {
     msgBox.innerHTML = "<div class='pluto-output admonition alert alert-danger'> <span>Χ&nbsp; Incorrect </span> </div>";
-    var explanation = document.getElementById("explanation_xoahk4oG")
+    var explanation = document.getElementById("explanation_Zhgv8ocI")
     if (explanation != null) {
        explanation.style.display = "block";
     }
@@ -469,15 +478,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYmFycGxvdChyb2xsX2NvdW50
 <li>Recall that <code>roll_count</code> contains a table counting the number of 1s, 2s, 3s, etc. whereas dice_rolls contains each roll. Try replacing <code>roll_count</code> with <code>dice_rolls</code> in the bar graph. What does this bar graph show?</li>
 <li>Hit the “Start Over” button to reset the code box. Suppose after these first 20 rolls, you roll an additional 5, 5, 2, 1, 6. Add this to the dice_rolls variable and then run both code boxes again.</li>
 </ol>
-<div id="6303b634" class="cell" data-execution_count="2">
+<div id="853e7655" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <script>
-var ID = "1rKinsbs"
+var ID = "JoXQ1tB2"
 </script>
-<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="1rKinsbs" data-controltype="" onsubmit="return false;">
+<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="JoXQ1tB2" data-controltype="" onsubmit="return false;">
   <div class="form-group ">
     <div class="controls">
-      <div class="form" id="controls_1rKinsbs" correct="-1" attempts="0">
+      <div class="form" id="controls_JoXQ1tB2" correct="-1" attempts="0">
      How many 5s have been rolled after adding these new rolls? 
 
     
@@ -485,17 +494,17 @@ var ID = "1rKinsbs"
     <div style="padding-top: 5px">
     <br>
 <div class="input-group" aria-label="Input form: Numeric answer">
-    <input id="1rKinsbs" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
+    <input id="JoXQ1tB2" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
 </div>
 
      </div>
     </div>
-    <div id="1rKinsbs_message" class="qqmessage" style="padding-bottom: 15px">
+    <div id="JoXQ1tB2_message" class="qqmessage" style="padding-bottom: 15px">
     </div>
 
 <script>
-document.getElementById('controls_1rKinsbs').addEventListener("quizquestion_answer", (e) => {
-          var o = document.getElementById('controls_1rKinsbs')
+document.getElementById('controls_JoXQ1tB2').addEventListener("quizquestion_answer", (e) => {
+          var o = document.getElementById('controls_JoXQ1tB2')
           var atts = Number(o.getAttribute("attempts"))
           o.setAttribute("correct",  e.detail.correct);
           o.setAttribute("attempts", atts + 1)
@@ -503,13 +512,13 @@ document.getElementById('controls_1rKinsbs').addEventListener("quizquestion_answ
 </script>
 
 <script text="text/javascript">
-document.getElementById("1rKinsbs").addEventListener("change", function() {
+document.getElementById("JoXQ1tB2").addEventListener("change", function() {
   var correct = (Math.abs(this.value - 4) <= 0);
-  var msgBox = document.getElementById('1rKinsbs_message');
+  var msgBox = document.getElementById('JoXQ1tB2_message');
   
   if(correct) {
     msgBox.innerHTML = "<div class='pluto-output admonition note alert alert-success'> <span>✔&nbsp; Correct </span> </div>";
-    var explanation = document.getElementById("explanation_1rKinsbs")
+    var explanation = document.getElementById("explanation_JoXQ1tB2")
     if (explanation != null) {
        explanation.style.display = "none";
     }
@@ -520,7 +529,7 @@ document.getElementById("1rKinsbs").addEventListener("change", function() {
 
   } else {
     msgBox.innerHTML = "<div class='pluto-output admonition alert alert-danger'> <span>Χ&nbsp; Incorrect </span> </div>";
-    var explanation = document.getElementById("explanation_1rKinsbs")
+    var explanation = document.getElementById("explanation_JoXQ1tB2")
     if (explanation != null) {
        explanation.style.display = "block";
     }
@@ -1000,8 +1009,8 @@ window._ojs.runtime.interpretFromScriptTags();
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="About">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About</span>
+      <a href="../project-1/slides.html" class="pagination-link" aria-label="Introduction to Statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to Statistics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

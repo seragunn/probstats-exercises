@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.12">
+<meta name="generator" content="quarto-1.9.17">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Calculating Mean, Median, etc. in R – Probability and Statistics Exercises</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -39,10 +42,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-cdaacfc258cb6f151192107f105ac881.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ce4278342a015d016477ed09bce942c5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3c5333e56ad6d1bf138ab44a25129ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4af47d3b37c543d314c5752801dfbda0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -79,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -171,6 +174,12 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project-1/slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Statistics</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project-1/intro.html" class="sidebar-item-text sidebar-link">
@@ -364,15 +373,15 @@ Tip
 <p>The short-hand for a consecutive list like <code>c(1, 2, 3, 4, 5, 6)</code> is <code>1:6</code>. Try changing the first line to <code>dice_values = 1:20</code> and get the average dice value on a 20 sided die—common in tabletop games like Dungeons &amp; Dragons.</p>
 </div>
 </div>
-<div id="3ab14af1" class="cell" data-execution_count="1">
+<div id="6496f8b5" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <script>
-var ID = "zroMK7LU"
+var ID = "2Q8HgaB4"
 </script>
-<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="zroMK7LU" data-controltype="" onsubmit="return false;">
+<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="2Q8HgaB4" data-controltype="" onsubmit="return false;">
   <div class="form-group ">
     <div class="controls">
-      <div class="form" id="controls_zroMK7LU" correct="-1" attempts="0">
+      <div class="form" id="controls_2Q8HgaB4" correct="-1" attempts="0">
      What is the average roll on a 20 sided die? 
 
     
@@ -380,17 +389,17 @@ var ID = "zroMK7LU"
     <div style="padding-top: 5px">
     <br>
 <div class="input-group" aria-label="Input form: Numeric answer">
-    <input id="zroMK7LU" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
+    <input id="2Q8HgaB4" type="number" step="any" class="form-control qqinput" placeholder="Numeric answer" aria-label="Numeric answer">
 </div>
 
      </div>
     </div>
-    <div id="zroMK7LU_message" class="qqmessage" style="padding-bottom: 15px">
+    <div id="2Q8HgaB4_message" class="qqmessage" style="padding-bottom: 15px">
     </div>
 
 <script>
-document.getElementById('controls_zroMK7LU').addEventListener("quizquestion_answer", (e) => {
-          var o = document.getElementById('controls_zroMK7LU')
+document.getElementById('controls_2Q8HgaB4').addEventListener("quizquestion_answer", (e) => {
+          var o = document.getElementById('controls_2Q8HgaB4')
           var atts = Number(o.getAttribute("attempts"))
           o.setAttribute("correct",  e.detail.correct);
           o.setAttribute("attempts", atts + 1)
@@ -398,13 +407,13 @@ document.getElementById('controls_zroMK7LU').addEventListener("quizquestion_answ
 </script>
 
 <script text="text/javascript">
-document.getElementById("zroMK7LU").addEventListener("change", function() {
+document.getElementById("2Q8HgaB4").addEventListener("change", function() {
   var correct = (Math.abs(this.value - 10.5) <= 0.001);
-  var msgBox = document.getElementById('zroMK7LU_message');
+  var msgBox = document.getElementById('2Q8HgaB4_message');
   
   if(correct) {
     msgBox.innerHTML = "<div class='pluto-output admonition note alert alert-success'> <span>✔&nbsp; Correct </span> </div>";
-    var explanation = document.getElementById("explanation_zroMK7LU")
+    var explanation = document.getElementById("explanation_2Q8HgaB4")
     if (explanation != null) {
        explanation.style.display = "none";
     }
@@ -415,7 +424,7 @@ document.getElementById("zroMK7LU").addEventListener("change", function() {
 
   } else {
     msgBox.innerHTML = "<div class='pluto-output admonition alert alert-danger'> <span>Χ&nbsp; Incorrect </span> </div>";
-    var explanation = document.getElementById("explanation_zroMK7LU")
+    var explanation = document.getElementById("explanation_2Q8HgaB4")
     if (explanation != null) {
        explanation.style.display = "block";
     }
@@ -452,15 +461,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGF0YSA9IGMoNC45LCAwLjcs
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGF0YSA9IGMoNC45LCAwLjcsIDEuOCwgMS4xLCAwLjYsIDEuOClcbnRhYmxlKGRhdGEpIn0=
 </script>
 </div>
-<div id="9acf5226" class="cell" data-execution_count="2">
+<div id="4c1680a2" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <script>
-var ID = "4OzoX0t1"
+var ID = "lkckTkUY"
 </script>
-<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="4OzoX0t1" data-controltype="" onsubmit="return false;">
+<form class="mx-2 my-3 mw-100 qqquestion" name="WeaveQuestion" data-id="lkckTkUY" data-controltype="" onsubmit="return false;">
   <div class="form-group ">
     <div class="controls">
-      <div class="form" id="controls_4OzoX0t1" correct="-1" attempts="0">
+      <div class="form" id="controls_lkckTkUY" correct="-1" attempts="0">
      Which value appears the most times? 
 
     
@@ -469,8 +478,8 @@ var ID = "4OzoX0t1"
     <fieldset style="border:0px">
 <legend style="display: none" aria-label="Select an item">Select an item</legend>
 <div class="form-check">
-    <label class="form-check-label qqradio" for="radio_4OzoX0t1_1">
-    <input class="form-check-input" type="radio" name="radio_4OzoX0t1" id="radio_4OzoX0t1_1" value="1">
+    <label class="form-check-label qqradio" for="radio_lkckTkUY_1">
+    <input class="form-check-input" type="radio" name="radio_lkckTkUY" id="radio_lkckTkUY_1" value="1">
     
     <span class="label-body px-1">
         0.6
@@ -478,8 +487,8 @@ var ID = "4OzoX0t1"
     </label>
 </div>
 <div class="form-check">
-    <label class="form-check-label qqradio" for="radio_4OzoX0t1_2">
-    <input class="form-check-input" type="radio" name="radio_4OzoX0t1" id="radio_4OzoX0t1_2" value="2">
+    <label class="form-check-label qqradio" for="radio_lkckTkUY_2">
+    <input class="form-check-input" type="radio" name="radio_lkckTkUY" id="radio_lkckTkUY_2" value="2">
     
     <span class="label-body px-1">
         0.7
@@ -487,8 +496,8 @@ var ID = "4OzoX0t1"
     </label>
 </div>
 <div class="form-check">
-    <label class="form-check-label qqradio" for="radio_4OzoX0t1_3">
-    <input class="form-check-input" type="radio" name="radio_4OzoX0t1" id="radio_4OzoX0t1_3" value="3">
+    <label class="form-check-label qqradio" for="radio_lkckTkUY_3">
+    <input class="form-check-input" type="radio" name="radio_lkckTkUY" id="radio_lkckTkUY_3" value="3">
     
     <span class="label-body px-1">
         1.1
@@ -496,8 +505,8 @@ var ID = "4OzoX0t1"
     </label>
 </div>
 <div class="form-check">
-    <label class="form-check-label qqradio" for="radio_4OzoX0t1_4">
-    <input class="form-check-input" type="radio" name="radio_4OzoX0t1" id="radio_4OzoX0t1_4" value="4">
+    <label class="form-check-label qqradio" for="radio_lkckTkUY_4">
+    <input class="form-check-input" type="radio" name="radio_lkckTkUY" id="radio_lkckTkUY_4" value="4">
     
     <span class="label-body px-1">
         1.8
@@ -505,8 +514,8 @@ var ID = "4OzoX0t1"
     </label>
 </div>
 <div class="form-check">
-    <label class="form-check-label qqradio" for="radio_4OzoX0t1_5">
-    <input class="form-check-input" type="radio" name="radio_4OzoX0t1" id="radio_4OzoX0t1_5" value="5">
+    <label class="form-check-label qqradio" for="radio_lkckTkUY_5">
+    <input class="form-check-input" type="radio" name="radio_lkckTkUY" id="radio_lkckTkUY_5" value="5">
     
     <span class="label-body px-1">
         4.9
@@ -517,12 +526,12 @@ var ID = "4OzoX0t1"
 
      </div>
     </div>
-    <div id="4OzoX0t1_message" class="qqmessage" style="padding-bottom: 15px">
+    <div id="lkckTkUY_message" class="qqmessage" style="padding-bottom: 15px">
     </div>
 
 <script>
-document.getElementById('controls_4OzoX0t1').addEventListener("quizquestion_answer", (e) => {
-          var o = document.getElementById('controls_4OzoX0t1')
+document.getElementById('controls_lkckTkUY').addEventListener("quizquestion_answer", (e) => {
+          var o = document.getElementById('controls_lkckTkUY')
           var atts = Number(o.getAttribute("attempts"))
           o.setAttribute("correct",  e.detail.correct);
           o.setAttribute("attempts", atts + 1)
@@ -530,14 +539,14 @@ document.getElementById('controls_4OzoX0t1').addEventListener("quizquestion_answ
 </script>
 
 <script text="text/javascript">
-document.querySelectorAll('input[name="radio_4OzoX0t1"]').forEach(function(rb) {
+document.querySelectorAll('input[name="radio_lkckTkUY"]').forEach(function(rb) {
 rb.addEventListener("change", function() {
     var correct = rb.value == 4;
-    var msgBox = document.getElementById('4OzoX0t1_message');
+    var msgBox = document.getElementById('lkckTkUY_message');
     
   if(correct) {
     msgBox.innerHTML = "<div class='pluto-output admonition note alert alert-success'> <span>✔&nbsp; Correct </span> </div>";
-    var explanation = document.getElementById("explanation_4OzoX0t1")
+    var explanation = document.getElementById("explanation_lkckTkUY")
     if (explanation != null) {
        explanation.style.display = "none";
     }
@@ -548,7 +557,7 @@ rb.addEventListener("change", function() {
 
   } else {
     msgBox.innerHTML = "<div class='pluto-output admonition alert alert-danger'> <span>Χ&nbsp; Incorrect </span> </div>";
-    var explanation = document.getElementById("explanation_4OzoX0t1")
+    var explanation = document.getElementById("explanation_lkckTkUY")
     if (explanation != null) {
        explanation.style.display = "block";
     }

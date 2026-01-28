@@ -1,0 +1,163 @@
+---
+title: Introduction to Statistics and Data
+author: Sera Gunn
+date: 2026-01-28
+format:
+  revealjs:
+    theme: beige
+    incremental: true
+---
+
+## Examples of Statistics
+
+* The average half-life of caffeine in adults is 5 hours
+* Approximately 8% of the US population lacked health insurance in 2023
+* The average person in the US spends 63 minutes a day eating
+* Individuals with autism spectrum disorder are 2.5 times more likely to be
+left-handed than those without ASD
+
+
+## Definitions
+
+* **Data** is a collection of observations and measurements about members of a group (e.g. their age, height, favourite hot beverage, ...)
+
+::: {.columns}
+::: {.column}
+* **Population** everyone in a group (e.g. all college students)
+* **Parameter** a numerical description of some characteristic of the population (e.g. average time spent sleeping)
+:::
+
+::: {.column}
+* **Sample** the subgroup of the population whose data we collect (e.g. sample 250 college students)
+* **Statistic** a numerical description of some characteristic of the sample
+:::
+:::
+
+## The practice of statistics
+
+* Statistics (the practice) comes in two flavours
+    1. **Descriptive statistics** (collecting, organizing, presenting data)
+    2. **Inferential statistics** (estimating and predicting parameters from
+    sample statistics)
+
+## Example
+
+Planned Parenthood wants to know what percent of their patients are on Medicaid.
+They look through their patient database and find 49% of patients are on Medicaid.
+
+* This is a **census** (meaning every patient's data was collected)
+* Here the *sample* = the *population* and this *statistic* is a *parameter*
+
+## Example 2
+
+Researchers want to know about sleep habits of college students. They question 600 students across several colleges and find that students are getting an average of 6 to 7 hours of sleep.
+
+* Population: college students
+* Sample: these 600 students
+* Statistic: 6 to 7 hours average sleep
+* Parameter: unknown
+
+## Random samples
+
+A sample is called a **random sample** if every member of the population has an equal chance of being selected.
+
+* E.g. put everyone's name in a hat and randomly pick 5 names
+* E.g. select every 10th person in a queue to ask questions to
+
+## Not random samples
+
+"Random sample" specifically means it is the same probability for everyone
+
+* E.g. if we select 2 random MTH 113 sections and 2 random ENG 151 sections
+    * maybe there are more ENG 151 sections (less likely to be picked)
+    * maybe there are people in both classes (more likely to be picked)
+* It's still random but it's not a "random sample" per this definition
+
+## Simple random sample
+
+The simplest way to sample people randomly is to just put all the names in a hat and pick.
+
+**A simple random sample is always a random sample but the reverse is not necessarily true**
+
+If we do anything else, it may be random but it isn't "simple random sampling"
+
+* E.g. if we group people by class section it's not SRS
+* E.g. if we select student IDs ending in 4 it's not SRS or select every 10th person in a queue
+* E.g. if we sample 10 kids and 10 adults it's not SRS
+
+## Technical definition
+
+A simple random sample is a random sample where every group of the same size has the same chance of being selected.
+
+E.g. if we want 10 kids and 10 adults then some groups of 20 will never be selected (e.g. 20 kids)
+
+## Once again
+
+Literally anything other than "everyone's name goes in a hat, 20 names come out" is not simple random sampling.
+
+## Example
+
+Here are some ways to select 5 students
+
+* Select the first 5 alphabetically
+    * not random
+* Select the first 5 by where they sit
+    * not random
+* Select a random column/row (assume students are seated in groups of 5)
+    * random sample but not simple random
+* Number the attendance sheet and pick 5 students by taking random numbers
+    * simple random sample
+
+## Types of Data
+
+| Name    | Age | Gender    | Amount of Caffeinated Beverages per day (mg) | Hours slept last week |
+|---------|-----|-----------|----------------------------------------------|-----------------------|
+| Alex    | 30  | Woman     | 2                                            | 50                    |
+| Ignacio | 23  | Man       | 3                                            | 52                    |
+| Jinu    | 27  | Man       | 1                                            | 54                    |
+| Paris   | 26  | Nonbinary | 1                                            | 60                    |
+| Zahra   | 19  | Woman     | 0                                            | 42                    |
+
+## Major categorizations
+
+* Quantitative or Qualitative
+    * quantities are numbers, qualities are descriptions
+    * however some numbers like student IDs are descriptive (i.e. qualitative)
+* Quantities can be ranked, compared (bigger, smaller)
+* Quantities can be discrete (whole numbers) or continuous (decimal numbers)
+    * e.g. how many kids a person has is a whole number (discrete data)
+    * e.g. temperatures are continuous data because they can have decimals (even if they're rounded to a whole number)
+
+## Levels of measurement
+
+What can we do with measurements/data?
+
+* Is it just a label and we can't order or compare bigger/smaller? **Nominal measurement**
+    * e.g. student ID
+* If we can order/rank the data from least to greatest but the exact difference between ranks isn't meaningful **Ordinal measurement**
+    * e.g. grades (A, B, C, D, F), hotel ratings, pain scale
+* If the differences are meaningful but it doesn't make sense to say "twice as much" **Interval measurement**
+    * e.g. date, temperatures in Celsius/Fahrenheit
+* If differences are meaningful and we can say "twice as much" **Ratio measurement**
+    * e.g. time for an activity, prices, weights, lengths, age
+
+## Examples
+
+* Age
+    * quantity, continuous, ratio
+* Gender
+    * quality, nominal
+* Amount of caffeinated beverages
+    * quantity, discrete, ratio
+* Hours slept
+    * quantity, continuous, ratio
+
+## Things to consider when making a survey
+
+* How the question is asked
+    * Do you think the United States should forbid public speeches against democracy? (21% said yes)
+    * Do you think the United States should allow public speeches against democracy? (48% said no)
+* Sample size
+* Is the sample *representative*?
+* Correlation vs Causation
+* Conflicts of Interest
