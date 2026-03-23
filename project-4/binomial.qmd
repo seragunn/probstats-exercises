@@ -127,7 +127,6 @@ Suppose we flip a coin 1000 times ($n = 1000, p = 1/2$)
 
 1. What is the probability of getting $< 480$ heads? Also give the R-function that calculates it.
 2. What is the probability of getting $470 \le X \le 530$ heads? Also give the R-function(s) that calculate it.
-3. Using any LLM, ask it how to do this calculation in Excel and write down its answer. You should notice that the answer it gives is very similar to your answer with R. E.g.
 
 > How do I calculate the probability of 470 <= X <= 530 in Excel if X follows a
 > binomial distribution with n = 1000 and p = 1/2?
